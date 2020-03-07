@@ -52,7 +52,6 @@ a.link2:active
 {
     padding:0
 }
-hr{
-    border-color: black;
-    border-width:5px;
+.nav_color{
+    background-color:#a457e4;
 }
