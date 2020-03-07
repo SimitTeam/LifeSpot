@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="assets/logo.png"/>
 
 
+
     <script src="jquery-3.4.1.min.js"></script>
     <script src="bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -25,12 +26,7 @@
         overflow:hidden; 
         background-color:grey;
         }
-
-    hr{
-    border-color: rgb(41, 151, 50);
-    border-width:5px;
-    }
-
+    
 </style>
 
 
@@ -55,14 +51,13 @@
                   <a class="dropdown-item" href="administrater.html">Moderator Options</a>
                 </div>              
             </li> 
-
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Moderating
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Option 1</a>
-                  <a class="dropdown-item" href="#">Option 2</a>
+                  <a class="dropdown-item" href="newSpecies.html">Add Species</a>
+                  <a class="dropdown-item" href="confirmMarker.html">Confirm Marker</a>
                   <a class="dropdown-item" href="#">Option 3</a>
                 </div>
                               
@@ -88,53 +83,99 @@
         </div>
       </nav>     
     <div class='container-fluid '>   
-        <div class='row'>
-            <div class='offset-sm-4 col-sm-4 text-center'>
-              <h2>New Marker</h2>
-              <hr>
-              <form>
-                  <table class='table'>
+        <div class="row">
+            <div class=" offset-sm-4 col-sm-4 text-center row_space">
+                <table class='table text-center'>
+                    <tr>
+                        <th>Number</th>
+                        <th>User</th>
+                        <th>Type</th>
+                        <th>Marker</th>
+                        <th>Selected</th>
+                    </tr>
                     <tr>
                         <td>
-                            Species Name:
+                           1
+                        </td>                       
+                        <td>
+                            Eddvin
                         </td>
                         <td>
-                            <input type="text">
+                            Plant
+                        </td>
+                        <td>
+                            <a href = "showMarker.html" class="btn btn-light text-center" target="_blank">Show</a>
+                        </td>                       
+                        <td>
+                            <input name="checkGroup" type='checkbox' >
                         </td>
                     </tr>
                     <tr>
-                        <td>Date:</td>
-                        <td><input type='date'>
-                        </td>
-                    </tr>  
-                    <tr>
-                        <td>Image:</td>
-                        <td colspan='2' >
-                            <a href = "#" class="btn btn-outline-dark ">AddImg</a>
-                            <img   src="assets/aki.jpg" width="80px" height="80px" style="float:right">
-                         </td>
-                    </tr>   
-                    <tr>
-                        <td>Location:</td>
                         <td>
-                            <img   src="assets/map.png" width="400px" height="200px" style="float:right">
+                            2
+                         </td>                       
+                         <td>
+                             Mara
                          </td>
-                    </tr>                                            
+                         <td>
+                            Animal
+                        </td>                         
+                         <td>
+                             <a href = "showMarker.html" class="btn btn-light text-center" target="_blank">Show</a>
+                         </td>                       
+                         <td>
+                             <input name="checkGroup" type='checkbox' >
+                         </td>
+                    </tr>
                     <tr>
-                        <td>Text:</td>
-                        <td><textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                        </td>
-                    </tr> 
-
+                        <td>
+                            3
+                         </td>                       
+                         <td>
+                             Алекса
+                         </td>
+                         <td>
+                            Плант
+                        </td>                         
+                         <td>
+                             <a href = "showMarker.html" class="btn btn-light text-center" target="_blank">Схов</a>
+                         </td>                       
+                         <td>
+                             <input name="checkGroup" type='checkbox' >
+                         </td>
+                    </tr>
                     <tr>
-                        <td colspan='2' class='text-center'>
-                           <a href = "#" class="btn btn-outline-dark ">AddMarker</a>
-                        </td>
-                    </tr>                    
+                        <td>
+                            4
+                         </td>                       
+                         <td>
+                             Norephinephrine
+                         </td>
+                         <td>
+                            Animal
+                        </td>                            
+                         <td>
+                             <a href = "showMarker.html" class="btn btn-light text-center " target="_blank">Show</a>
+                         </td>                       
+                         <td>
+                             <input name="checkGroup" type='checkbox' >
+                         </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <a href = "#" class="btn btn-primary ">Confirm</a>
+                        </td>  
+                        <td>
+                            &nbsp
+                        </td>                         
+                        <td colspan="2">
+                            <a href = "#" class="btn btn-danger ">Deny</a>
+                        </td>                                                                        
+                    </tr>
                   </table>
-              </form>
             </div>
         </div>
+
     </div>
 </body>
 
