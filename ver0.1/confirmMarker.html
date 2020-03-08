@@ -1,0 +1,168 @@
+<html>
+<head>
+    <title>LifeSpot</title>
+    <link rel="stylesheet" href="./bootstrap-4.4.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/logo.png"/>
+
+
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+
+<style>
+    html, body { 
+        height:100%
+    }
+    #mapDiv {
+        position: absolute;
+        z-index:1;
+        top:95px; 
+        bottom:0; 
+        right:0; 
+        left:0; 
+        overflow:hidden; 
+        background-color:grey;
+        }
+    
+</style>
+
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-ligh nav_color">
+        <a class="navbar-brand" href="index.html"><img src="assets/logo1.png" alt="Lifespot_logo"
+            height = 70 width = 325></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Administer
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="administrater.html">Moderator Options</a>
+                </div>              
+            </li> 
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Moderating
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="newSpecies.html">Add Species</a>
+                  <a class="dropdown-item" href="confirmMarker.html">Confirm Marker</a>
+                </div>
+                              
+            </li>            
+            <li class="nav-item">
+                <a class="nav-link " href="newMarker.html">New Marker</a>
+            </li> 
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Norephinephrine
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="index.html">Sign Out</a>
+                </div>
+                
+            </li>                                 
+          </ul>
+
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <a href="searchResult.html" class="btn btn-success my-2 my-sm-0" type="submit">Search</a>
+          </form>
+        </div>
+      </nav>     
+    <div class='container-fluid '>   
+        <div class="row">
+            <div class=" offset-sm-4 col-sm-4 text-center row_space">
+                <table class='table text-center'>
+                    <tr>
+                        <th>Number</th>
+                        <th>User</th>
+                        <th>Marker</th>
+                        <th>Selected</th>
+                    </tr>
+                    <tr>
+                        <td>
+                           1
+                        </td>                       
+                        <td>
+                            Eddvin
+                        </td>
+                        <td>
+                            <a href = "showMarker.html" class="btn btn-light text-center" target="_blank">Show</a>
+                        </td>                       
+                        <td>
+                            <input name="checkGroup" type='checkbox' >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            2
+                         </td>                       
+                         <td>
+                             Mara
+                         </td>                       
+                         <td>
+                             <a href = "showMarker.html" class="btn btn-light text-center" target="_blank">Show</a>
+                         </td>                       
+                         <td>
+                             <input name="checkGroup" type='checkbox' >
+                         </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            3
+                         </td>                       
+                         <td>
+                             Алекса
+                         </td>                        
+                         <td>
+                             <a href = "showMarker.html" class="btn btn-light text-center" target="_blank">Схов</a>
+                         </td>                       
+                         <td>
+                             <input name="checkGroup" type='checkbox' >
+                         </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            4
+                         </td>                       
+                         <td>
+                             Norephinephrine
+                         </td>                          
+                         <td>
+                             <a href = "showMarker.html" class="btn btn-light text-center " target="_blank">Show</a>
+                         </td>                       
+                         <td>
+                             <input name="checkGroup" type='checkbox' >
+                         </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <a href = "#" class="btn btn-primary ">Confirm</a>
+                        </td>  
+                        <td>
+                            &nbsp
+                        </td>                         
+                        <td colspan="2">
+                            <a href = "#" class="btn btn-danger ">Deny</a>
+                        </td>                                                                        
+                    </tr>
+                  </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
