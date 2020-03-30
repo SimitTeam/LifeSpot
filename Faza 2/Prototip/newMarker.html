@@ -95,18 +95,19 @@
                   <table class='table'>
                     <tr>
                         <td>
-                            Species Name:
+                            <span style="color: red;">*</span> Species Name:
                         </td>
                         <td>
-                            <input type="text">
-                            <select>
+                            <input list="list_animals">
+
+                            <datalist id="list_animals">
                                 <option> Canem Bonum</option>
                                 <option> purpura</option>
-                            </select>                           
+                            </datalist>                                             
                         </td>                    
                     </tr>
                     <tr>
-                        <td>Date:</td>
+                        <td><span style="color: red;">*</span>Date:</td>
                         <td><input type='date'>
                         </td>
                     </tr>  
@@ -118,7 +119,7 @@
                          </td>
                     </tr>   
                     <tr>
-                        <td>Location:</td>
+                        <td><span style="color: red;">*</span>Location:</td>
                         <td>
                             <img   src="assets/map.png" width="400px" height="200px" style="float:right">
                          </td>
