@@ -42,5 +42,17 @@ class BaseController extends Controller
 		// E.g.:
 		// $this->session = \Config\Services::session();
 	}
+        
+        
+        
+        public function index()
+        {
+            $this->prikaz("guest_page",[]);
+
+        }
+        
+        public function search(){
+            
+        }
 
 }
