@@ -58,3 +58,23 @@ a.link2:active
 .row_space{
     margin-top: 100px;
 }
+
+#footer
+{
+position: fixed;
+bottom: 0;
+text-align: center;
+width:100%;
+}
+
+
+.ui-helper-hidden-accessible { display:none; }
+.ui-autocomplete{
+   list-style-type: none;
+   
+}
+
+.ui-autocomplete img{
+    width:75px;
+    height:75px;
+}

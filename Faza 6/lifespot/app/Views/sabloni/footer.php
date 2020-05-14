@@ -1,9 +1,8 @@
 
-         <div class="row">
-             <div class="col-12 text-center">
+         <div class="row" id="footer">
+             <div class="col-12">
                  Copyright Lifespot team 2020
              </div>
-         /div>
                  
         </div>
     </body>
