@@ -1,73 +1,19 @@
-     <div  id="mapDiv" ></div>
-
-
-
- <style>
-    html, body { 
-        height:100%
-    }
-
-
-    #mapDiv {
-	height: 590px;
-  position: relative;
-        }
-    
-</style>
-<script>
-
-    function onMapClick(e) {
-        var lat  = e.latlng.lat.toFixed(5);
-        var lon  = e.latlng.lng.toFixed(5);
-        var gps = "";
-        if (lat>0) gps+='N'; else gps+='S';
-        if (10>Math.abs(lat))  gps += "0";
-        gps += Math.abs(lat).toFixed(5)+" ";
-        if (lon>0) gps+='E'; else gps+='W';
-        if (10>Math.abs(lon))  gps += "0";
-        if (100>Math.abs(lon)) gps += "0";
-        gps += Math.abs(lon).toFixed(5);
-        var textArea = document.createElement("textarea");
-        textArea.style.position = 'fixed';
-        textArea.style.top = 0;
-        textArea.style.left = 0;
-        textArea.style.width = '2em';
-        textArea.style.height = '2em';
-        textArea.style.padding = 0;
-        textArea.style.border = 'none';
-        textArea.style.outline = 'none';
-        textArea.style.boxShadow = 'none';
-        textArea.style.background = 'transparent';
-        textArea.value = gps;
-        document.body.appendChild(textArea);
-        textArea.select();
-        try {
-          var successful = document.execCommand('copy');
-          var msg = successful ? 'Successfully' : 'Unsuccessfully';
-          console.log(msg + ' copied ' + gps + ' to clipboard ');
-          
-        } catch (err) {
-          console.log('Oops, unable to copy');
-        }
-        document.body.removeChild(textArea);
-    }
-    
-        
-    var osmUrl='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-    var osm = new L.TileLayer(osmUrl, {minZoom:2, maxZoom:19});		
-    
-    var googleStreets = new L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{minZoom:1, maxZoom:19, subdomains:['mt0','mt1','mt2','mt3']});
-    
-    var googleSat = new L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{minZoom:1, maxZoom: 21,subdomains:['mt0','mt1','mt2','mt3']});
-    
-    var map = new L.Map('mapDiv', { doubleClickZoom:false, zoomControl:false, maxBounds:([[90,-270],[-90,270]]) });
-    
-    L.control.layers({"OSM (Mapnik)": osm, "Google Street": googleStreets, "Google Earth": googleSat}).addTo(map);
-    
-    map.addLayer(osm);
-    var map_set = "osm";
-    map.fitBounds([[0,-180],[0,180]]);
-    
-    map.on('click', onMapClick);
-        
-    </script>
+     <div class="row">
+        <div class="offset-4 col-4">
+            <input type="text" id="search_data" autocomplete="off" class="form-control">
+            <script>
+                $(document).ready(function(){
+                    $("#search_data").autocomplete({     
+                        source:"<?= site_url("./AutoComplete/fetch") ?>",
+                        minLength:1,
+                        select:function(event,ui){
+                            $("#search_data").val(ui.item.value);
+                        }
+                    }).data('ui-autocomplete')._renderItem=function(ul,item){
+                        return $("<li class='ui-autocomplete-row''></li>")
+                        .data("item.autocomplete",item).append(item.label).appendTo(ul);
+                    };
+                });
+            </script>    
+        </div>
+    </div>    

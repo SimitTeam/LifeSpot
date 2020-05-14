@@ -3,11 +3,11 @@
     <title>LifeSpot</title>
     <meta charset='utf-8' />
     <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no">
-    
+   
     
     <script src="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>
     <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />
- 
+    
     
     <link rel="stylesheet" href=" <?= site_url("./assets/bootstrap-4.4.1-dist/css/bootstrap.css") ?> ">
    
@@ -17,7 +17,7 @@
 
     <script src="<?= site_url("./assets/js/jquery-3.4.1.min.js") ?> "></script>
     <script src="<?= site_url("./assets/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js") ?> "></script>
-    
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <link rel="shortcut icon" href="<?= site_url("./assets/img/logo.png") ?> "/>
 
 </head>
