@@ -9,26 +9,27 @@
     <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />
  
     
-    <link rel="stylesheet" href="../assets/bootstrap-4.4.1-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href=" <?= site_url("./assets/bootstrap-4.4.1-dist/css/bootstrap.css") ?> ">
+   
+    <link rel="stylesheet" href=" <?= site_url("./assets/css/style.css") ?>">
     
 
 
-    <script src="../assets/js/jquery-3.4.1.min.js"></script>
-    <script src="../assets/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= site_url("./assets/js/jquery-3.4.1.min.js") ?> "></script>
+    <script src="<?= site_url("./assets/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js") ?> "></script>
     
-    <link rel="shortcut icon" href="../assets/img/logo.png"/>
+    <link rel="shortcut icon" href="<?= site_url("./assets/img/logo.png") ?> "/>
 
 </head>
 
 
 
 
-
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-ligh nav_color">
-            <?= anchor("Gost/index", "<img src='../assets/img/logo1.png' alt='Lifespot_logo'
-            height = 70 width = 325>",array('class' => 'navbar-brand')) ?> 
+        
+        <a href="<?= site_url("./Gost/index") ?>" > 
+            <img src="<?= site_url("./assets/img/logo1.png") ?>" alt='Lifespot_logo' class="navbar-brand" height = 70 width = 325></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
