@@ -47,12 +47,17 @@ class BaseController extends Controller
         
         public function index()
         {
-            $this->prikaz("guest_page",[]);
-
+            $this->show("guest_page",[]);
         }
+        
+        
         
         public function search(){
             
+        }
+        
+        public function signin(){
+            $this->login();
         }
 
 }

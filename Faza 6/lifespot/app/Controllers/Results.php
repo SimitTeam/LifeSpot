@@ -3,18 +3,15 @@
 
 use App\Models\SpeciesModel;
 
-
-class Korisnik extends BaseController
-{
-	public function index()
+class Results {
+    
+    	public function index()
 	{
             
             $speciesModel=new SpeciesModel();
             $species=$speciesModel->find("test");
             echo $species->species_name;
+            echo view('templates/footer.php');
 	    return view('welcome_message');
 	}
-
-	//--------------------------------------------------------------------
-
 }

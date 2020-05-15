@@ -4,14 +4,14 @@
 use App\Models\SpeciesModel;
 
 
-class AutoComplete extends BaseController
+class Autocomplete extends BaseController
 {
 
-        protected function prikaz($page,$data){
-                $data['controller']='AutoComplete';
-                echo view('sabloni/header_guest');
-                echo view("stranice/$page");
-                echo view('sabloni/footer.php');
+        protected function show($page,$data){
+                $data['controller']='Autocomplete';
+                echo view('templates/header_guest');
+                echo view("pages/$page");
+                echo view('teplates/footer.php');
         }
         
         public function fetch(){

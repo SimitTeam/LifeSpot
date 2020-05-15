@@ -4,7 +4,7 @@
 use App\Models\SpeciesModel;
 
 
-class Admin extends BaseController
+class ModifiableMarker extends BaseController
 {
 	public function index()
 	{
@@ -12,6 +12,7 @@ class Admin extends BaseController
             $speciesModel=new SpeciesModel();
             $species=$speciesModel->find("test");
             echo $species->species_name;
+            echo view('templates/footer.php');
 	    return view('welcome_message');
 	}
 

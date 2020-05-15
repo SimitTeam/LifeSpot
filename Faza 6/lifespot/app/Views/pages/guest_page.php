@@ -4,7 +4,7 @@
             <script>
                 $(document).ready(function(){
                     $("#search_data").autocomplete({     
-                        source:"<?= site_url("./AutoComplete/fetch") ?>",
+                        source:"<?= site_url("./Autocomplete/fetch") ?>",
                         minLength:1,
                         select:function(event,ui){
                             $("#search_data").val(ui.item.value);
