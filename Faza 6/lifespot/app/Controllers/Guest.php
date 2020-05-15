@@ -6,7 +6,7 @@ use App\Models\SpeciesModel;
 
 class Guest extends BaseController
 {
-   
+
     protected function show($page,$data){
         $data['controller']='Guest'; //Guest
         echo view('templates/header_guest');
