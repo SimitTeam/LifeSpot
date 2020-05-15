@@ -1,11 +1,23 @@
 <?php 
-namespace App\Libraries\ViewLib;
+namespace App\Libraries;
 
+// To use this you need to add the following code to your controller:
+// use App\Libraries\ViewConfig;
+//
+// When creating a view do the following
+//
+// $x = new ViewConfig;
+// $x->showSearchBar = False; Change the options as you wish
+// echo view('pages/some_page',["config"=>$x]);
+//
+//
+// If you wish to change the default setting you may do so here VVVVV
 
 class ViewConfig{
 	public function __construct(){
+		//General settings
 		$this->title = "LifeSpot";
-		$this->userType = "guest";
+		$this->userType = "guest"; // possible options: admin, moderator, user
 		$this->showSearchBar = True;
 		$this->showBackButton = False;
 
