@@ -10,8 +10,8 @@
 		Moderating
 	</a>
 	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		<?= anchor("Gost/index", " Add Species <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?> 
-		<?= anchor("Gost/index", " Confirm Marker <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?> 
+		<?= anchor($config->headerAddSpecies, " Add Species <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?> 
+		<?= anchor($config->headerConfirmMarker, " Confirm Marker <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?> 
 	</div>
 
 </li>            

@@ -1,7 +1,7 @@
 <html>
 	<head>
 			
-	<title><?= isset($title)? $title : "LifeSpot" ?></title>
+	<title><?= $config->title ?></title>
 		<meta charset='utf-8' />
 		<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no">
 
@@ -21,26 +21,21 @@
 	</head>
 	<body>
 	<?php
-		if(isset($config->userType)){
-			if(!strcmp($config->userType,"admin")){
-				echo($this-> include('headers/adminheader'));
-			}
-			else if(!strcmp($config->userType,"moderator")){
-				echo($this-> include('headers/moderatorheader'));
-			}
-			else if(!strcmp($config->userType,"user")){
-				echo($this-> include('headers/userheader'));
-			}
-			else{
-				echo($this-> include('headers/guestheader'));
-			}
+		if(!strcmp($config->userType,"admin")){
+			echo($this-> include('headers/adminheader'));
+		}
+		else if(!strcmp($config->userType,"moderator")){
+			echo($this-> include('headers/moderatorheader'));
+		}
+		else if(!strcmp($config->userType,"user")){
+			echo($this-> include('headers/userheader'));
 		}
 		else{
-			echo($this->include('headers/guestheader'));
+			echo($this-> include('headers/guestheader'));
 		}
+
 		$this->renderSection('content');
 	?>
-
         <div class="row" id="footer">
              <div class="col-12">
                  Copyright Lifespot team 2020
