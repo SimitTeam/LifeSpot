@@ -7,10 +7,10 @@
                         source:"<?= site_url("./AutoComplete/fetch") ?>",
                         minLength:1,
                         select:function(event,ui){
-                            $("#search_data").val(ui.item.value);
+                            $("#search_data").val(5);
                         }
                     }).data('ui-autocomplete')._renderItem=function(ul,item){
-                        return $("<li class='ui-autocomplete-row''></li>")
+                        return $("<li class='ui-autocomplete-row'></li>")
                         .data("item.autocomplete",item).append(item.label).appendTo(ul);
                     };
                 });
