@@ -39,6 +39,7 @@
             <li class="nav-item active">
                 <?= anchor("Guest/index", "Home <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?> 
             </li>
+             
             <li class="nav-item">
                 <?= anchor("BaseController/search", "Search <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?>
             </li>
