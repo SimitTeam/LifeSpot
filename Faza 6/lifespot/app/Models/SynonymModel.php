@@ -23,7 +23,8 @@ class SynonymModel extends Model
     
     protected $useTimestamps = false;
     protected $skipValidation = false;
-
+    
+    //Trazi markere koji u name i species_name imaju term
     public function findMarkers($term){
         return $this->like('species_name', $term)->orLike('name', $term)->findAll();
     }
