@@ -32,11 +32,23 @@ class ViewConfig{
 		$this->headerAdminister = "./Gost/index";
 		$this->headerBackButton = "./Gost/index";
 
+		$this->logInPageSignUpButton = "./Gost/index";
+
 		//Form submit controllers
 		$this->headerSearchFormSubmit = "./Gost/index";
+		$this->logInFormSubmit = "./Gost/index";
 
 		//Form input names
-		$this->headerSearchBarName="search_species";
+		$this->searchBarName="search_species";
+		$this->usernameInputName="username";
+		$this->passwordInputName="password";
 
+		$this->newMarkerTextInputName="text";
+		$this->newMarkerDateInputName="date";
+
+		//Autocomplete
+		//This is the controller which is being
+		//used while searching for species
+		$this->autocompleteFetch="./Gost/index";
 	}
 }
