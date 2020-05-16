@@ -10,7 +10,8 @@
     
     
     <link rel="stylesheet" href=" <?= site_url("./assets/bootstrap-4.4.1-dist/css/bootstrap.css") ?> ">
-   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+
     <link rel="stylesheet" href=" <?= site_url("./assets/css/style.css") ?>">
     
 
