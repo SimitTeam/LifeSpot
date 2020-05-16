@@ -1,7 +1,6 @@
 <?php $this->extend('template') ?>
 
 
-
 <?php $this->section('content') ?>
 <div class='container-fluid'>   
 	<div class='row'>

@@ -68,13 +68,28 @@ width:100%;
 }
 
 
-.ui-helper-hidden-accessible { display:none; }
-.ui-autocomplete{
-   list-style-type: none;
-   
-}
+
+
 
 .ui-autocomplete img{
     width:75px;
     height:75px;
 }
+.ui-autocomplete-row{
+    padding:8px;
+    background-color:#ccffcc !important;
+    border-bottom: 1px solid #ccc ;
+    font-weight:bold;
+}
+.ui-autocomplete-row:hover {
+background-color: #ddd !important;
+}
+.ui-menu-item-wrapper{
+    background-color:white !important ;
+    padding-left: 0px !important;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    padding-right: 0px !important;
+}
+
+
