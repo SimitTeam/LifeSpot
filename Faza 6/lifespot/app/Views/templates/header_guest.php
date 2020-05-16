@@ -41,10 +41,10 @@
             </li>
              
             <li class="nav-item">
-                <?= anchor("Guest/search", "Search",array('class' => 'nav-link')) ?> 
+                <?= anchor("BaseController/search", "Search <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?>
             </li>
             <li class="nav-item">
-               <?= anchor("Guest/signin", "Sign in",array('class' => 'nav-link')) ?> 
+                <?= anchor("Guest/signin", "Sign in <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?> 
             </li>           
           </ul>
           <form name="search" action="<?= site_url('$controller/search') ?>" class="form-inline my-2 my-lg-0">

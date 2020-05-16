@@ -1,4 +1,9 @@
-
+<style>
+    hr{
+    border-color: rgb(41, 151, 50);
+    border-width:5px;
+    }
+</style>
 <body>
     
     <div class='container-fluid'>   
