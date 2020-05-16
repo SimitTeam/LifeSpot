@@ -1,16 +1,16 @@
 <?php $this->extend('template') ?>
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+
+
+
+
 <?php $this->section('content') ?>
 <div class='container-fluid '>   
 	<div class='row'>
 		<div class='offset-sm-4 col-sm-4 text-center'>
 		  <h2>New Marker</h2>
 		  <hr>
-		  <form action="<?= site_url($config->logInFormSubmit)?>" method="get">
+		  <form action="<?= site_url($config->logInFormSubmit)?>" method="post">
 			  <table class='table'>
 				<tr>
 					<td>
@@ -22,7 +22,7 @@
 				</tr>
 				<tr>
 					<td><span style="color: red;">*</span>Date:</td>
-					<td><input type='date' name="<?= $config->newMarkerDateInputName ?>">
+					<td><input type='date' name="<?= $config->dateInputName ?>">
 					</td>
 				</tr>  
 				<tr>
@@ -39,7 +39,7 @@
 				</tr>                                            
 				<tr>
 					<td>Text:</td>
-					<td><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="<?= $config->newMarkerTextInputName ?>"></textarea>
+					<td><textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="<?= $config->textInputName ?>"></textarea>
 					</td>
 				</tr> 
 

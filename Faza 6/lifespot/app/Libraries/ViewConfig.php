@@ -20,6 +20,7 @@ class ViewConfig{
 		$this->userType = "guest"; // possible options: admin, moderator, user
 		$this->showSearchBar = True;
 		$this->showBackButton = False;
+		$this->modifiableMarker = True;
 
 		//Links
 		$this->headerLogo = "./Gost/index";
@@ -33,22 +34,37 @@ class ViewConfig{
 		$this->headerBackButton = "./Gost/index";
 
 		$this->logInPageSignUpButton = "./Gost/index";
+		$this->signUpPageLogInButton = "./Gost/index";
 
 		//Form submit controllers
 		$this->headerSearchFormSubmit = "./Gost/index";
 		$this->logInFormSubmit = "./Gost/index";
+		$this->addSpeciesFormSubmit = "./Gost/index";
+		$this->addSynonymFormSubmit = "./Gost/index";
+		$this->changeSpeciesFormSubmit = "./Gost/index";
+		$this->addConfirmationFormSubmit = "./Gost/index";
 
 		//Form input names
 		$this->searchBarName="search_species";
 		$this->usernameInputName="username";
 		$this->passwordInputName="password";
-
-		$this->newMarkerTextInputName="text";
-		$this->newMarkerDateInputName="date";
+		$this->confirmPasswordInputName="cpassword";
+		$this->nameInputName="name";
+		$this->surnameInputName="surname";
+		$this->textInputName="text";
+		$this->dateInputName="date";
+		$this->speciesTypeRadio="species_type";
+		$this->confirmationRadio="species_type";
+		$this->speciesInputName="species_name";
+		$this->synonymInputName="synonym_name";
 
 		//Autocomplete
 		//This is the controller which is being
 		//used while searching for species
 		$this->autocompleteFetch="./Gost/index";
+
+		//Outputs
+		$this->markerSpeciesName="Mock1";
+		$this->markerDate="Mock2";
 	}
 }

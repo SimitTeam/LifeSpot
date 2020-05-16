@@ -36,7 +36,7 @@
 		  </form>
 		  <hr>
 		  <p>Dont have an account?</p>
-		  <a href = "<?= site_url($config->logInFormSubmit)?>" class="btn btn-outline-dark link2">Sign Up</a>
+		  <a href = "<?= site_url($config->logInPageSignUpButton)?>" class="btn btn-outline-dark link2">Sign Up</a>
 		</div>
 </div>
 <?php $this->endSection() ?>
