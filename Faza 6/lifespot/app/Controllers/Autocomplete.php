@@ -16,10 +16,11 @@ class Autocomplete extends BaseController
         
         public function fetch(){
             $output=array();
-            $temp_array['value']=3;
+            $temp_array['value']=5;
             $test_img=site_url("./assets/img/species/aki.jpg");
-            $temp_array['label']="<img src='$test_img'   >"."Lorem ipsum";
+            $temp_array['label']="<img src='$test_img'   >"."&nbsp"."Lorem ipsum";
             $output[]=$temp_array;
+             $output[]=$temp_array;
             echo json_encode($output);
         }
 	//--------------------------------------------------------------------
