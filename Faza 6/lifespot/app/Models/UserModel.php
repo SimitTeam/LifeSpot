@@ -61,4 +61,5 @@ class UserModel extends Model
         $getMail = $this->find($username);
         return $getMail->mail;
     }
+    
 }

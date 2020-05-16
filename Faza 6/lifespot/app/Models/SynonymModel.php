@@ -24,6 +24,21 @@ class SynonymModel extends Model
     protected $useTimestamps = false;
     protected $skipValidation = false;
     
+    public function getSynonym($id){
+        $getSynonym = $this->find($id);
+        return $getSynonym;
+    }
+    
+    public function getSpeciesNameInSynonym($id){
+        $getSpeciesName = $this->find($id);
+        return $getSpeciesName->species_name;
+    }
+    
+    public function getSynonymName($id){
+        $getName = $this->find($id);
+        return $getName->species_name;
+    }
+    
     //Trazi markere koji u name i species_name imaju term
     public function findMarkers($term){
         return $this->like('species_name', $term)->orLike('name', $term)->findAll();
