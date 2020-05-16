@@ -8,4 +8,6 @@ class SpeciesModel extends Model
     protected $primaryKey = 'species_name';
 
     protected $returnType     = 'object';
+    
+        protected $allowedFields = ['username', 'type'];
 }
