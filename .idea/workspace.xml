@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="389eff90-2dc3-44a1-a209-d449751988c6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Faza 2/SSU/~$enario slucaja upotrebe funkcionalnosti administriranja sistema.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Faza 5/LifeSpot.mdj" beforeDir="false" afterPath="$PROJECT_DIR$/Faza 5/LifeSpot.mdj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Faza 6/lifespot/app/Controllers/Guest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Faza 6/lifespot/app/Controllers/Guest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Faza 6/lifespot/app/Views/pages/login_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/Faza 6/lifespot/app/Views/pages/login_page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Faza 6/lifespot/app/Views/pages/modifiable_marker_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/Faza 6/lifespot/app/Views/pages/modifiable_marker_page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Faza 6/lifespot/app/Views/pages/signup_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/Faza 6/lifespot/app/Views/pages/signup_page.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Faza 6/lifespot/app/Views/templates/header_guest.php" beforeDir="false" afterPath="$PROJECT_DIR$/Faza 6/lifespot/app/Views/templates/header_guest.php" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1bz2NUf5nkf41FPbeErxXK8p7ka" />
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="389eff90-2dc3-44a1-a209-d449751988c6" name="Default Changelist" comment="" />
+      <created>1589620562559</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589620562559</updated>
+    </task>
+    <servers />
+  </component>
+</project>

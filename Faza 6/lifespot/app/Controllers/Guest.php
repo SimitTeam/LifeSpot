@@ -15,9 +15,10 @@ class Guest extends BaseController
     }
     
     public function login(){
-        echo view('templates/header_guest');
-        echo view('pages/login_page.php');
-        echo view('templates/footer.php');
+        echo view('pages/login_page', ["userType"=>"Guest"]);
+        //echo view('templates/header_guest');
+        //echo view('pages/login_page.php');
+        //echo view('templates/footer.php');
     }
     
     
