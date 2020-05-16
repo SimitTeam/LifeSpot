@@ -20,7 +20,8 @@ class ViewConfig{
 		$this->userType = "guest"; // possible options: admin, moderator, user
 		$this->showSearchBar = True;
 		$this->showBackButton = False;
-		$this->modifiableMarker = False;
+		$this->showResultsMap = True;
+		$this->modifiableMarker = True;
 
 		//Links
 		$this->headerLogo = "./Gost/index";
@@ -38,6 +39,7 @@ class ViewConfig{
 
 		//Form submit controllers
 		$this->headerSearchFormSubmit = "./Gost/index";
+		$this->searchFormSubmit = "./Gost/index";
 		$this->logInFormSubmit = "./Gost/index";
 		$this->addSpeciesFormSubmit = "./Gost/index";
 		$this->addSynonymFormSubmit = "./Gost/index";
@@ -64,8 +66,9 @@ class ViewConfig{
 		$this->autocompleteFetch="./Gost/index";
 
 		//Outputs
-		$this->markerSpeciesName="Mock1";
-		$this->markerDate="Mock2";
-		$this->markerText="Mock3";
+		$this->markerUser="Mock1";
+		$this->markerSpeciesName="Mock2";
+		$this->markerDate="Mock3";
+		$this->markerText="Mock4";
 	}
 }

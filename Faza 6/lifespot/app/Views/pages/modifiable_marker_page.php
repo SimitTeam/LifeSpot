@@ -16,7 +16,12 @@
 	</div>
 	<div class="row">
 		<div class=" col-sm-12 text-center ">
-		<h2><p><i><?=$config->markerSpeciesName?></i> </p></h2> 
+			<h4><p>User: <i><?=$config->markerUser?></i> </p></h4>
+		</div>
+	</div>
+	<div class="row">
+		<div class=" col-sm-12 text-center ">
+		<h2><p><i>Species: <?=$config->markerSpeciesName?></i> </p></h2> 
 		</div>
 	</div>
 	<?php
