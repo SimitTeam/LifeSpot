@@ -28,13 +28,13 @@
 				<tr>
 					<td>Image:</td>
 					<td colspan='2' >
-						<?=$this-> include('modules/imageUpload');?>
+						<?=$this-> include('modules/imageupload');?>
 					 </td>
 				</tr>   
 				<tr>
 					<td><span style="color: red;">*</span>Location:</td>
 					<td>
-						<?=$this-> include('modules/inputMap');?>
+						<?=$this-> include('modules/inputmap');?>
 					 </td>
 				</tr>                                            
 				<tr>

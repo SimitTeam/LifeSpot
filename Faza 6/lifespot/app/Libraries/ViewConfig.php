@@ -20,7 +20,7 @@ class ViewConfig{
 		$this->userType = "guest"; // possible options: admin, moderator, user
 		$this->showSearchBar = True;
 		$this->showBackButton = False;
-		$this->modifiableMarker = True;
+		$this->modifiableMarker = False;
 
 		//Links
 		$this->headerLogo = "./Gost/index";
@@ -66,5 +66,6 @@ class ViewConfig{
 		//Outputs
 		$this->markerSpeciesName="Mock1";
 		$this->markerDate="Mock2";
+		$this->markerText="Mock3";
 	}
 }

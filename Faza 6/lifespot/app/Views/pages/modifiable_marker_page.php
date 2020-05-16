@@ -25,33 +25,49 @@
 	?>
 	<div class="row">
 		<div class=" col-sm-12 text-center ">
-			<p><i><?=$config->markerDate?></i> </p>
+			<h4><p>Sighting Date: <i><?=$config->markerDate?></i> </p></h4>
 		</div>
 	</div>
 	<div class="row">
 		<div class=" col-sm-12 text-center ">
-			<img src="assets/map.png" width="400px" height="400px">
+			<?=$this-> include('modules/outputmap');?>
+		</div>
+	</div>
+	<div class="row">
+		<div class=" offset-sm-3 col-sm-6">
+			&nbsp;
 		</div>
 	</div>
 	<div class="row">
 		<div class=" col-sm-12 text-center ">
-			<img src="assets/dog1.jpg" width="400px" height="400px">
+			<?=$this-> include('modules/imagepreview');?>
 		</div>
 	</div>
-
 	<div class="row">
-		<div class=" offset-sm-4 col-sm-4 text-center ">
+		<div class=" offset-sm-3 col-sm-6">
+			<h2> &nbsp;</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class=" offset-sm-3 col-sm-6">
+			<h2> Description: </h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class=" offset-sm-3 col-sm-6">
 			<p>
-				Lorem ipsum dolor sit amet, cu qui vide pertinax incorrupte, at wisi rebum usu. Et quem mutat vix. Malorum repudiandae quo te, eu semper nonumes partiendo nam, veniam argumentum dissentiunt in has. Deleniti omittantur sit an, est mutat utinam semper ex. Eu dolorum gloriatur definitiones mea. Id mei justo maiestatis.
-
-				Mei dolorum quaerendum id, impetus singulis vulputate at usu, in vix simul oportere. Nam solet habemus salutatus ea. Adipiscing scribentur et usu, fabellas perpetua his at. Zril quidam molestie eam an. Aliquam accusata repudiare eu eum, id omnis nostrum quo, vis te eius tamquam.                   
-
+				<?=$config->markerText?>
 			</p>
 
 		</div>
 
 	</div>       
 
+	<div class="row">
+		<div class=" offset-sm-3 col-sm-6">
+			<h2> &nbsp;</h2>
+		</div>
+	</div>
 
 </div>
 <?php $this->endSection() ?>

@@ -1,3 +1,4 @@
+<h3> Confirm Marker: </h3>
 <form action="<?=site_url($config->addConfirmationFormSubmit)?>">
 	Confirm 
 	<input type='radio' name="<?=$config->confirmationRadio?>" value='confirm' checked>
