@@ -1,5 +1,15 @@
 <?php $this->extend('template') ?>
 
+<?php $this->section('htmlhead') ?>
+<link rel="stylesheet" type="text/css" href="<?= site_url("./assets/DataTables/datatables.min.css")?>">
+<script type="text/javascript" src="<?= site_url("./assets/DataTables/datatables.min.js")?>"></script>
+<script>
+	$(document).ready(function() {
+		$('#example').DataTable();
+	} );
+</script>
+<?php $this->endSection() ?>
+
 
 <?php $this->section('content') ?>
 <div class="row">
@@ -23,6 +33,12 @@
 <div class="row">
 	<div class="col-12">
 		<?php if($config->showResultsMap) echo($this->include('modules/resultsmap'));?>
+	</div>
+</div>    
+
+<div class="row">
+	<div class="offset-2 col-8">
+		<?php if($config->showSearchResults) echo($this->include('modules/datatable'));?>
 	</div>
 </div>    
 

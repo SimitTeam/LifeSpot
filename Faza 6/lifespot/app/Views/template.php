@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />
 
 		<link rel="stylesheet" href=" <?= site_url("./assets/bootstrap-4.4.1-dist/css/bootstrap.css") ?> ">
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
 		<link rel="stylesheet" href=" <?= site_url("./assets/css/style.css") ?>">
 		<link rel="stylesheet" type="text/css" href="<?=site_url("./assets/DataTables/datatables.min.css")?>"/>
 
@@ -18,13 +18,7 @@
 		<script src="<?= site_url("./assets/bootstrap-4.4.1-dist/js/bootstrap.bundle.min.js") ?> "></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 		<link rel="shortcut icon" href="<?= site_url("./assets/img/logo.png") ?> "/>
-		<script type="text/javascript" src="<?=site_url("./assets/DataTables/datatables.min.js")?>"></script>
-		<script>
-		$(document).ready(function() {
-			$('#example').DataTable();
-		} );
-		</script>
-
+		<?php $this->renderSection('htmlhead');?>
 	</head>
 	<body>
 	<?php
