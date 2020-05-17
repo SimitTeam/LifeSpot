@@ -65,11 +65,11 @@ class Guest extends BaseController
        
         if (!$this->validate(['username'=>'required'])){
             echo "username reqired";
-            return false;
+            return;
         }
         if (!$this->validate(['password'=>'required'])){
             echo "password reqired";
-            return false;
+            return;
         }
         
         
@@ -97,37 +97,37 @@ class Guest extends BaseController
        if (!$this->validate(['name'=>'required'])){
             $x = new ViewConfig();
             echo "name reqired";
-            return false;
+            return;
         }
         if (!$this->validate(['surname'=>'required'])){
             $x = new ViewConfig();
             echo "surname reqired";
-            return false;
+            return;
         }
         if (!$this->validate(['newusername'=>'trim|required|min_length[4]'])){
             $x = new ViewConfig();
             echo "username reqired";
-            return false;
+            return;
         }
         if (!$this->validate(['newpassword'=>'trim|required|min_length[4]|max_length[15]'])){
             $x = new ViewConfig();
             echo "password reqired";
-            return false;
+            return;
         }
         if (!$this->validate(['cpassword'=>'trim|required|matches[newpassword]'])){
             $x = new ViewConfig();
             echo "must confirm password";
-            return false;
+            return;
         }
         if (!$this->validate(['date'=>'required'])){
             $x = new ViewConfig();
             echo "date reqired";
-            return false;
+            return;
         }
         if (!$this->validate(['email'=>'trim|required|valid_email'])){
             $x = new ViewConfig();
             echo "email reqired";
-            return false;
+            return;
         }
         
         //

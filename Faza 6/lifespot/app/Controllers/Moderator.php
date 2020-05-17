@@ -25,14 +25,49 @@ class Moderator extends BaseController
             echo view('pages/modifiable_marker_page', ["config"=>$x]);
         }
         
-        public function speciesSubmit($species_name, $type){
+        public function confirmSubmit(){
+            
+        }
+
+
+        public function speciesSubmit(){
+            //validation
+            if (!$this->validate(['species_name'=>'required'])){
+                $x = new ViewConfig();
+                echo "species reqired";
+                return false;
+            }
+              if (!$this->validate(['type'=>'required'])){
+                $x = new ViewConfig();
+                echo "type reqired";
+                return;
+            }
+      
+            //database add
             $speciesModel=new SpeciesModel();
-            $species=$speciesModel->addSpecies($species_name,  $username, $type);
+            $species=$speciesModel->addSpecies($this->request->getVar('speciesInputName'),  $this->request->getVar('username'), $this->request->getVar('speciesTypeRadio'));
         }
         
-        public function synonymSubmit($species_name, $synonym, $type){
+        public function synonymSubmit(){
+            //validation
+            if (!$this->validate(['species_name'=>'required'])){
+                $x = new ViewConfig();
+                echo "species reqired";
+                return;
+            }
+            if (!$this->validate(['synonym'=>'required'])){
+                $x = new ViewConfig();
+                echo "synonym reqired";
+                return;
+            }
+              if (!$this->validate(['type'=>'required'])){
+                $x = new ViewConfig();
+                echo "type reqired";
+                return;
+            }
+            //database add
             $speciesModel=new SpeciesModel();
-            $species=$speciesModel->addSynonym($species_name, $name, $type);
+            $species=$speciesModel->addSynonym($this->request->getVar('speciesInputName'),$this->request->getVar('synonymInputName'), $this->request->getVar('speciesTypeRadio'));
         }
 
 
