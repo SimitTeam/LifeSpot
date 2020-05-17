@@ -1,0 +1,205 @@
+[33mcommit 304c487d8b46244e11523046e13318ce998a9185[m
+Author: Edvvin <edvvin@mail.com>
+Date:   Sat May 16 00:28:03 2020 +0200
+
+    Template Complete:
+    - Added Library in Libraries folder
+    - All links in views are now modifiable using the ViewConfig class
+
+[1mdiff --git a/Faza 6/lifespot/app/Libraries/ViewLib/ViewConfig.php b/Faza 6/lifespot/app/Libraries/ViewLib/ViewConfig.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..44165e7[m
+[1m--- /dev/null[m
+[1m+++ b/Faza 6/lifespot/app/Libraries/ViewLib/ViewConfig.php[m	
+[36m@@ -0,0 +1,30 @@[m
+[32m+[m[32m<?php[m[41m [m
+[32m+[m[32mnamespace App\Libraries\ViewLib;[m
+[32m+[m
+[32m+[m
+[32m+[m[32mclass ViewConfig{[m
+[32m+[m	[32mpublic function __construct(){[m
+[32m+[m		[32m$this->title = "LifeSpot";[m
+[32m+[m		[32m$this->userType = "guest";[m
+[32m+[m		[32m$this->showSearchBar = True;[m
+[32m+[m		[32m$this->showBackButton = False;[m
+[32m+[m
+[32m+[m		[32m//Links[m
+[32m+[m		[32m$this->headerLogo = "./Gost/index";[m
+[32m+[m		[32m$this->headerHome = "./Gost/index";[m
+[32m+[m		[32m$this->headerLogIn = "./Gost/index";[m
+[32m+[m		[32m$this->headerSignUp = "./Gost/index";[m
+[32m+[m		[32m$this->headerAddMarker = "./Gost/index";[m
+[32m+[m		[32m$this->headerAddSpecies = "./Gost/index";[m
+[32m+[m		[32m$this->headerConfirmMarker = "./Gost/index";[m
+[32m+[m		[32m$this->headerAdminister = "./Gost/index";[m
+[32m+[m		[32m$this->headerBackButton = "./Gost/index";[m
+[32m+[m
+[32m+[m		[32m//Form submit controllers[m
+[32m+[m		[32m$this->headerSearchFormSubmit = "./Gost/index";[m
+[32m+[m
+[32m+[m		[32m//Form input names[m
+[32m+[m		[32m$this->headerSearchBarName="search_species";[m
+[32m+[m
+[32m+[m	[32m}[m
+[32m+[m[32m}[m
+[1mdiff --git a/Faza 6/lifespot/app/Views/headers/adminheader.php b/Faza 6/lifespot/app/Views/headers/adminheader.php[m
+[1mindex 0d546fd..721f7ba 100644[m
+[1m--- a/Faza 6/lifespot/app/Views/headers/adminheader.php[m	
+[1m+++ b/Faza 6/lifespot/app/Views/headers/adminheader.php[m	
+[36m@@ -2,6 +2,6 @@[m
+ [m
+ <?php $this->section('adminOptions') ?>[m
+ <li class="nav-item">[m
+[31m-	<?= anchor("Gost/index", " Administrate <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?> [m
+[32m+[m	[32m<?= anchor($config->headerAdminister, " Administer <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?>[m[41m [m
+ </li>[m
+ <?php $this->endSection() ?>[m
+[1mdiff --git a/Faza 6/lifespot/app/Views/headers/backbutton.php b/Faza 6/lifespot/app/Views/headers/backbutton.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7f31c57[m
+[1m--- /dev/null[m
+[1m+++ b/Faza 6/lifespot/app/Views/headers/backbutton.php[m	
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32m<a href="<?= site_url($config->headerSearchFormSubmit) ?>" class="btn btn-warning my-2 my-sm-0">Back</a>[m
+[1mdiff --git a/Faza 6/lifespot/app/Views/headers/guestheader.php b/Faza 6/lifespot/app/Views/headers/guestheader.php[m
+[1mindex a2a9878..f48c697 100644[m
+[1m--- a/Faza 6/lifespot/app/Views/headers/guestheader.php[m	
+[1m+++ b/Faza 6/lifespot/app/Views/headers/guestheader.php[m	
+[36m@@ -3,9 +3,9 @@[m
+ [m
+ <?php $this->section('options') ?>[m
+ <li class="nav-item">[m
+[31m-	<?= anchor("Gost/index", " Log in <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?> [m
+[32m+[m	[32m<?= anchor($config->headerLogIn, " Log in <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?>[m[41m [m
+ </li>           [m
+ <li class="nav-item">[m
+[31m-	<?= anchor("Gost/index", " Sign up <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?> [m
+[32m+[m	[32m<?= anchor($config->headerSignUp, " Sign up <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?>[m[41m [m
+ </li>           [m
+ <?php $this->endSection() ?>[m
+[1mdiff --git a/Faza 6/lifespot/app/Views/headers/moderatorheader.php b/Faza 6/lifespot/app/Views/headers/moderatorheader.php[m
+[1mindex e908d78..90e9c01 100644[m
+[1m--- a/Faza 6/lifespot/app/Views/headers/moderatorheader.php[m	
+[1m+++ b/Faza 6/lifespot/app/Views/headers/moderatorheader.php[m	
+[36m@@ -10,8 +10,8 @@[m
+ 		Moderating[m
+ 	</a>[m
+ 	<div class="dropdown-menu" aria-labelledby="navbarDropdown">[m
+[31m-		<?= anchor("Gost/index", " Add Species <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?> [m
+[31m-		<?= anchor("Gost/index", " Confirm Marker <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?> [m
+[32m+[m		[32m<?= anchor($config->headerAddSpecies, " Add Species <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?>[m[41m [m
+[32m+[m		[32m<?= anchor($config->headerConfirmMarker, " Confirm Marker <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?>[m[41m [m
+ 	</div>[m
+ [m
+ </li>            [m
+[1mdiff --git a/Faza 6/lifespot/app/Views/headers/searchbar.php b/Faza 6/lifespot/app/Views/headers/searchbar.php[m
+[1mindex bb0fc89..5931aa2 100644[m
+[1m--- a/Faza 6/lifespot/app/Views/headers/searchbar.php[m	
+[1m+++ b/Faza 6/lifespot/app/Views/headers/searchbar.php[m	
+[36m@@ -1,4 +1,4 @@[m
+[31m-<form name="search" action="<?= site_url('Gost/index') ?>" class="form-inline my-2 my-lg-0">[m
+[31m-	<input class="form-control mr-sm-2" type="search" name="search_species" placeholder="Search" aria-label="Search">[m
+[32m+[m[32m<form name="search" action="<?= site_url($config->headerSearchFormSubmit) ?>" class="form-inline my-2 my-lg-0">[m
+[32m+[m	[32m<input class="form-control mr-sm-2" type="search" name="<?= $config->headerSearchBarName ?>" placeholder="Search" aria-label="Search">[m
+ 	<button class="btn btn-success my-2 my-sm-0" type="submit">Search</button> [m
+ </form>[m
+[1mdiff --git a/Faza 6/lifespot/app/Views/headers/template.php b/Faza 6/lifespot/app/Views/headers/template.php[m
+[1mindex f509b96..8b41a9b 100644[m
+[1m--- a/Faza 6/lifespot/app/Views/headers/template.php[m	
+[1m+++ b/Faza 6/lifespot/app/Views/headers/template.php[m	
+[36m@@ -1,5 +1,5 @@[m
+ <nav class="navbar navbar-expand-lg navbar-light bg-ligh nav_color">[m
+[31m-	<a href="<?= site_url("./Gost/index") ?>" > [m
+[32m+[m	[32m<a href="<?= site_url($config->headerLogo) ?>" >[m[41m [m
+ 		<img src="<?= site_url("./assets/img/logo1.png") ?>" alt='Lifespot_logo' class="navbar-brand" height = 70 width = 325></a>[m
+ 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">[m
+ 	  <span class="navbar-toggler-icon"></span>[m
+[36m@@ -8,10 +8,11 @@[m
+ 	<div class="collapse navbar-collapse" id="navbarSupportedContent">[m
+ 	  <ul class="navbar-nav mr-auto">[m
+ 		<li class="nav-item active">[m
+[31m-		<?= anchor("Gost/index", " Home <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?> [m
+[32m+[m		[32m<?= anchor($config->headerHome, " Home <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?>[m[41m [m
+ 		</li>[m
+[31m-		<?php $this->renderSection('options'); ?>[m
+[32m+[m		[32m<?= $this->renderSection('options'); ?>[m
+ 	  </ul>[m
+[31m-	<?php if($config->showSearchBar)echo($this->include('headers/searchbar'))?>[m
+[32m+[m	[32m<?php if($config->showSearchBar) echo($this->include('headers/searchbar'))?>[m
+[32m+[m	[32m<?php if($config->showBackButton) echo($this->include('headers/backbutton'))?>[m
+ 	</div>[m
+ </nav>        [m
+[1mdiff --git a/Faza 6/lifespot/app/Views/headers/userheader.php b/Faza 6/lifespot/app/Views/headers/userheader.php[m
+[1mindex eab9fa8..09cdff4 100644[m
+[1m--- a/Faza 6/lifespot/app/Views/headers/userheader.php[m	
+[1m+++ b/Faza 6/lifespot/app/Views/headers/userheader.php[m	
+[36m@@ -3,6 +3,6 @@[m
+ <?php $this->section('options') ?>[m
+ <?php $this->renderSection('moderatorOptions'); ?>[m
+ <li class="nav-item">[m
+[31m-	<?= anchor("Gost/index", " Add Marker <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?> [m
+[32m+[m	[32m<?= anchor($config->headerAddMarker, " Add Marker <span class='sr-only'>(current)</span>",array('class' => 'nav-link')) ?>[m[41m [m
+ </li>[m
+ <?php $this->endSection() ?>[m
+[1mdiff --git a/Faza 6/lifespot/app/Views/template.php b/Faza 6/lifespot/app/Views/template.php[m
+[1mindex 24605ef..d2e9df8 100644[m
+[1m--- a/Faza 6/lifespot/app/Views/template.php[m	
+[1m+++ b/Faza 6/lifespot/app/Views/template.php[m	
+[36m@@ -1,7 +1,7 @@[m
+ <html>[m
+ 	<head>[m
+ 			[m
+[31m-	<title><?= isset($title)? $title : "LifeSpot" ?></title>[m
+[32m+[m	[32m<title><?= $config->title ?></title>[m
+ 		<meta charset='utf-8' />[m
+ 		<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no">[m
+ [m
+[36m@@ -21,26 +21,21 @@[m
+ 	</head>[m
+ 	<body>[m
+ 	<?php[m
+[31m-		if(isset($config->userType)){[m
+[31m-			if(!strcmp($config->userType,"admin")){[m
+[31m-				echo($this-> include('headers/adminheader'));[m
+[31m-			}[m
+[31m-			else if(!strcmp($config->userType,"moderator")){[m
+[31m-				echo($this-> include('headers/moderatorheader'));[m
+[31m-			}[m
+[31m-			else if(!strcmp($config->userType,"user")){[m
+[31m-				echo($this-> include('headers/userheader'));[m
+[31m-			}[m
+[31m-			else{[m
+[31m-				echo($this-> include('headers/guestheader'));[m
+[31m-			}[m
+[32m+[m		[32mif(!strcmp($config->userType,"admin")){[m
+[32m+[m			[32mecho($this-> include('headers/adminheader'));[m
+[32m+[m		[32m}[m
+[32m+[m		[32melse if(!strcmp($config->userType,"moderator")){[m
+[32m+[m			[32mecho($this-> include('headers/moderatorheader'));[m
+[32m+[m		[32m}[m
+[32m+[m		[32melse if(!strcmp($config->userType,"user")){[m
+[32m+[m			[32mecho($this-> include('headers/userheader'));[m
+ 		}[m
+ 		else{[m
+[31m-			echo($this->include('headers/guestheader'));[m
+[32m+[m			[32mecho($this-> include('headers/guestheader'));[m
+ 		}[m
+[32m+[m
+ 		$this->renderSection('content');[m
+ 	?>[m
+[31m-[m
+         <div class="row" id="footer">[m
+              <div class="col-12">[m
+                  Copyright Lifespot team 2020[m
+[1mdiff --git a/Faza 6/lifespot/app/Views/test.php b/Faza 6/lifespot/app/Views/test.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a20f311[m
+[1m--- /dev/null[m
+[1m+++ b/Faza 6/lifespot/app/Views/test.php[m	
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m<?php $this->extend('template') ?>[m
+[32m+[m
+[32m+[m
+[32m+[m[32m<?php $this->section('content') ?>[m
+[32m+[m[32m<h1> HelloWorld </h1>[m
+[32m+[m[32m<?php $this->endSection() ?>[m
