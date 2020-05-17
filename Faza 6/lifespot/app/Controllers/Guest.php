@@ -2,25 +2,55 @@
 
 
 use App\Models\SpeciesModel;
-
+use App\Libraries\ViewConfig;
+use App\Models\UserModel;
 
 class Guest extends BaseController
 {
 
     protected function show($page,$data){
-        $data['controller']='Guest'; //Guest
-        echo view('templates/header_guest');
-        echo view("pages/$page");
-        echo view('templates/footer.php');
+        $x = new ViewConfig();
+        $x->showSearchBar = true;
+        echo view('pages/guest_page',["config"=>$x]);
     }
     
     public function login(){
-        echo view('pages/login_page', ["userType"=>"Guest"]);
-        //echo view('templates/header_guest');
-        //echo view('pages/login_page.php');
-        //echo view('templates/footer.php');
+        $x = new ViewConfig();
+        $x->showSearchBar = true;
+        echo view('pages/login_page', ["config"=>$x]);
+       
     }
     
+    public function signup(){
+        $x = new ViewConfig();
+        $x->showSearchBar = true;
+        echo view("pages/signup_page", ["config"=>$x]);
+    }
+    
+    public function loginSubmit(){
+        if (!$this->validate(['username'=>'required',
+            'password'=>'reqired'
+        ])){
+            $x = new ViewConfig();
+            return view("pages/guest_page", ["config"=>$x]);
+        }
+        
+        $userModel = new UserModel();
+        
+        $user = $userModel->checkUser($username, $password);
+        
+        
+        $this->session->set('user', $username);
+        
+        return redirect()->to(site_url('Marker/newMarker'));
+      
+    }
+    
+    public function signupSubmit($name, $surname, $username, $pass, $confPass, $date, $email){
+        //validation
+        $userModel = new UserModel();
+        $user = $userModel->addUser($name, $surname, $username, $pass, $confPass, $date, $email);
+    }
     
     
     
