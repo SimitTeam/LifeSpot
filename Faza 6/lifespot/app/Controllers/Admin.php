@@ -16,8 +16,8 @@ class Admin extends BaseController
     public function administer(){
         $x = new ViewConfig();
         $x->userType = "admin";
-        echo "henlo";
-        //echo view('pages/admin_actions_page', ["config"=>$x]);
+        //echo "henlo";
+        echo view('pages/admin_actions_page', ["config"=>$x]);
     }
 
-}
+} 

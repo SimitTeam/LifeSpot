@@ -41,6 +41,7 @@ class ViewConfig{
 		$this->headerSearchFormSubmit = "./BaseController/search";
 		$this->searchFormSubmit = "./BaseController/search";
 		$this->logInFormSubmit = "./Guest/loginSubmit";
+                $this->signUpFormSubmit = "./Guest/signupSubmit";
 		$this->addSpeciesFormSubmit = "./Moderator/speciesSubmit";
 		$this->addSynonymFormSubmit = "./Moderator/synonymSubmit";
 		$this->changeSpeciesFormSubmit = "./Guest/index";
@@ -50,11 +51,14 @@ class ViewConfig{
 		$this->searchBarName="search_species";
 		$this->usernameInputName="username";
 		$this->passwordInputName="password";
+                $this->newUsernameInputName="newusername";
+		$this->newPasswordInputName="newpassword";
 		$this->confirmPasswordInputName="cpassword";
 		$this->nameInputName="name";
 		$this->surnameInputName="surname";
 		$this->textInputName="text";
 		$this->dateInputName="date";
+                $this->emailInputName="email";
 		$this->speciesTypeRadio="species_type";
 		$this->confirmationRadio="species_type";
 		$this->speciesInputName="species_name";
