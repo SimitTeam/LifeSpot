@@ -2,7 +2,7 @@
 
 
 use App\Models\SpeciesModel;
-
+use App\Models\SynonymModel;
 
 class Autocomplete extends BaseController
 {
@@ -15,14 +15,27 @@ class Autocomplete extends BaseController
         }
         
         public function fetch(){
-            $output=array();
-            $temp_array['value']=5;
-            $test_img=site_url("./assets/img/species/aki.jpg");
-            $temp_array['label']="<img src='$test_img'   >"."&nbsp"."Lorem ipsum";
-            $output[]=$temp_array;
-             $output[]=$temp_array;
-            echo json_encode($output);
+            if(isset($_GET["term"])){
+                $output=array();
+                $synonym=new SynonymModel();        
+                $result=$synonym->findMarkers($_GET["term"]);
+                
+                foreach ($result as $value) {
+                   $temp_array['value']="$value->species_name";
+                   $test_img=site_url("./assets/img/species/aki.jpg");
+ 
+                   $temp_array['label']="<div class='row'><div class='col-12 col-sm-6 col-md-4'><img src='$test_img'></div> <div class='col-12 col-sm-6 col-md-8'>"
+                           . "<div class='row'><div class='col-12 col-sm-12'>".$value->name."<br>"
+                           . $value->species_name
+                           . "</div></div></div></div>";                  
+                   $output[]=$temp_array;
+                }
+                echo json_encode($output);
+            }
         }
+
+        
+ 
 	//--------------------------------------------------------------------
 
 }

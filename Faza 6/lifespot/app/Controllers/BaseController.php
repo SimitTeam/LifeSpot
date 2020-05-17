@@ -15,6 +15,7 @@ namespace App\Controllers;
  */
 
 use CodeIgniter\Controller;
+
 class BaseController extends Controller
 {
 
@@ -48,7 +49,6 @@ class BaseController extends Controller
         {
             $this->show("guest_page",[]);
         }
-        
         
         
         public function search(){

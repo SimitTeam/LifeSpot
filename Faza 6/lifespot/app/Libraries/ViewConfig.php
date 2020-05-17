@@ -26,7 +26,7 @@ class ViewConfig{
 		//Links
 		$this->headerLogo = "./Gost/index";
 		$this->headerHome = "./Gost/index";
-		$this->headerLogIn = "./Gost/index";
+		$this->headerLogIn = "./Gost/login";
 		$this->headerSignUp = "./Gost/index";
 		$this->headerAddMarker = "./Gost/index";
 		$this->headerAddSpecies = "./Gost/index";
@@ -63,7 +63,7 @@ class ViewConfig{
 		//Autocomplete
 		//This is the controller which is being
 		//used while searching for species
-		$this->autocompleteFetch="./Gost/index";
+		$this->autocompleteFetch="./AutoComplete/fetch";
 
 		//Outputs
 		$this->markerUser="Mock1";

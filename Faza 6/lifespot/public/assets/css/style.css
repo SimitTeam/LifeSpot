@@ -85,11 +85,21 @@ width:100%;
 background-color: #ddd !important;
 }
 .ui-menu-item-wrapper{
-    background-color:white !important ;
+    text-align: center;
     padding-left: 0px !important;
     padding-top: 0px !important;
     padding-bottom: 0px !important;
     padding-right: 0px !important;
 }
+.ui-autocomplete {
+    overflow: auto;
+    height: 300px;
+    width:400p;
+}
 
 
+
+.latin_text{
+    font-style: italic;
+    font-weight: bold;
+}

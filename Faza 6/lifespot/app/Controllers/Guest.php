@@ -2,20 +2,22 @@
 
 
 use App\Models\SpeciesModel;
-
+use App\Libraries\ViewConfig;
 
 class Guest extends BaseController
 {
 
     protected function show($page,$data){
-        $data['controller']='Guest'; //Guest
-        echo view('templates/header_guest');
-        echo view("pages/$page");
-        echo view('templates/footer.php');
+        $x = new ViewConfig;
+        $x->showSearchBar = False;
+        echo view("pages/$page",["config"=>$x]);
     }
     
     public function login(){
-        echo view('pages/login_page', ["userType"=>"Guest"]);
+        
+        $x = new ViewConfig;
+        $x->showSearchBar = False;
+        echo view('pages/signup_page',["config"=>$x]);
         //echo view('templates/header_guest');
         //echo view('pages/login_page.php');
         //echo view('templates/footer.php');
