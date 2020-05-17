@@ -24,37 +24,41 @@ class ViewConfig{
 		$this->modifiableMarker = True;
 
 		//Links
-		$this->headerLogo = "./Gost/index";
-		$this->headerHome = "./Gost/index";
-		$this->headerLogIn = "./Gost/index";
-		$this->headerSignUp = "./Gost/index";
-		$this->headerAddMarker = "./Gost/index";
-		$this->headerAddSpecies = "./Gost/index";
-		$this->headerConfirmMarker = "./Gost/index";
-		$this->headerAdminister = "./Gost/index";
-		$this->headerBackButton = "./Gost/index";
+		$this->headerLogo = "./Guest/index";
+		$this->headerHome = "./Guest/index";
+		$this->headerLogIn = "./Guest/login";
+		$this->headerSignUp = "./Guest/signup";
+		$this->headerAddMarker = "./Marker/newMarker";
+		$this->headerAddSpecies = "./Moderator/addSpecies";
+		$this->headerConfirmMarker = "./Moderator/confirmMarker";
+		$this->headerAdminister = "./Admin/administer";
+		$this->headerBackButton = "./Guest/index";
 
-		$this->logInPageSignUpButton = "./Gost/index";
-		$this->signUpPageLogInButton = "./Gost/index";
+		$this->logInPageSignUpButton = "./Guest/signup";
+		$this->signUpPageLogInButton = "./Guest/login";
 
 		//Form submit controllers
-		$this->headerSearchFormSubmit = "./Gost/index";
-		$this->searchFormSubmit = "./Gost/index";
-		$this->logInFormSubmit = "./Gost/index";
-		$this->addSpeciesFormSubmit = "./Gost/index";
-		$this->addSynonymFormSubmit = "./Gost/index";
-		$this->changeSpeciesFormSubmit = "./Gost/index";
-		$this->addConfirmationFormSubmit = "./Gost/index";
+		$this->headerSearchFormSubmit = "./BaseController/search";
+		$this->searchFormSubmit = "./BaseController/search";
+		$this->logInFormSubmit = "./Guest/loginSubmit";
+                $this->signUpFormSubmit = "./Guest/signupSubmit";
+		$this->addSpeciesFormSubmit = "./Moderator/speciesSubmit";
+		$this->addSynonymFormSubmit = "./Moderator/synonymSubmit";
+		$this->changeSpeciesFormSubmit = "./Guest/index";
+		$this->addConfirmationFormSubmit = "./Guest/index";
 
 		//Form input names
 		$this->searchBarName="search_species";
 		$this->usernameInputName="username";
 		$this->passwordInputName="password";
+                $this->newUsernameInputName="newusername";
+		$this->newPasswordInputName="newpassword";
 		$this->confirmPasswordInputName="cpassword";
 		$this->nameInputName="name";
 		$this->surnameInputName="surname";
 		$this->textInputName="text";
 		$this->dateInputName="date";
+                $this->emailInputName="email";
 		$this->speciesTypeRadio="species_type";
 		$this->confirmationRadio="species_type";
 		$this->speciesInputName="species_name";
@@ -63,7 +67,7 @@ class ViewConfig{
 		//Autocomplete
 		//This is the controller which is being
 		//used while searching for species
-		$this->autocompleteFetch="./Gost/index";
+		$this->autocompleteFetch="./Guest/index";
 
 		//Outputs
 		$this->markerUser="Mock1";

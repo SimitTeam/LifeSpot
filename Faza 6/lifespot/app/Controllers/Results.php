@@ -5,13 +5,13 @@ use App\Models\SpeciesModel;
 
 class Results {
     
-    	public function index()
-	{
-            
+    //private $resultPerPage = 3;
+    
+    	public function index($id)
+        {
             $speciesModel=new SpeciesModel();
-            $species=$speciesModel->find("test");
-            echo $species->species_name;
-            echo view('templates/footer.php');
-	    return view('welcome_message');
+            $species = $speciesModel->findLike();
 	}
 }
+
+
