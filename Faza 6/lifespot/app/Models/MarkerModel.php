@@ -66,4 +66,23 @@ class MarkerModel extends Model
         return $getLongitude->longitude;
     }
     
+    public function addMarker($species, $username, $date, $img, $latitude, $longitude, $text){
+        $query = $this->db->query('SELECT * FROM marker');
+        $id = $query->num_rows();
+        $new_id = $id + 1;
+        
+        $marker = [
+                'id' => $new_id,
+                'species_name' => $species,
+                'username' => $username,
+                'img' => $img,
+                'date' => $date,
+                'latitude' => $latitude,
+                'longitude' => $longitude,
+                'text' => $text
+            ];
+
+            $this->insert($marker);
+    }
+    
 }

@@ -62,4 +62,49 @@ class UserModel extends Model
         return $getMail->mail;
     }
     
+    public function addUser($name, $surname, $username, $pass, $confPass, $date, $email){
+        $proveraUsername = $this->where('username', $username)->findAll();
+        $proveraMail = $this->where('mail', $email)->findAll();
+        
+        if ($proveraUsername != NULL) {
+            return '<h3>To korisnicko ime vec postoji !<h3>';
+        } else if ($proveraMail != NULL) {
+            return '<h3>Taj mejl vec postoji ! </h3>';
+        } else {
+            if ($this->first() != null) {
+                $t = 'U';
+            } else {
+                $t = 'A';
+            }
+
+            $korisnik = [
+                'username' => $username,
+                'type' => $t,
+                'name' => $name,
+                'surname' => $surname,
+                'pass' => $pass,
+                'birth_date' => $date,
+                'mail' => $email
+            ];
+
+            $this->insert($korisnik);
+        }        
+        
+    }
+    
+    public function checkUser($username, $password){
+        $user = $this->getUser($username);
+        
+        if($user == NULL){
+            return '<h3>To korisnicko ime ne postoji</h3>';
+        }
+        
+        if($user->pass === $password){
+            return '<h3>Uspesno ste ulogovani</h3>';
+        }else{
+            return '<h3>Sifra nije dobra</h3>';
+        }
+    }
+    
+    
 }

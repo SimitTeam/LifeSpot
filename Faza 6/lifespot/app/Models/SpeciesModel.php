@@ -26,4 +26,14 @@ class SpeciesModel extends Model
         return $getType->username;
     }
         
+    public function addSpecies($species_name, $username, $type){
+        $species = [
+            'species_name' => $species_name,
+            'username' => $username,
+            'type' => $type
+        ];
+        
+        $this->insert($species);
+    }
+    
 }

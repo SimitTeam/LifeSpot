@@ -44,4 +44,19 @@ class SynonymModel extends Model
         return $this->like('species_name', $term)->orLike('name', $term)->findAll();
     }
     
+    public function addSynonym($species_name, $name, $type){
+        $query = $this->db->query('SELECT * FROM synonym');
+        $id = $query->num_rows();
+        $new_id = $id + 1;
+        
+        $synonym = [
+            'id' => $new_id,
+            'species_name' => $species_name,
+            'name' => $name,
+            'type' => $type
+        ];
+        
+        $this->insert($synonym);
+    }
+    
 }
