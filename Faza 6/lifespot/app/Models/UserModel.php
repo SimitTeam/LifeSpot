@@ -62,6 +62,17 @@ class UserModel extends Model
         return $getMail->mail;
     }
     
+    public function getType($username){
+        $getType = $this->find($username);
+        if($getType->type === 'U'){
+            return 'User';
+        }else if($getType->type === 'M'){
+            return 'Moderator';
+        }else{
+            return 'Admin';
+        }
+    }
+    
     public function addUser($name, $surname, $username, $pass, $confPass, $date, $email){
         $proveraUsername = $this->where('username', $username)->findAll();
         $proveraMail = $this->where('mail', $email)->findAll();
