@@ -43,7 +43,7 @@ class Guest extends BaseController
             
     ];
    
-    protected function show($page,$data){
+    protected function show(){
         $x = new ViewConfig();
         echo view('pages/guest_page',["config"=>$x]);
     }
