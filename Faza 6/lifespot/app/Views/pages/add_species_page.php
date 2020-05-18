@@ -6,6 +6,7 @@
 	<div class="row">
 		<div class=" offset-sm-2 col-sm-4 text-center row_space">
 			<h2>Add Species</h2>
+			<?php if($config->showError) echo($validation->listErrors()) ?>
 			<form action="<?=site_url($config->addSpeciesFormSubmit)?>" >
 				<table class='table'>
 				  <tr>
@@ -34,6 +35,7 @@
 		</div>
 		<div class=" col-sm-4 text-center row_space">
 			<h2>Add Synonym</h2>
+			<?php if($config->showError) echo($validation->listErrors()) ?>
 			<form action="<?=site_url($config->addSynonymFormSubmit)?>" >
 				<table class='table'>
 				  <tr>

@@ -40,6 +40,7 @@ class BaseController extends Controller
 		// Preload any models, libraries, etc, here.
 		//--------------------------------------------------------------------
 		// E.g.:
+		$this->validation =  \Config\Services::validation();
 		$this->session = session();
 	}
         
