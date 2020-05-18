@@ -15,10 +15,10 @@ class Autocomplete extends BaseController
         }
         
         public function fetch(){
-            if(isset($_GET["term"])){
+            if($this->request->isAJAX()){
                 $output=array();
                 $synonym=new SynonymModel();        
-                $result=$synonym->findMarkers($_GET["term"]);
+                $result=$synonym->findMarkers($this->request->getVar("term"));
                 
                 foreach ($result as $value) {
                    $temp_array['value']="$value->species_name";
@@ -31,11 +31,13 @@ class Autocomplete extends BaseController
                    $output[]=$temp_array;
                 }
                 echo json_encode($output);
+            }else{
+                echo "Acces Denied";
             }
         }
         public function getMarkers(){
-         if(isset($_GET["search_species"])){
-                $term=$_GET["search_species"];
+         if($this->request->isAJAX()){
+                $term=$this->request->getVar("term");
                 $markers=new MarkerModel();
                 $results=$markers->findMarkers($term);   
                 echo json_encode($results);

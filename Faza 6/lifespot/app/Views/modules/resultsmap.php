@@ -69,15 +69,14 @@
             $.ajax({
             method: "Get",
             url: "<?= site_url("./Autocomplete/getMarkers") ?>",
-            data: {search_species:search_species_data},
+            data: {term:search_species_data},
             datatype:"json",
             success: function(data){
-            j_obj=JSON.parse(data);
-            for (var item in j_obj) {
-              
-            }
-            }
-            });
+                j_obj=JSON.parse(data);
+                for (var item in j_obj) {
+                  var marker = L.marker([j_obj[item].latitude, j_obj[item].longitude]).addTo(map);
+                }
+            } });
 
     
     
