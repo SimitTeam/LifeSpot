@@ -25,6 +25,12 @@
 						<input type='radio' name="<?=$config->speciesTypeRadio?>" value='animal' >
 					</td>
 				  </tr> 
+				<tr>
+					<td>Image:</td>
+					<td colspan='2' >
+						<input type="file" name="<?=$config->imgUploadName ?>[]">
+					 </td>
+				</tr>   
 				  <tr>
 					  <td colspan='2' class='text-center'>
 						  <button class="btn btn-success my-2 my-sm-0" type="submit">Confirm</button> 
@@ -54,14 +60,6 @@
 						  <input type="text" name="<?=$config->synonymInputName?>">
 					  </td>    
 				  </tr>
-				  <tr>
-					<td colspan='2'  class='text-center'>
-						Plant 
-						<input type='radio' name="<?=$config->speciesTypeRadio?>" value='plant' checked>
-						&nbsp Animal 
-						<input type='radio' name="<?=$config->speciesTypeRadio?>" value='animal' >
-					</td>
-				  </tr> 
 				  <tr>
 					  <td colspan='2' class='text-center'>
 						  <button class="btn btn-success my-2 my-sm-0" type="submit">Confirm</button> 
