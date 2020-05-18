@@ -26,7 +26,7 @@ class ViewConfig{
 		//Links
 		$this->headerLogo = "./Gost/index";
 		$this->headerHome = "./Gost/index";
-		$this->headerLogIn = "./Gost/login";
+		$this->headerLogIn = "./Guest/login";
 		$this->headerSignUp = "./Gost/index";
 		$this->headerAddMarker = "./Gost/index";
 		$this->headerAddSpecies = "./Gost/index";
@@ -38,8 +38,8 @@ class ViewConfig{
 		$this->signUpPageLogInButton = "./Gost/index";
 
 		//Form submit controllers
-		$this->headerSearchFormSubmit = "./Gost/index";
-		$this->searchFormSubmit = "./Gost/index";
+		$this->headerSearchFormSubmit = "./Guest/search";
+		$this->searchFormSubmit = "./Guest/search";
 		$this->logInFormSubmit = "./Gost/index";
 		$this->addSpeciesFormSubmit = "./Gost/index";
 		$this->addSynonymFormSubmit = "./Gost/index";

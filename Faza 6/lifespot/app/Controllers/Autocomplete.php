@@ -3,7 +3,7 @@
 
 use App\Models\SpeciesModel;
 use App\Models\SynonymModel;
-
+use App\Models\MarkerModel;
 class Autocomplete extends BaseController
 {
 
@@ -32,6 +32,14 @@ class Autocomplete extends BaseController
                 }
                 echo json_encode($output);
             }
+        }
+        public function getMarkers(){
+         if(isset($_GET["search_species"])){
+                $term=$_GET["search_species"];
+                $markers=new MarkerModel();
+                $results=$markers->findMarkers($term);   
+                echo json_encode($results);
+          }
         }
 
         
