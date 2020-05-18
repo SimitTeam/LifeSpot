@@ -3,6 +3,7 @@
 <?php $this->section('htmlhead') ?>
 <link rel="stylesheet" type="text/css" href="<?= site_url("./assets/DataTables/datatables.min.css")?>">
 <script type="text/javascript" src="<?= site_url("./assets/DataTables/datatables.min.js")?>"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script>
 	$(document).ready(function() {
 		$('#example').DataTable();

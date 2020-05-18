@@ -42,8 +42,8 @@ class ViewConfig{
 
 		//Form submit controllers
 
-		$this->headerSearchFormSubmit = "./BaseController/search";
-		$this->searchFormSubmit = "./BaseController/search";
+		$this->headerSearchFormSubmit = "./Guest/search";
+		$this->searchFormSubmit = "./Guest/search";
 		$this->logInFormSubmit = "./Guest/loginSubmit";
                 $this->signUpFormSubmit = "./Guest/signupSubmit";
 		$this->addSpeciesFormSubmit = "./Moderator/speciesSubmit";
@@ -73,7 +73,7 @@ class ViewConfig{
 		//This is the controller which is being
 		//used while searching for species
 
-		$this->autocompleteFetch="./Guest/index";
+		$this->autocompleteFetch="./AutoComplete/fetch";
 
 		//Outputs
 		$this->markerUser="Mock1";
