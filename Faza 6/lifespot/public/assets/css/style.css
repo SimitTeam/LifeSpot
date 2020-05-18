@@ -107,3 +107,6 @@ background-color: #ddd !important;
     font-style: italic;
     font-weight: bold;
 }
+.errors{
+	color: red;
+}

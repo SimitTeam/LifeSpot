@@ -7,6 +7,7 @@
 		<div class='offset-sm-4 col-sm-4 text-center row_space'>
 		  <h2>Login</h2>
 		  <hr>
+		<?php if($config->showError) echo($validation->listErrors()) ?>
 		  <form action="<?= site_url($config->logInFormSubmit)?>" method="post">
 			  <table class='table'>
 				<tr>

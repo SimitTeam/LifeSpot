@@ -5,8 +5,9 @@
 <div class='container-fluid'>   
 	<div class='row'>
 		<div class='offset-sm-4 col-sm-4 text-center row_space'>
-		  <h2>Sign Up</h2>
-		  <hr>
+		<h2>Sign Up</h2>
+		<hr>
+		<?php if($config->showError) echo($validation->listErrors()) ?>
 		  <form action="<?= site_url($config->signUpFormSubmit)?>" method="post">
 			  <table class='table'>
 				<tr>
