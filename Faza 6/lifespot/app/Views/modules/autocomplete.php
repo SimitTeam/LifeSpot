@@ -6,7 +6,10 @@
 			minLength:1,
 			select:function(event,ui){
 				$("#search_data").val(ui.item.value);
-			}
+			},
+                        open: function(event, ui) {
+                            $(".ui-autocomplete").css("z-index", 1000);
+                        }
 		}).data('ui-autocomplete')._renderItem=function(ul,item){
 			return $("<li class='ui-autocomplete-row''></li>")
 			.data("item.autocomplete",item).append(item.label).appendTo(ul);

@@ -61,9 +61,13 @@ class MarkerModel extends Model
         return $getLatitude->latitude;
     }
     
-        public function getLongitude($id){
+     public function getLongitude($id){
         $getLongitude = $this->find($id);
         return $getLongitude->longitude;
+    }
+    public function findMarkers($term)
+    {
+       return $this->where('species_name', $term)->findAll();
     }
     
     public function addMarker($species, $username, $date, $img, $latitude, $longitude, $text){

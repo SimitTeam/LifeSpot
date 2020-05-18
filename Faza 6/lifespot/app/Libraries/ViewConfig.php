@@ -25,6 +25,7 @@ class ViewConfig{
 		$this->showSearchResults = False;
 
 		//Links
+
 		$this->headerLogo = "./Guest/index";
 		$this->headerHome = "./Guest/index";
 		$this->headerLogIn = "./Guest/login";
@@ -39,8 +40,8 @@ class ViewConfig{
 		$this->signUpPageLogInButton = "./Guest/login";
 
 
-
 		//Form submit controllers
+
 		$this->headerSearchFormSubmit = "./BaseController/search";
 		$this->searchFormSubmit = "./BaseController/search";
 		$this->logInFormSubmit = "./Guest/loginSubmit";
@@ -49,6 +50,7 @@ class ViewConfig{
 		$this->addSynonymFormSubmit = "./Moderator/synonymSubmit";
 		$this->changeSpeciesFormSubmit = "./Guest/index";
 		$this->addConfirmationFormSubmit = "./Guest/index";
+
 
 		//Form input names
 		$this->searchBarName="search_species";
@@ -70,6 +72,7 @@ class ViewConfig{
 		//Autocomplete
 		//This is the controller which is being
 		//used while searching for species
+
 		$this->autocompleteFetch="./Guest/index";
 
 		//Outputs
