@@ -39,6 +39,7 @@ class ViewConfig{
 		$this->signUpPageLogInButton = "./Guest/login";
 
 
+
 		//Form submit controllers
 		$this->headerSearchFormSubmit = "./BaseController/search";
 		$this->searchFormSubmit = "./BaseController/search";
