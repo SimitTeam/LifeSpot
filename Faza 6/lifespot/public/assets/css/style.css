@@ -120,7 +120,7 @@ background-color: #ddd !important;
     height:300px;
 }
 
-.prev, .next {
+#prev_img, #next_img {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -134,17 +134,17 @@ background-color: #ddd !important;
   border-radius: 0 3px 3px 0;
 }
 
-.next {
+#next_img {
   right: 10px;
   border-radius: 3px 0 0 3px;
 }
 
-.prev {
+#prev_img {
   left: 10px;
   border-radius: 3px 0 0 3px;
 }
 
-.prev:hover, .next:hover {
+#prev_img:hover, #next_img:hover {
     background-color:#00ccff;
 }
 
