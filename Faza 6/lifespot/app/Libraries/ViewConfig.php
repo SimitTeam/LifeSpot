@@ -80,6 +80,9 @@ class ViewConfig{
 		$this->markerSpeciesName="Mock2";
 		$this->markerDate="Mock3";
 		$this->markerText="Mock4";
+                $this->markerLat="Mock5";
+                $this->markerLon="Mock6";
+                $this->markerImage="Mock7";
 		$this->username="Options";
 
 

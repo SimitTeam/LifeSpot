@@ -19,6 +19,24 @@ class Marker extends BaseController
 	    return view('welcome_message');
 	}
         
+        //Shows marker by id
+        public function showMarker($id){
+            
+            $t_marker=new MarkerModel();
+            $marker=$t_marker->find($id);
+            
+            $x = new ViewConfig();
+            $x->modifiableMarker=false;
+            $x->markerUser=$marker->username;
+            $x->markerSpeciesName=$marker->species_name;
+            $x->markerDate=$marker->date;
+            $x->markerText=$marker->text;
+            $x->markerLat=$marker->latitude;
+            $x->markerLon=$marker->longitude;
+            $x->markerImage=$marker->img;
+	    echo view('./pages/modifiable_marker_page', ["config"=>$x]);
+            
+        }
         
         public function newMarker(){
             $x = new ViewConfig();

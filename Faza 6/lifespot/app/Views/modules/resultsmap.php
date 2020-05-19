@@ -1,7 +1,7 @@
 
 <div class="row">
     <div class="offset-4 col-4">
-        <div id="mapDiv"></div>
+        <div id="mapDiv"> </div>
     </div>
     
 </div>
@@ -74,7 +74,10 @@
             success: function(data){
                 j_obj=JSON.parse(data);
                 for (var item in j_obj) {
-                  var marker = L.marker([j_obj[item].latitude, j_obj[item].longitude]).addTo(map);
+                  var marker = L.marker([j_obj[item].latitude, j_obj[item].longitude],{id:j_obj[item].id}).addTo(map);
+                  marker.on("click",function(event){
+                     window.open("<?= site_url("./Marker/showMarker/")?>"+this.options.id,"_self");
+                  });
                 }
             } });
 

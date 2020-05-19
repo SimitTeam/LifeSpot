@@ -22,7 +22,7 @@ class Autocomplete extends BaseController
                 
                 foreach ($result as $value) {
                    $temp_array['value']="$value->species_name";
-                   $test_img=site_url("./assets/img/species/aki.jpg");
+                   $test_img=site_url("./assets/img/species/".$value->species_name.".jpg");
  
                    $temp_array['label']="<div class='row'><div class='col-12 col-sm-6 col-md-4'><img src='$test_img'></div> <div class='col-12 col-sm-6 col-md-8'>"
                            . "<div class='row'><div class='col-12 col-sm-12'>".$value->name."<br>"
