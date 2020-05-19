@@ -10,6 +10,7 @@
 		<div class='offset-sm-4 col-sm-4 text-center'>
 		  <h2>New Marker</h2>
 		  <hr>
+		<?php if($config->showError) echo($validation->listErrors()) ?>
 		  <form action="<?= site_url($config->logInFormSubmit)?>" method="post">
 			  <table class='table'>
 				<tr>
@@ -28,7 +29,7 @@
 				<tr>
 					<td>Image:</td>
 					<td colspan='2' >
-						<?=$this-> include('modules/imageupload');?>
+						<input type="file" name="<?=$config->imgUploadName ?>[]" multiple>
 					 </td>
 				</tr>   
 				<tr>

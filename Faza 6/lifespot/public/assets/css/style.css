@@ -110,6 +110,7 @@ background-color: #ddd !important;
 }
 
 
+
 /*Slide show css*/
 .mySlide {
   display: none;
@@ -154,3 +155,8 @@ background-color: #ddd !important;
   position: absolute;
   top: 0;
 }
+
+.errors{
+	color: red;
+}
+
