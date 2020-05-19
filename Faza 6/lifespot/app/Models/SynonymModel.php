@@ -29,7 +29,7 @@ class SynonymModel extends Model
         return $getSynonym;
     }
     
-    public function getSpeciesNameInSynonym($id){
+    public function getSpeciesName($id){
         $getSpeciesName = $this->find($id);
         return $getSpeciesName->species_name;
     }

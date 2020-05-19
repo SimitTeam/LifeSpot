@@ -100,5 +100,16 @@ class UserModel extends Model
         }
     }
     
+    public function promoteUser($username, $type){
+        
+    }
+    
+    public function demoteUser($username){
+        
+    }
+    
+    public function findUser($term){
+        
+    }
     
 }

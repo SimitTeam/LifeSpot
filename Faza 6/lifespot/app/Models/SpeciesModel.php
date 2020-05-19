@@ -16,7 +16,7 @@ class SpeciesModel extends Model
         return $getSpecies;
     }
     
-    public function getUsernameSpecies($species_name){
+    public function getUsername($species_name){
         $getUsername = $this->find($species_name);
         return $getUsername->username;
     }   

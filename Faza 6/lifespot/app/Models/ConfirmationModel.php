@@ -25,4 +25,8 @@ class ConfirmationModel extends Model
         $getStatus = $this->find($id);
         return $getStatus->status;
     }
+    
+    public function addConfirmation($username, $status){
+        
+    }
 }
