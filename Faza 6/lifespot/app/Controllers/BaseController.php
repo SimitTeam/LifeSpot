@@ -52,10 +52,6 @@ class BaseController extends Controller
         }
         
         
-        public function search(){
-            
-             $this->show("guest_page",[]);
-        }
         
         public function signin(){
             $this->login();

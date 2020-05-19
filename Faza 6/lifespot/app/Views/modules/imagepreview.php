@@ -1,6 +1,9 @@
         <?php 
             if($config->markerImage==null){
-                echo "<img src=".site_url("./assets/img/users/no_preview.jpg")." width='100%'>";
+                   $result=array();
+                   $image=glob("./assets/img/users/no_preview.jpg");
+                   $result[]=site_url($image);
+                   echo "<script>var images=". json_encode($result)." </script>";
             }
             else
             {
@@ -8,7 +11,7 @@
                 $images = glob($dirname."*.{jpg,png}",GLOB_BRACE);
                 $result=array();
                 foreach($images as $image) {
-                  $result[]=site_url($image);     
+                  $result[]=site_url($image);  
                 }
                 echo "<script>var images=". json_encode($result)." </script>";
             }
@@ -17,7 +20,7 @@
 
 
 <div class="row">
-    <div class="offset-4 col-4" id="slide-container" style="width:100%;">
+    <div class="offset-4 col-4" id="slide-container">
           <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
           <a class="next" onclick="plusSlides(1)">&#10095;</a>      
     </div>
@@ -27,6 +30,7 @@
     var len=images.length;
     var str="";
     for (var ind in images) {
+        
         str+="<div class='mySlide'>";
         str+="<div class='numbertext'>"+(parseInt(ind)+1)+"/"+len+"</div>";
         str+="<img src='"+images[ind]+"'>";

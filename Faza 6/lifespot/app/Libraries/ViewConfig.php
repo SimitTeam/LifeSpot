@@ -43,8 +43,8 @@ class ViewConfig{
 
 		//Form submit controllers
 
-		$this->headerSearchFormSubmit = "./Guest/search";
-		$this->searchFormSubmit = "./Guest/search";
+		$this->headerSearchFormSubmit = "./Results/search";
+		$this->searchFormSubmit = "./Results/search";
 		$this->logInFormSubmit = "./Guest/loginSubmit";
                 $this->signUpFormSubmit = "./Guest/signupSubmit";
 		$this->addSpeciesFormSubmit = "./Moderator/speciesSubmit";
