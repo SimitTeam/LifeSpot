@@ -36,6 +36,7 @@ class ViewConfig{
 		$this->headerConfirmMarker = "./Moderator/confirmMarker";
 		$this->headerAdminister = "./Admin/administer";
 		$this->headerBackButton = "./Guest/index";
+		$this->headerSignOut = "./SignOut/index";
 
 		$this->logInPageSignUpButton = "./Guest/signup";
 		$this->signUpPageLogInButton = "./Guest/login";
