@@ -29,4 +29,8 @@ class ConfirmationModel extends Model
     public function addConfirmation($username, $status){
         
     }
+    
+    public function updateConfirmation($id, $status){
+        
+    }
 }

@@ -112,4 +112,7 @@ class UserModel extends Model
         
     }
     
+    public function getAllUsers(){
+        
+    }
 }

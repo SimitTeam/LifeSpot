@@ -88,4 +88,11 @@ class MarkerModel extends Model
             $this->insert($marker);
     }
     
+    public function getNotConfirmed($username){
+        
+    }
+    
+    public function changeSpecies($id, $species){
+        
+    }
 }
