@@ -88,7 +88,16 @@ class MarkerModel extends Model
             $this->insert($marker);
     }
     
+    //nisam siguran dal radi treba testirati, ako ne radi uradicu ga preko query
     public function getNotConfirmed($username){
+        //return $this->db->query('SELECT * FROM confirmation WHERE username ='+ $username + 'AND status = N');
+        
+        $confModel = new ConfirmationModel();
+        $statusN = 'N';
+        
+        $allUserConf = $confModel->findAll($username);
+        return $allUserConf->where('status', $statusN)->findAll();
+        
         
     }
     
