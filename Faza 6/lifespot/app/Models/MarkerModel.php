@@ -93,6 +93,10 @@ class MarkerModel extends Model
     }
     
     public function changeSpecies($id, $species){
+        $newSpecies = [
+            'species_name' => $species
+        ];
         
+        $this->update($id, $newSpecies);
     }
 }

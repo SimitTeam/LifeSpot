@@ -27,10 +27,24 @@ class ConfirmationModel extends Model
     }
     
     public function addConfirmation($username, $status){
+        $query = $this->db->query('SELECT * FROM marker');
+        $id = $query->num_rows();
+        $new_id = $id + 1;
         
+        $confirmation = [
+                'id' => $new_id,
+                'username' => $username,
+                'status' => $status
+            ];
+
+            $this->insert($confirmation);
     }
     
     public function updateConfirmation($id, $status){
+        $newStatus = [
+            'species_name' => $status
+        ];
         
+        $this->update($id, $newStatus);
     }
 }

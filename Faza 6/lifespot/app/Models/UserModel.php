@@ -101,18 +101,38 @@ class UserModel extends Model
     }
     
     public function promoteUser($username, $type){
+        $newType = [
+            'type' => $type
+        ];
         
+        $this->update($username, $newType);
     }
     
     public function demoteUser($username){
+        $currType = $this->getType($username);
+        $test = FALSE;
+        if ($currType === 'Administrator') {
+            $type = 'M';
+            $test = TRUE;
+        } else if ($currType === 'Moderator') {
+            $type = 'U';
+            $test = TRUE;
+        }
         
+        if(test === TRUE){
+            $newType = [
+               'type' => $type
+            ];
+        
+            $this->update($username, $newType);
+        }
     }
     
     public function findUser($term){
-        
+        return $this->where('username', $term)->findAll();
     }
     
     public function getAllUsers(){
-        
+        return $this->findAll();
     }
 }
