@@ -90,6 +90,11 @@ class MarkerModel extends Model
     
     public function getNotConfirmed($username){
         
+        return $this->db->table('confirmation as con')->where('con.username',$username)
+          ->where('con.status','N')
+          ->join('marker  as m', 'm.id = con.id', 'LEFT')
+          ->get()->getResult();     
+        
     }
     
     public function changeSpecies($id, $species){

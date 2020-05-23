@@ -76,7 +76,7 @@
                 for (var item in j_obj) {
                   var marker = L.marker([j_obj[item].latitude, j_obj[item].longitude],{id:j_obj[item].id}).addTo(map);
                   marker.on("click",function(event){
-                     window.open("<?= site_url("./Marker/showMarker/")?>"+this.options.id,"_self");
+                     window.open("<?= site_url("./Marker/showMarker/")?>"+this.options.id+"/"+"hm","_self");
                   });
                 }
             } });

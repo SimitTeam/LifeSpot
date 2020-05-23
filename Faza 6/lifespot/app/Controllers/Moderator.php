@@ -2,7 +2,10 @@
 
 
 use App\Models\SpeciesModel;
+use App\Models\MarkerModel;
+
 use \App\Libraries\ViewConfig;
+
 
 class Moderator extends BaseController
 {
@@ -19,17 +22,32 @@ class Moderator extends BaseController
             echo view('pages/add_species_page', ["config"=>$x]);
         }
 
+        
+        //Creates page with markers to be confirmed
         public function confirmMarker(){
+            $test=new MarkerModel();
+            $results=$test->getNotConfirmed('nore');
+
+            
             $x = new ViewConfig();
             $x->userType = "moderator";
-            echo view('pages/modifiable_marker_page', ["config"=>$x]);
+            $x->dtRows=[];
+            $x->dtHead=["Username", "Image", "Species", "Link"];
+            foreach ($results as $value) {
+               $x->dtRows[]=[$value->username,$value->img,$value->species_name,["text"=>"Show", "url"=>site_url("./Marker/showMarker/")."$value->id/hm"]];
+            }
+
+            echo view('pages/confirm_marker_page', ["config"=>$x]);
         }
+        
+        
         
         public function confirmSubmit(){
             
         }
 
 
+        
         public function speciesSubmit(){
             //validation
             if (!$this->validate(['species_name'=>'required'])){

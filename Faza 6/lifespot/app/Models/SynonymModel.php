@@ -41,7 +41,11 @@ class SynonymModel extends Model
     
     //Trazi markere koji u name i species_name imaju term
     public function findMarkers($term){
-        return $this->like('species_name', $term)->orLike('name', $term)->findAll();
+     return $this->db->table('species as sp')
+     ->join('synonym  as syn', 'sp.species_name = syn.species_name', 'LEFT')
+     ->like('syn.name',"$term")
+     ->orLike("sp.species_name","$term")
+     ->get()->getResult(); 
     }
     
     public function addSynonym($species_name, $name, $type){

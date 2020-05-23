@@ -20,7 +20,7 @@ class Marker extends BaseController
 	}
         
         //Shows marker by id
-        public function showMarker($id){
+        public function showMarker($id,$string){
             
             $t_marker=new MarkerModel();
             $marker=$t_marker->find($id);
@@ -34,6 +34,8 @@ class Marker extends BaseController
             $x->markerLat=$marker->latitude;
             $x->markerLon=$marker->longitude;
             $x->markerImage=$marker->img;
+            $x->showBackButton=true;
+            $x->headerBackButton=$string;
 	    echo view('./pages/modifiable_marker_page', ["config"=>$x]);
             
         }

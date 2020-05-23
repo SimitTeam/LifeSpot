@@ -17,10 +17,10 @@
 						echo("<td>".$row[$i]."</td>");
 					}
 					else if(!strcmp($config->dtTypes[$i], "ref")){
-						echo("<td><a href=\"".site_url($row[$i]["url"])."\" class='btn btn-success'>".$row[$i]["text"]."</a></td>");
+						echo("<td><a href=\"".$row[$i]["url"]."\" class='btn btn-success'>".$row[$i]["text"]."</a></td>");
 					}
 					else if(!strcmp($config->dtTypes[$i], "img")){
-						echo("<td>".view('modules/imagepreview', ['img'=>$row[$i]])."</td>");
+						echo("<td>".$row[$i]."</td>");
 					}
 				}
 				echo("</tr>");
