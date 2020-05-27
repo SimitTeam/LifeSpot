@@ -10,7 +10,7 @@
 		<div class=" col-sm-12 text-center ">
 		<?php
 			if($config->modifiableMarker)
-				echo $this->include('modules/simple/confirm');
+				echo $this->include('modules/confirm');
 		?>
 		</div>
 	</div>
@@ -21,12 +21,12 @@
 	</div>
 	<div class="row">
 		<div class=" col-sm-12 text-center ">
-		<h2><p><i>Species: <?=$config->markerSpeciesName?></i> </p></h2> 
+                    <h2><p><i id="new_species">Species: <?=$config->markerSpeciesName?></i> </p></h2> 
 		</div>
 	</div>
 	<?php
 	if($config->modifiableMarker)
-		echo $this->include('modules/simple/modname');
+		echo $this->include('modules/species_change');
 	?>
 	<div class="row">
 		<div class=" col-sm-12 text-center ">

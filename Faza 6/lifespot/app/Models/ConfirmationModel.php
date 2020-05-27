@@ -42,7 +42,7 @@ class ConfirmationModel extends Model
     
     public function updateConfirmation($id, $status){
         $newStatus = [
-            'species_name' => $status
+            'status' => $status
         ];
         
         $this->update($id, $newStatus);

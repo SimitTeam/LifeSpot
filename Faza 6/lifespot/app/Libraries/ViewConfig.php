@@ -51,7 +51,7 @@ class ViewConfig{
 		$this->addSpeciesFormSubmit = "./Moderator/speciesSubmit";
 		$this->addSynonymFormSubmit = "./Moderator/synonymSubmit";
 		$this->changeSpeciesFormSubmit = "./Guest/index";
-		$this->addConfirmationFormSubmit = "./Guest/index";
+		$this->ConfirmationFormSubmit = "./Moderator/confirmSubmit";
 
 
 		//Form input names
@@ -67,7 +67,7 @@ class ViewConfig{
 		$this->dateInputName="date";
                 $this->emailInputName="email";
 		$this->speciesTypeRadio="species_type";
-		$this->confirmationRadio="species_type";
+		$this->confirmationRadio="option";
 		$this->speciesInputName="species_name";
 		$this->synonymInputName="synonym_name";
 		$this->imgUploadName="img";
@@ -86,6 +86,7 @@ class ViewConfig{
                 $this->markerLat="Mock5";
                 $this->markerLon="Mock6";
                 $this->markerImage="Mock7";
+                $this->markerId="Mock8";
 		$this->username="Options";
 
 

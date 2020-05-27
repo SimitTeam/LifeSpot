@@ -34,8 +34,23 @@ class Marker extends BaseController
             $x->markerLat=$marker->latitude;
             $x->markerLon=$marker->longitude;
             $x->markerImage=$marker->img;
+            $x->markerId=$marker->id;
             $x->showBackButton=true;
-            $x->headerBackButton=$string;
+            
+            if($this->session->get("userType")==null){
+                 $x->userType="Moderator";
+                 $x->modifiableMarker=true;
+                
+            }
+            
+            
+            if(strcmp($string, "confirmMarker")==0){
+                $x->headerBackButton="/Moderator/confirmMarker";
+            }else{
+                $x->headerBackButton="/Results/search?search_species=".urldecode($string);
+            }
+            
+            
 	    echo view('./pages/modifiable_marker_page', ["config"=>$x]);
             
         }
