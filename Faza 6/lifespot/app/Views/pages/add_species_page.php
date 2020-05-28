@@ -7,7 +7,7 @@
 		<div class=" offset-sm-2 col-sm-4 text-center row_space">
 			<h2>Add Species</h2>
 			<?php if($config->showError) echo($validation->listErrors()) ?>
-			<form action="<?=site_url($config->addSpeciesFormSubmit)?>" >
+			<form action="<?=site_url($config->addSpeciesFormSubmit)?>" method="post" enctype="multipart/form-data" >
 				<table class='table'>
 				  <tr>
 					  <td>
@@ -28,7 +28,7 @@
 				<tr>
 					<td>Image:</td>
 					<td colspan='2' >
-						<input type="file" name="<?=$config->imgUploadName ?>[]">
+						<input type="file" name="<?=$config->imgUploadName?>">
 					 </td>
 				</tr>   
 				  <tr>
