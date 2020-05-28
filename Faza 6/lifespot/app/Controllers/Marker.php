@@ -45,27 +45,29 @@ class Marker extends BaseController
         }
         
         public function markerSubmit(){
-            //validation
-            if (!$this->validate(['species'=>'required'])){
-            $x = new ViewConfig();
-            echo "species reqired";
-            return;
-        }
-        if (!$this->validate(['date'=>'required'])){
-            $x = new ViewConfig();
-            echo "date reqired";
-            return;
-        }
-        if (!$this->validate(['location'=>'trim|required'])){
-            $x = new ViewConfig();
-            echo "location reqired";
-            return;
-        }
-            
-            //adding to database
-            $markerModel = new MarkerModel();
-            $marker = $markerModel->addMarker($species, $date, $img, $location, $text);
-            
+			//validation
+			/*
+			if (!$this->validate(['species'=>'required'])){
+				$x = new ViewConfig();
+				echo "species reqired";
+				return;
+			}
+			if (!$this->validate(['date'=>'required'])){
+				$x = new ViewConfig();
+				echo "date reqired";
+				return;
+			}
+			if (!$this->validate(['location'=>'trim|required'])){
+				$x = new ViewConfig();
+				echo "location reqired";
+				return;
+			}
+			 */
+			$img = $this->request->getFile("nesto");
+			$img->store('','tsf.jpg');
+			//$PATH = getcwd();
+			//$img->move( $PATH .'/assets/img', 'ime.jpg' );
+            return redirect()->to(site_url("./Guest/index"));
         }
         //--------------------------------------------------------------------
 

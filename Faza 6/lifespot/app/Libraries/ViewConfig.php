@@ -47,7 +47,8 @@ class ViewConfig{
 		$this->headerSearchFormSubmit = "./Results/search";
 		$this->searchFormSubmit = "./Results/search";
 		$this->logInFormSubmit = "./Guest/loginSubmit";
-                $this->signUpFormSubmit = "./Guest/signupSubmit";
+		$this->signUpFormSubmit = "./Guest/signupSubmit";
+		$this->newMarkerSubmit = "./Marker/markerSubmit";
 		$this->addSpeciesFormSubmit = "./Moderator/speciesSubmit";
 		$this->addSynonymFormSubmit = "./Moderator/synonymSubmit";
 		$this->changeSpeciesFormSubmit = "./Guest/index";

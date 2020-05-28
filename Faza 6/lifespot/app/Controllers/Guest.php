@@ -45,7 +45,7 @@ class Guest extends BaseController
    
     protected function show($page,$data){
         $x = new ViewConfig();
-        echo view('pages/guest_page',["config"=>$x]);
+		echo view('pages/new_marker_page',["config"=>$x]);
     }
     
     public function login(){
