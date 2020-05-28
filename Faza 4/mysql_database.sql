@@ -24,6 +24,8 @@ CREATE TABLE Marker
 ALTER TABLE Marker
 ADD CONSTRAINT XPKMarker PRIMARY KEY (id);
 
+ALTER TABLE `Marker` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT; 
+
 CREATE TABLE Species
 (
 	species_name         VARCHAR(50) NOT NULL,
@@ -43,6 +45,9 @@ CREATE TABLE Synonym
 
 ALTER TABLE Synonym
 ADD CONSTRAINT XPKSynonym PRIMARY KEY (id);
+
+ALTER TABLE `Synonym` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT; 
+
 
 CREATE TABLE User
 (
@@ -75,3 +80,5 @@ ADD CONSTRAINT R_20 FOREIGN KEY (username) REFERENCES User (username);
 
 ALTER TABLE Synonym
 ADD CONSTRAINT R_18 FOREIGN KEY (species_name) REFERENCES Species (species_name);
+
+
