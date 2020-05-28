@@ -86,6 +86,8 @@ class MarkerModel extends Model
             ];
 
             $this->insert($marker);
+            
+            return $new_id;
     }
     
     //nisam siguran dal radi treba testirati, ako ne radi uradicu ga preko query
