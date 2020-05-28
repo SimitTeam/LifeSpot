@@ -37,7 +37,7 @@
 					<td>
 						<?=$this-> include('modules/inputmap');?>
                                             <input type="text" name="lon" id="hidden_lon" hidden value="0">
-                                            <input type="text" name="lan" id="hidden_lat" hidden value="0">
+                                            <input type="text" name="lat" id="hidden_lat" hidden value="0">
 					 </td>
 				</tr>                                            
 				<tr>
