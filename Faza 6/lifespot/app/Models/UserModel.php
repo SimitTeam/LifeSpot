@@ -90,13 +90,13 @@ class UserModel extends Model
         $user = $this->getUser($username);
         
         if($user == NULL){
-            return '<h3>To korisnicko ime ne postoji</h3>';
+            return ['message'=>'<h3>To korisnicko ime ne postoji</h3>'];
         }
         
         if($user->pass === $password){
-            return '<h3>Uspesno ste ulogovani</h3>';
-        }else{
-            return '<h3>Sifra nije dobra</h3>';
+            return  ['message'=>'<h3>Uspesno ste ulogovani</h3>','user'=>$user];
+        }else{   
+            return  ['message'=>'<h3>Sifra nije dobra</h3>'];
         }
     }
     

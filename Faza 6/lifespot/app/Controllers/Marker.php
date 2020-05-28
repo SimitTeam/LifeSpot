@@ -20,7 +20,7 @@ class Marker extends BaseController
 	}
         
         //Shows marker by id
-        public function showMarker($id){
+        public function showMarker($id,$string){
             
             $t_marker=new MarkerModel();
             $marker=$t_marker->find($id);
@@ -34,6 +34,19 @@ class Marker extends BaseController
             $x->markerLat=$marker->latitude;
             $x->markerLon=$marker->longitude;
             $x->markerImage=$marker->img;
+            $x->markerId=$marker->id;
+            $x->showBackButton=true;
+            
+            
+            
+            if(strcmp($string, "confirmMarker")==0){
+                $x->headerBackButton="/Moderator/confirmMarker";
+                $x->modifiableMarker=true;
+            }else{
+                $x->headerBackButton="/Results/search?search_species=".urldecode($string);
+            }
+            
+            
 	    echo view('./pages/modifiable_marker_page', ["config"=>$x]);
             
         }

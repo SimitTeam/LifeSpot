@@ -22,6 +22,11 @@
 	</head>
 	<body>
 	<?php
+                $user_type_arr=['M'=>"Moderator","U"=>"User","A"=>"Admin"];
+                $user=session()->get("user");
+                if($user!=null){
+                    $config->userType=$user_type_arr[$user->type];
+                }
 		if(!strcmp($config->userType,"Admin")){
 			echo($this-> include('headers/adminheader'));
 		}
