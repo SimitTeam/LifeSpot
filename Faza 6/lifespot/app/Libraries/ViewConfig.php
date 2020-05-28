@@ -71,7 +71,7 @@ class ViewConfig{
 		$this->confirmationRadio="option";
 		$this->speciesInputName="species_name";
 		$this->synonymInputName="synonym_name";
-		$this->imgUploadName="img";
+		$this->imgUploadName="imgs";
 
 		//Autocomplete
 		//This is the controller which is being

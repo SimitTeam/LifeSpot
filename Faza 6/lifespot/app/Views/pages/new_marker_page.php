@@ -29,7 +29,7 @@
 				<tr>
 					<td>Image:</td>
 					<td colspan='2' >
-						<input type="file" name="nesto" >
+						<input type="file" name="<?=$config->imgUploadName?>[]" multiple>
 					 </td>
 				</tr>   
 				<tr>
