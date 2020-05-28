@@ -37,15 +37,11 @@ class Marker extends BaseController
             $x->markerId=$marker->id;
             $x->showBackButton=true;
             
-            if($this->session->get("userType")==null){
-                 $x->userType="Moderator";
-                 $x->modifiableMarker=true;
-                
-            }
             
             
             if(strcmp($string, "confirmMarker")==0){
                 $x->headerBackButton="/Moderator/confirmMarker";
+                $x->modifiableMarker=true;
             }else{
                 $x->headerBackButton="/Results/search?search_species=".urldecode($string);
             }
