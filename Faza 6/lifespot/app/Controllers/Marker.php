@@ -63,16 +63,19 @@ class Marker extends BaseController
 				return;
 			}
 			 */
-			if($imagefile = $this->request->getFile('imgs[]'))
+			$species = $this->request->getVar("search_species");
+			$username = $this->session->get("user");
+			$date = $this->request->getVar("date");
+			$text = $this->request->getVar("text");
+			$markerId = addMarker($species, $username, $date, $latitude, $longitude, $text)
+			$imgs = $this->request->getFiles();
+			foreach($imgs['imgs'] as $img)
 			{
-				fdsfsd();
-				foreach($imagefile as $img)
-				{
-					$newName = $img->getRandomName();
-					$PATH = getcwd();
-					$img->move('assets/img', $newName );
-				}
+				$newName = $img->getRandomName();
+				$PATH = getcwd();
+				$img->move($PATH.'/assets/img/markers'.$markerId, $newName );
 			}
+
             return redirect()->to(site_url("./Guest/index"));
         }
         //--------------------------------------------------------------------
