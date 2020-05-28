@@ -63,10 +63,16 @@ class Marker extends BaseController
 				return;
 			}
 			 */
-			$img = $this->request->getFile("nesto");
-			$img->store('','tsf.jpg');
-			//$PATH = getcwd();
-			//$img->move( $PATH .'/assets/img', 'ime.jpg' );
+			if($imagefile = $this->request->getFile('imgs[]'))
+			{
+				fdsfsd();
+				foreach($imagefile as $img)
+				{
+					$newName = $img->getRandomName();
+					$PATH = getcwd();
+					$img->move('assets/img', $newName );
+				}
+			}
             return redirect()->to(site_url("./Guest/index"));
         }
         //--------------------------------------------------------------------
