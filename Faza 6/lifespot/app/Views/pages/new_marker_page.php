@@ -11,7 +11,7 @@
 		  <h2>New Marker</h2>
 		  <hr>
 		<?php if($config->showError) echo($validation->listErrors()) ?>
-		  <form action="<?= site_url($config->logInFormSubmit)?>" method="post">
+		  <form action="<?= site_url($config->newMarkerSubmit)?>" method="post" enctype="multipart/form-data">
 			  <table class='table'>
 				<tr>
 					<td>
@@ -29,7 +29,7 @@
 				<tr>
 					<td>Image:</td>
 					<td colspan='2' >
-						<input type="file" name="<?=$config->imgUploadName ?>[]" multiple>
+						<input type="file" name="nesto" >
 					 </td>
 				</tr>   
 				<tr>
