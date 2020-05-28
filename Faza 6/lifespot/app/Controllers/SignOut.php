@@ -3,15 +3,11 @@
 
 use App\Models\SpeciesModel;
 
-class Signout {
+class SignOut extends BaseController{
     
     	public function index()
 	{
-            
-            $speciesModel=new SpeciesModel();
-            $species=$speciesModel->find("test");
-            echo $species->species_name;
-            echo view('templates/footer.php');
-	    return view('welcome_message');
+               $this->session->destroy();
+               return redirect()->to(site_url("Results/search"));
 	}
 }

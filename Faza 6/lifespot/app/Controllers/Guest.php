@@ -60,34 +60,33 @@ class Guest extends BaseController
     }
     
     
+    //
     public function loginSubmit(){
         //validation
        
-        if (!$this->validate(['username'=>'required'])){
-            echo "username reqired";
-            return;
-        }
-        if (!$this->validate(['password'=>'required'])){
-            echo "password reqired";
+        if (!$this->validate(['username'=>'required','password'=>'required'])){
+            $x = new ViewConfig();
+            $x->showError=$this->validator->getErrors();
+            echo view('pages/login_page', ["config"=>$x]);
             return;
         }
         
         
         //checking if user exists and mathces password
         $userModel = new UserModel();
-        $user = $userModel->checkUser($username, $password);
-        $user=true;
+        $result = $userModel->checkUser($this->request->getVar('username'), $this->request->getVar('password'));
         
         //setting user and redirecting to home page
-        if ($user == true){
-            $this->session->set('user', $this->request->getVar('username'));
-            $userType = $userModel->getUserType($this->request->getVar('username'));
+        if (!empty($result["user"])){
+            $this->session->set('user', $result["user"]);
             $viewConf = new ViewConfig();
-            $viewConf->userType = $userType;
-            return redirect()->to(site_url("$userType/index"));
+            return redirect()->to(site_url("Results/search"));
         }
         else {
-            echo "wrong username or password";
+            $x = new ViewConfig();
+            $x->showError=['error'=>$result["message"]];
+            echo view('pages/login_page', ["config"=>$x]);
+            return;
         }
       
     }

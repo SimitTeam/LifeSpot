@@ -12,7 +12,7 @@ class Moderator extends BaseController
 	public function index()
 	{
             $x = new ViewConfig();
-            $x->userType = "moderator";
+            $x->userType = "Moderator";
             echo view('pages/guest_page', ["config"=>$x]);
 	}
         

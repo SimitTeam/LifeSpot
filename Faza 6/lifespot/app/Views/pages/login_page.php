@@ -7,7 +7,7 @@
 		<div class='offset-sm-4 col-sm-4 text-center row_space'>
 		  <h2>Login</h2>
 		  <hr>
-		<?php if($config->showError) echo($validation->listErrors()) ?>
+		 <?php if(!empty($config->showError["error"])) echo "<span style='color:red'>".$config->showError['error']."</span>"; ?>
 		  <form action="<?= site_url($config->logInFormSubmit)?>" method="post">
 			  <table class='table'>
 				<tr>
@@ -16,6 +16,7 @@
 					</td>
 					<td>
 						<input type="text" name="<?=$config->usernameInputName?>">
+                                                <?php if(!empty($config->showError["username"])) echo "<span style='color:red'>".$config->showError['username']."</span>"; ?>
 					</td>
 				</tr>
 				<tr>
@@ -24,6 +25,7 @@
 					</td>
 					<td>
 					<input type="password" name="<?=$config->passwordInputName?>">
+                                         <?php if(!empty($config->showError["password"])) echo "<span style='color:red'>".$config->showError['password']."</span>"; ?>
 					</td>    
 				</tr>
 
