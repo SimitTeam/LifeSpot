@@ -59,14 +59,14 @@ class ViewConfig{
 		$this->searchBarName="search_species";
 		$this->usernameInputName="username";
 		$this->passwordInputName="password";
-                $this->newUsernameInputName="newusername";
+		$this->newUsernameInputName="newusername";
 		$this->newPasswordInputName="newpassword";
 		$this->confirmPasswordInputName="cpassword";
 		$this->nameInputName="name";
 		$this->surnameInputName="surname";
 		$this->textInputName="text";
 		$this->dateInputName="date";
-                $this->emailInputName="email";
+		$this->emailInputName="email";
 		$this->speciesTypeRadio="species_type";
 		$this->confirmationRadio="option";
 		$this->speciesInputName="species_name";
@@ -84,10 +84,10 @@ class ViewConfig{
 		$this->markerSpeciesName="Mock2";
 		$this->markerDate="Mock3";
 		$this->markerText="Mock4";
-                $this->markerLat="Mock5";
-                $this->markerLon="Mock6";
-                $this->markerImage="Mock7";
-                $this->markerId="Mock8";
+		$this->markerLat="Mock5";
+		$this->markerLon="Mock6";
+		$this->markerImage="Mock7";
+		$this->markerId="Mock8";
 		$this->username="Options";
 
 

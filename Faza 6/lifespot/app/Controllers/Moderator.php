@@ -78,6 +78,7 @@ class Moderator extends BaseController
         
         public function speciesSubmit(){
             //validation
+			/*
             if (!$this->validate(['species_name'=>'required'])){
                 $x = new ViewConfig();
                 echo "species reqired";
@@ -88,7 +89,14 @@ class Moderator extends BaseController
                 echo "type reqired";
                 return;
             }
-      
+			 */
+
+			$imgs = $this->request->getFile("imgs");
+			$ext = $imgs->getClientExtension();
+			$newName = $this->request->getVar("species_name").'.'.$ext;
+			$PATH = getcwd();
+			$imgs->move($PATH.'/assets/img/species', $newName);
+
             //database add
             $speciesModel=new SpeciesModel();
             $species=$speciesModel->addSpecies($this->request->getVar('speciesInputName'),  $this->request->getVar('username'), $this->request->getVar('speciesTypeRadio'));
