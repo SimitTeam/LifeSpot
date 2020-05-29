@@ -9,7 +9,7 @@ class SpeciesModel extends Model
 
     protected $returnType     = 'object';
     
-    protected $allowedFields = ['username', 'type'];
+    protected $allowedFields = ['species_name', 'username', 'type'];
     
     public function getSpecies($species_name){
         $getSpecies = $this->find($species_name);

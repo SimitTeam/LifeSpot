@@ -24,8 +24,9 @@
 	<?php
                 $user_type_arr=['M'=>"Moderator","U"=>"User","A"=>"Admin"];
                 $user=session()->get("user");
+                $userType = session()->get("userType");
                 if($user!=null){
-                    $config->userType=$user_type_arr[$user->type];
+                    $config->userType=$userType;
                 }
 		if(!strcmp($config->userType,"Admin")){
 			echo($this-> include('headers/adminheader'));

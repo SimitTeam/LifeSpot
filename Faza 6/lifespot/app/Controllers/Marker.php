@@ -58,36 +58,41 @@ class Marker extends BaseController
         }
         
         public function markerSubmit(){
-			//validation
-			/*
-			if (!$this->validate(['species'=>'required'])){
-				$x = new ViewConfig();
-				echo "species reqired";
-				return;
-			}
-			if (!$this->validate(['date'=>'required'])){
-				$x = new ViewConfig();
-				echo "date reqired";
-				return;
-			}
-			if (!$this->validate(['location'=>'trim|required'])){
-				$x = new ViewConfig();
-				echo "location reqired";
-				return;
-			}
-			 */
-			$species = $this->request->getVar("search_species");
-			$username = $this->session->get("user");
-			$date = $this->request->getVar("date");
-			$text = $this->request->getVar("text");
-			$markerId = addMarker($species, $username, $date, $latitude, $longitude, $text)
-			$imgs = $this->request->getFiles();
-			foreach($imgs['imgs'] as $img)
-			{
-				$newName = $img->getRandomName();
-				$PATH = getcwd();
-				$img->move($PATH.'/assets/img/markers'.$markerId, $newName );
-			}
+            //validation
+            $this->validation->setRuleGroup("marker");
+            if (!$this->validation->withRequest($this->request)->run()){
+                    $x = new ViewConfig();
+                    $x->showError = [True]; //Dodaj da ti se ispisu errori
+                    echo view('pages/new_marker_page',["config"=>$x,
+                                    'validation' => $this->validation,
+                                    'errors'=>[]
+                        ]);
+                    return;
+            }
+
+
+            $markerModel= new MarkerModel();
+
+            $species = $this->request->getVar("search_species");
+            $user = $this->session->get("user");
+            $date = $this->request->getVar("date");
+            $text = $this->request->getVar("text");
+            $latitude = $this->request->getVar("lat");
+            $longitude = $this->request->getVar("lon");
+           
+            $markerId = $markerModel->addMarker($species, $user->username, $date, $latitude, $longitude, $text);
+            
+            $imgs = $this->request->getFiles();
+            
+            
+            foreach($imgs['imgs'] as $img)
+            {
+                if($img->isValid()){
+                    $newName = $img->getRandomName();
+                    $PATH = getcwd();
+                    $img->move($PATH.'/assets/img/markers'.$markerId, $newName );
+                }
+            }
 
             return redirect()->to(site_url("./Guest/index"));
         }

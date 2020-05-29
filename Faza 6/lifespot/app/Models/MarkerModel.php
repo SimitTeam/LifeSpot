@@ -9,19 +9,8 @@ class MarkerModel extends Model
 
     protected $returnType     = 'object';
     
-    protected $allowedFields = ['species_name', 'username', 'img', 'date', 'text', 'latitude', 'longitude'];
+    protected $allowedFields = ['id', 'species_name', 'username', 'img', 'date', 'text', 'latitude', 'longitude'];
     
-    protected $validationRules    = [
-                    'species_name'   => 'trim|required',
-                    'date' => 'trim|required',
-                    'img' => 'trim|required',
-            ];
-    
-    protected $validationMessages = [
-                'species_name'   => ['required' => 'Ime vrste je obavezno !'],
-                'date' => ['required' => 'Datum je obavezan !'],
-                'img' => ['required' => 'Slika je obavezna !'],
-            ];
     
     protected $useTimestamps = false;
     protected $skipValidation = false;
@@ -69,25 +58,23 @@ class MarkerModel extends Model
        return $this->where('species_name', $term)->findAll();
     }
     
-    public function addMarker($species, $username, $date, $img, $latitude, $longitude, $text){
-        $query = $this->db->query('SELECT * FROM marker');
-        $id = $query->num_rows();
-        $new_id = $id + 1;
+    public function addMarker($species, $username, $date, $latitude, $longitude, $text){
         
-        $marker = [
-                'id' => $new_id,
+        
+            $marker = [
                 'species_name' => $species,
                 'username' => $username,
-                'img' => $img,
                 'date' => $date,
                 'latitude' => $latitude,
                 'longitude' => $longitude,
                 'text' => $text
             ];
 
+            
+            
             $this->insert($marker);
             
-            return $new_id;
+            
     }
     
     //nisam siguran dal radi treba testirati, ako ne radi uradicu ga preko query
