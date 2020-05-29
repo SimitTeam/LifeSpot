@@ -7,7 +7,7 @@
 		<div class='offset-sm-4 col-sm-4 text-center row_space'>
 		<h2>Sign Up</h2>
 		<hr>
-		<?php if($config->showError) echo($validation->listErrors()) ?>
+		<?php if($config->showError[0]) echo($this-> include('modules/error_list')) ?>
 		  <form action="<?= site_url($config->signUpFormSubmit)?>" method="post">
 			  <table class='table'>
 				<tr>

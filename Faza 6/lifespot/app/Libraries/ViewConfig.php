@@ -23,7 +23,7 @@ class ViewConfig{
 		$this->showResultsMap = True;
 		$this->modifiableMarker = True;
 		$this->showSearchResults = False;
-		$this->showError =[];
+		$this->showError = [False, False]; //showError is now an array for every form on a page
 
 		//Links
 
@@ -62,11 +62,11 @@ class ViewConfig{
 		$this->newUsernameInputName="newusername";
 		$this->newPasswordInputName="newpassword";
 		$this->confirmPasswordInputName="cpassword";
-		$this->nameInputName="name";
+		$this->nameInputName="myname";
 		$this->surnameInputName="surname";
 		$this->textInputName="text";
 		$this->dateInputName="date";
-		$this->emailInputName="email";
+		$this->emailInputName="myemail";
 		$this->speciesTypeRadio="species_type";
 		$this->confirmationRadio="option";
 		$this->speciesInputName="species_name";
