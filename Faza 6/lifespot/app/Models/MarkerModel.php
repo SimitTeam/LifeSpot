@@ -72,7 +72,7 @@ class MarkerModel extends Model
 
             
             
-            $this->insert($marker);
+          return  $this->insert($marker);
             
             
     }
