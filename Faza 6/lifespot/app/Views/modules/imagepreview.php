@@ -1,20 +1,20 @@
         <?php 
-            if($config->markerImage==null){
-                   $result=array();
-                   $image=glob("./assets/img/users/no_preview.jpg");
-                   $result[]=site_url($image);
-                   echo "<script>var images=". json_encode($result)." </script>";
-            }
-            else
-            {
-                $dirname="./assets/img/users/".$config->markerUser."/".$config->markerImage."/";
+                $dirname="./assets/img/markers/".$config->markerId."/".$config->markerImage."/";
                 $images = glob($dirname."*.{jpg,png}",GLOB_BRACE);
                 $result=array();
                 foreach($images as $image) {
                   $result[]=site_url($image);  
                 }
-                echo "<script>var images=". json_encode($result)." </script>";
-            }
+                
+                if(empty($result)){
+                   $result=array();
+                   $image=glob("./assets/img/markers/no_preview.jpg");
+                   $result[]=site_url($image);
+                   echo "<script>var images=". json_encode($result)." </script>";                   
+                }
+                else{
+                     echo "<script>var images=". json_encode($result)." </script>";
+                }
         ?>
 
 

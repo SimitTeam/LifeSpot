@@ -117,6 +117,7 @@ class Validation
                             'max_length' => 'Max text lengt is 500 characters !',
                     ]
                 ],
+            
 
            ];
         
@@ -130,9 +131,9 @@ class Validation
                     ]
             ],
             'imgs'  =>[
-                'rules' => 'is_image[imgs]',
+                'rules' => 'uploaded[imgs]|is_image[imgs]',
                 'errors' => [
-                    
+                    'uploaded' =>'No file uploaded',
                     'is_image' => 'File has to be image'
                 ]
             ]
