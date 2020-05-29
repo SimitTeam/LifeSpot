@@ -49,6 +49,7 @@ class Guest extends BaseController
         
         
         //setting user and redirecting to home page
+
         if ($valid){
             $user = $userModel->getUser($this->request->getVar('username'));
             $userType = $userModel->getType($this->request->getVar('username'));
@@ -58,6 +59,7 @@ class Guest extends BaseController
             
             //$viewConf = new ViewConfig();
             return redirect()->to(site_url("Results/search"));
+
         }
         else {
             $x = new ViewConfig();

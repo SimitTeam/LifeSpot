@@ -2,8 +2,11 @@
 
 
 use App\Models\SpeciesModel;
-use App\Libraries\ViewConfig;
+use App\Models\ConfirmationModel;
 use App\Models\MarkerModel;
+
+use App\Libraries\ViewConfig;
+
 
 class Marker extends BaseController
 {
@@ -24,6 +27,10 @@ class Marker extends BaseController
             
             $t_marker=new MarkerModel();
             $marker=$t_marker->find($id);
+            if($marker==null){
+               return redirect()->to(site_url("Results/search"));
+            }
+            
             
             $x = new ViewConfig();
             $x->modifiableMarker=false;
@@ -40,6 +47,11 @@ class Marker extends BaseController
             
             
             if(strcmp($string, "confirmMarker")==0){
+                $conf_model=new ConfirmationModel();
+                $result_conf=$conf_model->find($id);
+                if(strcmp($this->session->get('user')->username,$result_conf->username)){
+                    return redirect()->to(site_url("Results/Search"));
+                }
                 $x->headerBackButton="/Moderator/confirmMarker";
                 $x->modifiableMarker=true;
             }else{
