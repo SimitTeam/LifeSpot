@@ -9,7 +9,7 @@ class UserModel extends Model
 
     protected $returnType     = 'object';
     
-    protected $allowedFields = ['type', 'name', 'surname', 'birth_date', 'mail', 'pass'];
+    protected $allowedFields = ['type', 'name', 'surname', 'username', 'birth_date', 'mail', 'pass'];
   
     
     protected $useTimestamps = false;
@@ -60,18 +60,13 @@ class UserModel extends Model
         $proveraUsername = $this->where('username', $username)->findAll();
         $proveraMail = $this->where('mail', $email)->findAll();
         
-        if ($proveraUsername != NULL) {
-            return '<h3>To korisnicko ime vec postoji !<h3>';
-        } else if ($proveraMail != NULL) {
-            return '<h3>Taj mejl vec postoji ! </h3>';
-        } else {
             if ($this->first() != null) {
                 $t = 'U';
             } else {
                 $t = 'A';
             }
 
-            $korisnik = [
+            $user = [
                 'username' => $username,
                 'type' => $t,
                 'name' => $name,
@@ -81,8 +76,7 @@ class UserModel extends Model
                 'mail' => $email
             ];
 
-            $this->insert($korisnik);
-        }        
+            $this->insert($user);      
         
     }
     

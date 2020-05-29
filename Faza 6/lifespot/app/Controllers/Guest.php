@@ -10,7 +10,7 @@ class Guest extends BaseController
    
     protected function show($page,$data){
         $x = new ViewConfig();
-		echo view('pages/new_marker_page',["config"=>$x]);
+        echo view('pages/guest_page',["config"=>$x]);
     }
     
     public function login(){
@@ -29,15 +29,15 @@ class Guest extends BaseController
     public function loginSubmit(){
         //validation
        
-        if (!$this->validation->withRequest($this->request)->run(null,"login")){
+        $this->validation->setRuleGroup("login");
+        if (!$this->validation->withRequest($this->request)->run()){
                 $x = new ViewConfig();
-                $x->showError = True; //Dodaj da ti se ispisu errori
+                $x->showError = [True]; //Dodaj da ti se ispisu errori
                 echo view('pages/login_page',["config"=>$x,
-                                'validation' => $this->validation
-                ]);
-        }
-        else{
-                //echo ("Success");
+				'validation' => $this->validation,
+				'errors'=>[]
+                    ]);
+                return;
         }
         
         
@@ -53,6 +53,7 @@ class Guest extends BaseController
             $user = $userModel->getUser($this->request->getVar('username'));
             $userType = $userModel->getType($this->request->getVar('username'));
             $this->session->set('user', $user);
+            
             $this->session->set('userType', $userType);
             
             //$viewConf = new ViewConfig();
@@ -60,9 +61,11 @@ class Guest extends BaseController
         }
         else {
             $x = new ViewConfig();
-            $x->showError=['error' => "ne valja"];
-            echo view('pages/login_page',["config"=>$x
-                ]);
+            $x->showError=[true];
+             echo view('pages/login_page',["config"=>$x,
+				'validation' => $this->validation,
+				'errors'=>["Username or password is not correct"]
+                    ]);
             return;
         }
       
@@ -71,17 +74,17 @@ class Guest extends BaseController
     public function signupSubmit(){
         //validation
        
-        if (!$this->validation->withRequest($this->request)->run(null,"signup")){
+        $this->validation->setRuleGroup("signup");
+        if (!$this->validation->withRequest($this->request)->run()){
 		$x = new ViewConfig();
-		$x->showError = True; //Dodaj da ti se ispisu errori
+		$x->showError = [True]; //Dodaj da ti se ispisu errori
 		echo view('pages/signup_page',["config"=>$x,
-				'validation' => $this->validation
+				'validation' => $this->validation,
+                                'errors' => []
 		]);
+                return;
 	}
-	else{
-		//echo ("Success");
-	}
-        
+	
         
         //
         $userModel = new UserModel();

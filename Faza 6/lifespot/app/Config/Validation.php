@@ -23,10 +23,11 @@ class Validation
                     ]
             ],
         
-            'username'   => [ //is_unique
-                    'rules' => 'required',
+            'newusername'   => [ //is_unique
+                    'rules' => 'required|is_unique[user.username]',
                     'errors' =>[
                         'required' => 'Your username is required  !', 
+                        'is_unique' => 'Username already exists'
                     ]
             ],
 
@@ -37,7 +38,7 @@ class Validation
                     ]
             ],
 
-            'pass_confirm' =>[
+            'cpassword' =>[
                     'rules' => 'required|matches[newpassword]',
                     'errors' =>[
                         'required' => 'Your password confirmation is required  !',
@@ -45,7 +46,7 @@ class Validation
                     ]
             ],
 
-            'birth_date' => [
+            'date' => [
                     'rules' => 'required',
                     'errors' => [
                         'required' => 'Your birth date is required  !'
@@ -53,10 +54,11 @@ class Validation
             ],
         
             'email'      => [
-                    'rules' =>'required|valid_email',
+                    'rules' =>'required|valid_email|is_unique[user.mail]',
                     'errors' =>[
                             'required' => 'Your mail is required !',
-                            'valid_email' => 'Your mail is not gud !'
+                            'valid_email' => 'Your mail is not gud !',
+                            'is_unique' => 'Email already exists'
                     ]
                 ],
 
@@ -79,6 +81,45 @@ class Validation
                 ],
 
            ];
+        
+        public $marker= [
+            'search_species'       => [
+                    'rules' =>'required|is_not_unique[species.species_name]',
+                    'errors' =>[
+                        'required' => 'Species is required !',
+                        'is_not_unique' => 'Species does not exist'
+                        
+                    ]
+            ],
+            'date'    => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Date is required !'
+                    ]
+            ],
+        
+            'lon'  => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Your password is required  !'
+                    ]
+            ],
+
+            'lat' =>[
+                    'rules' => 'required',
+                    'errors' =>[
+                    ]
+            ],
+        
+            'text'      => [
+                    'rules' =>'max_length[500]',
+                    'errors' =>[
+                            'max_length' => 'Max text lengt is 500 characters !',
+                    ]
+                ],
+
+           ];
+        
         
 	public $templates = [
 		'list'   => 'CodeIgniter\Validation\Views\list',
