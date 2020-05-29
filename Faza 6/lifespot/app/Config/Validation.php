@@ -2,16 +2,6 @@
 
 class Validation
 {
-	//--------------------------------------------------------------------
-	// Setup
-	//--------------------------------------------------------------------
-
-	/**
-	 * Stores the classes that contain the
-	 * rules that are available.
-	 *
-	 * @var array
-	 */
 	public $ruleSets = [
 		\CodeIgniter\Validation\Rules::class,
 		\CodeIgniter\Validation\FormatRules::class,
@@ -23,7 +13,7 @@ class Validation
             'name'       => [
                     'rules' =>'required',
                     'errors' =>[
-                            'requried' => 'Your name is required !'
+                        'required' => 'Your name is required !'
                     ]
             ],
             'surname'    => [
@@ -51,7 +41,7 @@ class Validation
                     'rules' => 'required|matches[newpassword]',
                     'errors' =>[
                         'required' => 'Your password confirmation is required  !',
-                        'matches[newpassword]' => 'Your password must match'
+                        'matches' => 'Your password must match'
                     ]
             ],
 
@@ -65,7 +55,7 @@ class Validation
             'email'      => [
                     'rules' =>'required|valid_email',
                     'errors' =>[
-                            'requried' => 'Your mail is required !',
+                            'required' => 'Your mail is required !',
                             'valid_email' => 'Your mail is not gud !'
                     ]
                 ],
@@ -77,14 +67,14 @@ class Validation
                     'label' => 'Name',
                     'rules' =>'required',
                     'errors' =>[
-                            'requried' => 'Your name is required !'
+                            'required' => 'Your name is required !'
                     ]
             ],
             'password'      => [
                     'label' => 'Mail',
                     'rules' =>'required',
                     'errors' =>[
-                            'requried' => 'Your mail is required !',
+                            'required' => 'Your mail is required !',
                     ]
                 ],
 
@@ -95,7 +85,5 @@ class Validation
 		'single' => 'CodeIgniter\Validation\Views\single',
 	];
 
-	//--------------------------------------------------------------------
-	// Rules
-	//--------------------------------------------------------------------
+	
 }
