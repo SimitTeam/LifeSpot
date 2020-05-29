@@ -10,7 +10,7 @@
 		<div class='offset-sm-4 col-sm-4 text-center'>
 		  <h2>New Marker</h2>
 		  <hr>
-		<?php if($config->showError) echo($validation->listErrors()) ?>
+		<?php if($config->showError[0]) echo($this-> include('modules/error_list')) ?>
 		  <form action="<?= site_url($config->newMarkerSubmit)?>" method="post" enctype="multipart/form-data">
 			  <table class='table'>
 				<tr>
