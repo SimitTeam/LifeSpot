@@ -24,4 +24,170 @@
 	</div>
 
 </div>
+<script>
+    //PROMOTE BUTTON
+    $(document).ready(function(){
+        $(".promote_button").click(function(){
+             $(this).prop("disabled",true);
+             
+             var id=$(this).attr("id").substring(3);
+             var user=$("#user"+id).text();
+             
+             $("#ban"+id).prop("disabled",true);
+             if($(this).hasClass("Promote"))
+             {
+                var answer=confirm("Do you want to PROMOTE user:"+user);
+                if(answer)
+                {
+                    $.ajax({
+                    method: "Get",
+                    url: "<?= site_url("./Autocomplete/updateUser") ?>"+"/"+user+"/M",
+                    datatype:"json",
+                    success: function(data){
+                        j_obj=JSON.parse(data);                  
+                        if(j_obj==true){
+                            $("#type"+id).text("Moderator");
+                            $("#mod"+id).addClass("Demote btn-secondary");
+                            $("#mod"+id).removeClass(" Promote btn-primary");
+                            $("#mod"+id).text("Demote");    
+                            $("#mod"+id).prop("disabled",false);
+                            $("#ban"+id).prop("disabled",false);
+                        }
+                        else{
+                             window.open("<?= site_url("./Admin/administer") ?>","_self")
+                        }
+                    },
+                    error: function(){
+                       window.open("<?= site_url("./Admin/administer") ?>","_self")
+                   }});                     
+                  }
+                  else{
+                    $("#mod"+id).prop("disabled",false);
+                    $("#ban"+id).prop("disabled",false);
+                  }
+             }
+             
+             else{
+                var answer=confirm("Do you want to DEMOTE user:"+user);
+                if(answer)
+                { 
+                 $.ajax({
+                    method: "Get",
+                    url: "<?= site_url("./Autocomplete/updateUser") ?>"+"/"+user+"/U",
+                    datatype:"json",
+                    success: function(data){
+                        j_obj=JSON.parse(data);
+                        if(j_obj==true){
+                            $("#type"+id).text("User");
+                            $("#mod"+id).addClass("Promote btn-primary");
+                            $("#mod"+id).removeClass("Demote btn-secondary");
+                            $("#mod"+id).text("Promote");
+                            $("#mod"+id).prop("disabled",false);
+                            $("#ban"+id).prop("disabled",false);                       
+                        }
+                        else{
+                             window.open("<?= site_url("./Admin/administer") ?>","_self")
+                        }
+                    },
+                    error: function(){
+                       window.open("<?= site_url("./Admin/administer") ?>","_self")
+                   }});                  
+                }
+                else{
+                    $("#mod"+id).prop("disabled",false);
+                    $("#ban"+id).prop("disabled",false);                   
+                }
+             
+           
+            
+             }
+             
+        })
+        
+        
+        //BAN BUTTON
+         $(".ban_button").click(function(){
+             $(this).prop("disabled",true);
+             
+             var id=$(this).attr("id").substring(3);
+             var user=$("#user"+id).text();
+             
+             $("#mod"+id).prop("disabled",true);
+             if($(this).hasClass("Ban"))
+             {
+                var answer=confirm("Do you want to BAN user:"+user);
+                if(answer)
+                { 
+                    $.ajax({
+                    method: "Get",
+                    url: "<?= site_url("./Autocomplete/updateUser") ?>"+"/"+user+"/B",
+                    datatype:"json",
+                    success: function(data){
+                        j_obj=JSON.parse(data);                  
+                        if(j_obj==true){
+                            $("#type"+id).text("Banned");
+                            $("#ban"+id).addClass("UnBan btn-success");
+                            $("#ban"+id).removeClass("Ban btn-danger");
+                            $("#ban"+id).text("UnBan");    
+                            $("#ban"+id).prop("disabled",false);
+                        }
+                        else{
+                             window.open("<?= site_url("./Admin/administer") ?>","_self")
+                        }
+                    },
+                    error: function(){
+                       window.open("<?= site_url("./Admin/administer") ?>","_self")
+                   }});                     
+                }else{
+                   $("#ban"+id).prop("disabled",false);
+                   $("#mod"+id).prop("disabled",false);   
+                }              
+        
+             }
+             
+             else{
+                var old_type="";
+                if($("#mod"+id).hasClass("Promote")){
+                    old_type="U";
+                }
+                else old_type="M";
+                
+                var answer=confirm("Do you want to UNBAN user:"+user);
+                if(answer)
+                {
+                 $.ajax({
+                    method: "Get",
+                    url: "<?= site_url("./Autocomplete/updateUser") ?>"+"/"+user+"/"+old_type,
+                    datatype:"json",
+                    success: function(data){
+                        j_obj=JSON.parse(data);
+                        if(j_obj==true){
+                            if($("#mod"+id).hasClass("Promote")){
+                                $("#type"+id).text("User");
+                            }
+                            else $("#type"+id).text("Moderator");
+
+                            $("#ban"+id).addClass("Ban btn-danger");
+                            $("#ban"+id).removeClass("UnBan btn-success");
+                            $("#ban"+id).text("Ban");    
+                            $("#ban"+id).prop("disabled",false);    
+                            $("#mod"+id).prop("disabled",false); 
+                        }
+                        else{
+                            
+                             window.open("<?= site_url("./Admin/administer") ?>","_self")
+                        }
+                    },
+                    error: function(){
+                       window.open("<?= site_url("./Admin/administer") ?>","_self")
+                   }});                  
+                }
+                else{
+                 $("#ban"+id).prop("disabled",false);    
+                }
+             }            
+        })    
+        
+    });
+</script>
 <?php $this->endSection() ?>
