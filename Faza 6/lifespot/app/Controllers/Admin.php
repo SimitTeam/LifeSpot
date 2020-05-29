@@ -22,7 +22,20 @@ class Admin extends BaseController
         $x->showResultsMap=false;
 
         $users=new UserModel();
-        $results=$users->getAllUsers();
+        
+        $limit=$this->request->getVar("limit");
+        if($limit==null || is_int($limit)){
+            $limit=100;
+        }
+        
+        $offset=$this->request->getVar("offset");
+        if($offset==null || is_int($offset)){
+            $offset=0;
+        }        
+        
+        
+        $results=$users->findAll($limit, $offset);
+        
         $type_array=['M'=>"Moderator","U"=>"User","A"=>"Admin","B"=>"Banned"];
         $id=0;
         foreach ($results as $value) {

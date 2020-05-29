@@ -22,7 +22,38 @@
 		?>
 		</div>
 	</div>
-
+    
+ 	<div class="row">
+		<div class="col-12 text-center ">
+                    &nbsp;
+		</div>
+        </div>
+	<div class="row">
+		<div class="col-12 text-center ">
+                    
+                    <?php 
+                        $limit=100;
+                        
+                        if(isset($_GET["limit"])){
+                             $limit=$_GET["limit"];
+                        }
+                        
+                        
+                        $offset=0;
+                        if(isset($_GET["offset"])){
+                             $offset=$_GET["offset"];
+                        }   
+                        
+                        $offset_bef= max(0,$offset-$limit);
+                        $offset_aft=$offset+$limit;
+                        
+                        $link_bef= site_url("./Admin/administer")."/?limit=$limit&offset=$offset_bef";
+                        $link_aft= site_url("./Admin/administer")."/?limit=$limit&offset=$offset_aft";
+                    echo '<a '."href='$link_bef'".' class="btn btn-dark"><span style="color:white;">Previous</span></a>';
+                    echo '<a '."href='$link_aft'".' class="btn btn-dark"><span style="color:white;">Next</span></a>';
+                    ?>
+		</div>
+	</div>
 </div>
 <script>
     //PROMOTE BUTTON
