@@ -23,7 +23,11 @@ class ViewConfig{
 		$this->showResultsMap = True;
 		$this->modifiableMarker = True;
 		$this->showSearchResults = False;
+
 		$this->showError = [False, False]; //showError is now an array for every form on a page
+
+		$this->errors = [];
+
 
 		//Links
 

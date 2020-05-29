@@ -90,14 +90,12 @@ class UserModel extends Model
         $user = $this->getUser($username);
         
         if($user == NULL){
-            ['message'=>'<h3>Username does not exist</h3>'];
             return false;
         }
         
         if($user->pass === $password){
-            return  true;
+            return true;
         }else{   
-            ['message'=>'<h3Wrong password</h3>']; 
             return false;
         }
     }
