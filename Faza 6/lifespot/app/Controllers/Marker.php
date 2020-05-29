@@ -90,7 +90,7 @@ class Marker extends BaseController
                 if($img->isValid()){
                     $newName = $img->getRandomName();
                     $PATH = getcwd();
-                    $img->move($PATH.'/assets/img/markers'.$markerId, $newName );
+                    $img->move($PATH.'/assets/img/markers/'.$markerId, $newName );
                 }
             }
 

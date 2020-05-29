@@ -34,7 +34,7 @@ class Moderator extends BaseController
             $x->showResultsMap=false;
             
             $test=new MarkerModel();
-            $results=$test->getNotConfirmed('nore');
+            $results=$test->getNotConfirmed($this->session->get("user")->username);
             foreach ($results as $value) {
                $x->dtRows[]=[$value->username,$value->img,$value->species_name,["text"=>"Show", "url"=>site_url("./Marker/showMarker/")."$value->id/confirmMarker"]];
             }
