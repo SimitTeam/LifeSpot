@@ -121,6 +121,40 @@ class Validation
            ];
         
         
+        public $species= [
+            'species_name'       => [
+                    'rules' =>'required|is_unique[species.species_name]',
+                    'errors' =>[
+                            'required' => 'Species name is required !',
+                            'is_unique' => 'Species name already exists'
+                    ]
+            ],
+            'imgs'  =>[
+                'rules' => 'is_image[imgs]',
+                'errors' => [
+                    
+                    'is_image' => 'File has to be image'
+                ]
+            ]
+           ];
+        
+        public $synonym= [
+            'search_species'       => [
+                    'rules' =>'required|is_not_unique[species.species_name]',
+                    'errors' =>[
+                            'required' => 'Species name is required !',
+                            'is_not_unique' => 'Species name does not exist'
+                    ]
+            ],
+            'synonym_name'      => [
+                    'rules' =>'required',
+                    'errors' =>[
+                            'required' => 'Synonym is required !',
+                    ]
+                ],
+
+           ];
+        
 	public $templates = [
 		'list'   => 'CodeIgniter\Validation\Views\list',
 		'single' => 'CodeIgniter\Validation\Views\single',

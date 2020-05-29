@@ -11,16 +11,7 @@ class SynonymModel extends Model
     
     protected $allowedFields = ['species_name', 'name'];
     
-    protected $validationRules    = [
-                    'species_name'   => 'trim|required',
-                    'name' => 'trim|required'
-            ];
-    
-    protected $validationMessages = [
-                'species_name'   => ['required' => 'Ime vrste je obavezno !'],
-                'name' => ['required' => 'Ime je obavezno !']
-            ];
-    
+
     protected $useTimestamps = false;
     protected $skipValidation = false;
     
@@ -48,16 +39,11 @@ class SynonymModel extends Model
      ->get()->getResult(); 
     }
     
-    public function addSynonym($species_name, $name, $type){
-        $query = $this->db->query('SELECT * FROM synonym');
-        $id = $query->num_rows();
-        $new_id = $id + 1;
+    public function addSynonym($species_name, $name){
         
         $synonym = [
-            'id' => $new_id,
             'species_name' => $species_name,
             'name' => $name,
-            'type' => $type
         ];
         
         $this->insert($synonym);

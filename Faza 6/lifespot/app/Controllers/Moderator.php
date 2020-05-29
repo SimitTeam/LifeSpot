@@ -5,6 +5,7 @@ use App\Models\SpeciesModel;
 use App\Models\MarkerModel;
 use App\Models\ConfirmationModel;
 use \App\Libraries\ViewConfig;
+use \App\Models\SynonymModel;
 
 
 class Moderator extends BaseController
@@ -18,7 +19,7 @@ class Moderator extends BaseController
         
         public function addSpecies(){
             $x = new ViewConfig();
-            $x->userType = "moderator";
+            //$x->userType = "moderator";
             echo view('pages/add_species_page', ["config"=>$x]);
         }
 
@@ -26,9 +27,6 @@ class Moderator extends BaseController
         //Creates page with markers to be confirmed
         public function confirmMarker(){
            
-           
-
-            
             $x = new ViewConfig();
             $x->dtRows=[];
             $x->dtHead=["Username", "Image", "Species", "Link"];
@@ -78,50 +76,52 @@ class Moderator extends BaseController
         
         public function speciesSubmit(){
             //validation
-			/*
-            if (!$this->validate(['species_name'=>'required'])){
-                $x = new ViewConfig();
-                echo "species reqired";
-                return false;
+	
+            $this->validation->setRuleGroup("species");
+            if (!$this->validation->withRequest($this->request)->run()){
+                    $x = new ViewConfig();
+                    $x->showError = [true, false]; //Dodaj da ti se ispisu errori
+                    echo view('pages/add_species_page',["config"=>$x,
+                                    'validation' => $this->validation,
+                                    'errors'=>[]
+                        ]);
+                    return;
             }
-              if (!$this->validate(['type'=>'required'])){
-                $x = new ViewConfig();
-                echo "type reqired";
-                return;
-            }
-			 */
 
-			$imgs = $this->request->getFile("imgs");
-			$ext = $imgs->getClientExtension();
-			$newName = $this->request->getVar("species_name").'.'.$ext;
-			$PATH = getcwd();
-			$imgs->move($PATH.'/assets/img/species', $newName);
+            $imgs = $this->request->getFile("imgs");
+            $ext = $imgs->getClientExtension();
+            $newName = $this->request->getVar("species_name").'.'.$ext;
+            $PATH = getcwd();
+            $imgs->move($PATH.'/assets/img/species', $newName);
 
             //database add
             $speciesModel=new SpeciesModel();
-            $species=$speciesModel->addSpecies($this->request->getVar('speciesInputName'),  $this->request->getVar('username'), $this->request->getVar('speciesTypeRadio'));
+            $speciesModel->addSpecies($this->request->getVar('species_name'),  
+                    $this->session->get('user')->username, $this->request->getVar('species_type'));
+            
+            
+            return redirect()->to(site_url("/Moderator/addSpecies"));
         }
         
         public function synonymSubmit(){
             //validation
-            if (!$this->validate(['species_name'=>'required'])){
-                $x = new ViewConfig();
-                echo "species reqired";
-                return;
+            $this->validation->setRuleGroup("synonym");
+            if (!$this->validation->withRequest($this->request)->run()){
+                    $x = new ViewConfig();
+                    $x->showError = [false, true]; //Dodaj da ti se ispisu errori
+                    echo view('pages/add_species_page',["config"=>$x,
+                                    'validation' => $this->validation,
+                                    'errors'=>[]
+                        ]);
+                    return;
             }
-            if (!$this->validate(['synonym'=>'required'])){
-                $x = new ViewConfig();
-                echo "synonym reqired";
-                return;
-            }
-              if (!$this->validate(['type'=>'required'])){
-                $x = new ViewConfig();
-                echo "type reqired";
-                return;
-            }
+       
             //database add
-            $speciesModel=new SpeciesModel();
-            $species=$speciesModel->addSynonym($this->request->getVar('speciesInputName'),$this->request->getVar('synonymInputName'), $this->request->getVar('speciesTypeRadio'));
+            $synoModel=new SynonymModel();
+            $synoModel->addSynonym($this->request->getVar('search_species'),
+                    $this->request->getVar('synonym_name'));
+            
+            return redirect()->to(site_url("/Moderator/addSpecies"));
         }
 
 
