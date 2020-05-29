@@ -33,8 +33,10 @@ class Admin extends BaseController
             $offset=0;
         }        
         
+        $term=$this->request->getVar("term");  
         
-        $results=$users->findAll($limit, $offset);
+        
+        $results=$users->like('username',"$term")->findAll($limit,$offset);
         
         $type_array=['M'=>"Moderator","U"=>"User","A"=>"Admin","B"=>"Banned"];
         $id=0;

@@ -1,4 +1,4 @@
-<table id="example" class="display" style="width:100%">
+<table id="example" class="display table" style="width:100%">
 	<thead>
 		<tr>
 			<?php	

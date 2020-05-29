@@ -4,17 +4,29 @@
 <link rel="stylesheet" type="text/css" href="<?= site_url("./assets/DataTables/datatables.min.css")?>">
 <script type="text/javascript" src="<?= site_url("./assets/DataTables/datatables.min.js")?>"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<script>
-	$(document).ready(function() {
-		$('#example').DataTable();
-	} );
-</script>
 <?php $this->endSection() ?>
 
 
 
 <?php $this->section('content') ?>
 <div class='container-fluid '>   
+   	<div class="row">
+		<div class="col-12 text-center ">
+                    &nbsp;
+		</div>
+        </div>  
+ 	<div class="row">
+		<div class="col-12 text-center ">
+                    
+                    <form >
+                        <input type="text" name="term">
+                        <input hidden type="text" name="offset" value="0">
+                        <input hidden type="text" name="limit" value="100">
+                        <button type="submit" class="btn btn-primary">Search</button>
+                    </form>
+		</div>
+	</div>   
+    
 	<div class="row">
 		<div class="offset-2 col-8 text-center ">
 		<?php
@@ -47,8 +59,13 @@
                         $offset_bef= max(0,$offset-$limit);
                         $offset_aft=$offset+$limit;
                         
-                        $link_bef= site_url("./Admin/administer")."/?limit=$limit&offset=$offset_bef";
-                        $link_aft= site_url("./Admin/administer")."/?limit=$limit&offset=$offset_aft";
+                        $term="";
+                        if(isset($_GET["term"])){
+                             $term=$_GET["term"];
+                        }                        
+                        
+                        $link_bef= site_url("./Admin/administer")."/?limit=$limit&offset=$offset_bef&term=$term";
+                        $link_aft= site_url("./Admin/administer")."/?limit=$limit&offset=$offset_aft&term=$term";
                     echo '<a '."href='$link_bef'".' class="btn btn-dark"><span style="color:white;">Previous</span></a>';
                     echo '<a '."href='$link_aft'".' class="btn btn-dark"><span style="color:white;">Next</span></a>';
                     ?>
