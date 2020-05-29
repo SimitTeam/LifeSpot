@@ -23,7 +23,8 @@ class ViewConfig{
 		$this->showResultsMap = True;
 		$this->modifiableMarker = True;
 		$this->showSearchResults = False;
-		$this->showError =[];
+		$this->showError = false;
+                $this->errors = [];
 
 		//Links
 

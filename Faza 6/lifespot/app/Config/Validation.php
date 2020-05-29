@@ -21,14 +21,48 @@ class Validation
 
 	public $signup= [
             'name'       => [
-                    'label' => 'Name',
                     'rules' =>'required',
                     'errors' =>[
                             'requried' => 'Your name is required !'
                     ]
             ],
+            'surname'    => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Your surname is required !'
+                    ]
+            ],
+        
+            'username'   => [ //is_unique
+                    'rules' => 'required',
+                    'errors' =>[
+                        'required' => 'Your username is required  !', 
+                    ]
+            ],
+
+            'newpassword'  => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Your password is required  !'
+                    ]
+            ],
+
+            'pass_confirm' =>[
+                    'rules' => 'required|matches[newpassword]',
+                    'errors' =>[
+                        'required' => 'Your password confirmation is required  !',
+                        'matches[newpassword]' => 'Your password must match'
+                    ]
+            ],
+
+            'birth_date' => [
+                    'rules' => 'required',
+                    'errors' => [
+                        'required' => 'Your birth date is required  !'
+                    ]
+            ],
+        
             'email'      => [
-                    'label' => 'Mail',
                     'rules' =>'required|valid_email',
                     'errors' =>[
                             'requried' => 'Your mail is required !',
