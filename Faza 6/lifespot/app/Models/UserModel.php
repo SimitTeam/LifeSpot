@@ -56,7 +56,7 @@ class UserModel extends Model
         }
     }
     
-    public function addUser($name, $surname, $username, $pass, $confPass, $date, $email){
+    public function addUser($name, $surname, $username, $pass, $date, $email){
         $proveraUsername = $this->where('username', $username)->findAll();
         $proveraMail = $this->where('mail', $email)->findAll();
         
@@ -90,13 +90,15 @@ class UserModel extends Model
         $user = $this->getUser($username);
         
         if($user == NULL){
-            return ['message'=>'<h3>To korisnicko ime ne postoji</h3>'];
+            ['message'=>'<h3>Username does not exist</h3>'];
+            return false;
         }
         
         if($user->pass === $password){
-            return  ['message'=>'<h3>Uspesno ste ulogovani</h3>','user'=>$user];
+            return  true;
         }else{   
-            return  ['message'=>'<h3>Sifra nije dobra</h3>'];
+            ['message'=>'<h3Wrong password</h3>']; 
+            return false;
         }
     }
     
