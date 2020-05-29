@@ -64,27 +64,34 @@ class Guest extends BaseController
     public function loginSubmit(){
         //validation
        
-        if (!$this->validate(['username'=>'required','password'=>'required'])){
-            $x = new ViewConfig();
-            $x->showError=$this->validator->getErrors();
-            echo view('pages/login_page', ["config"=>$x]);
-            return;
+        if (!$this->validation->withRequest($this->request)->run(null,"login")){
+                $x = new ViewConfig();
+                $x->showError = True; //Dodaj da ti se ispisu errori
+                echo view('pages/login_page',["config"=>$x,
+                                'validation' => $this->validation
+                ]);
+        }
+        else{
+                //echo ("Success");
         }
         
         
         //checking if user exists and mathces password
         $userModel = new UserModel();
-        $result = $userModel->checkUser($this->request->getVar('username'), $this->request->getVar('password'));
+        $valid = $userModel->checkUser($this->request->getVar('username'), $this->request->getVar('password'));
+        //$user=true;
+        
+        
         
         //setting user and redirecting to home page
-        if (!empty($result["user"])){
+        if (!$valid ){
             $this->session->set('user', $result["user"]);
             $viewConf = new ViewConfig();
             return redirect()->to(site_url("Results/search"));
         }
         else {
             $x = new ViewConfig();
-            $x->showError=['error'=>$result["message"]];
+            $x->showError=['error'=>$user["message"]];
             echo view('pages/login_page', ["config"=>$x]);
             return;
         }
@@ -93,45 +100,24 @@ class Guest extends BaseController
     
     public function signupSubmit(){
         //validation
-       if (!$this->validate(['name'=>'required'])){
-            $x = new ViewConfig();
-            echo "name reqired";
-            return;
-        }
-        if (!$this->validate(['surname'=>'required'])){
-            $x = new ViewConfig();
-            echo "surname reqired";
-            return;
-        }
-        if (!$this->validate(['newusername'=>'trim|required|min_length[4]'])){
-            $x = new ViewConfig();
-            echo "username reqired";
-            return;
-        }
-        if (!$this->validate(['newpassword'=>'trim|required|min_length[4]|max_length[15]'])){
-            $x = new ViewConfig();
-            echo "password reqired";
-            return;
-        }
-        if (!$this->validate(['cpassword'=>'trim|required|matches[newpassword]'])){
-            $x = new ViewConfig();
-            echo "must confirm password";
-            return;
-        }
-        if (!$this->validate(['date'=>'required'])){
-            $x = new ViewConfig();
-            echo "date reqired";
-            return;
-        }
-        if (!$this->validate(['email'=>'trim|required|valid_email'])){
-            $x = new ViewConfig();
-            echo "email reqired";
-            return;
-        }
+       
+        if (!$this->validation->withRequest($this->request)->run(null,"signup")){
+		$x = new ViewConfig();
+		$x->showError = True; //Dodaj da ti se ispisu errori
+		echo view('pages/signup_page',["config"=>$x,
+				'validation' => $this->validation
+		]);
+	}
+	else{
+		//echo ("Success");
+	}
+        
         
         //
         $userModel = new UserModel();
-        $user = $userModel->addUser($name, $surname, $username, $pass, $confPass, $date, $email);
+        $user = $userModel->addUser($this->request->getVar('name'), $this->request->getVar('surname'), 
+                $this->request->getVar('newusername'), $this->request->getVar('newpassword'), 
+                $this->request->getVar('date'), $this->request->getVar('email'));
         
         return redirect()->to(site_url('Guest/login'));
         

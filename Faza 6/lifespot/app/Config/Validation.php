@@ -19,12 +19,43 @@ class Validation
 		\CodeIgniter\Validation\CreditCardRules::class,
 	];
 
-	/**
-	 * Specifies the views that are used to display the
-	 * errors.
-	 *
-	 * @var array
-	 */
+	public $signup= [
+            'name'       => [
+                    'label' => 'Name',
+                    'rules' =>'required',
+                    'errors' =>[
+                            'requried' => 'Your name is required !'
+                    ]
+            ],
+            'email'      => [
+                    'label' => 'Mail',
+                    'rules' =>'required|valid_email',
+                    'errors' =>[
+                            'requried' => 'Your mail is required !',
+                            'valid_email' => 'Your mail is not gud !'
+                    ]
+                ],
+
+           ];
+
+	public $login= [
+            'username'       => [
+                    'label' => 'Name',
+                    'rules' =>'required',
+                    'errors' =>[
+                            'requried' => 'Your name is required !'
+                    ]
+            ],
+            'password'      => [
+                    'label' => 'Mail',
+                    'rules' =>'required',
+                    'errors' =>[
+                            'requried' => 'Your mail is required !',
+                    ]
+                ],
+
+           ];
+        
 	public $templates = [
 		'list'   => 'CodeIgniter\Validation\Views\list',
 		'single' => 'CodeIgniter\Validation\Views\single',
