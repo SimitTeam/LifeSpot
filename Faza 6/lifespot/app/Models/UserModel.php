@@ -99,7 +99,7 @@ class UserModel extends Model
             'type' => $type
         ];
         
-        $this->update($username, $newType);
+        return $this->update($username, $newType);
     }
     
     public function demoteUser($username){

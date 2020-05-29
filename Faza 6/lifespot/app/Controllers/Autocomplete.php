@@ -3,6 +3,7 @@
 
 use App\Models\SpeciesModel;
 use App\Models\SynonymModel;
+use App\Models\UserModel;
 use App\Models\MarkerModel;
 class Autocomplete extends BaseController
 {
@@ -43,7 +44,13 @@ class Autocomplete extends BaseController
                 echo json_encode($results);
           }
         }
-
+        public function updateUser($username,$type){
+         if($this->request->isAJAX()){
+                $marker=new UserModel();
+                $result=$marker->promoteUser($username, $type);
+                echo json_encode($result);
+          }
+        }
         
  
 	//--------------------------------------------------------------------
