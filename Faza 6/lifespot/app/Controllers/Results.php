@@ -20,11 +20,11 @@ class Results extends BaseController{
            
            if($this->request->getVar('search_species')){
             $x->dtRows=[];
-            $x->dtHead=["Username", "Image", "Date", "Link"];
+            $x->dtHead=["Username", "Image", "Confirmation", "Link"];
             $x->showSearchResults=true;
             
             $test=new MarkerModel();
-            $results=$test->findMarkers($this->request->getVar('search_species'));
+            $results=$test->findMarkersValid($this->request->getVar('search_species'));
 
             foreach ($results as $value) {
                 
@@ -47,8 +47,8 @@ class Results extends BaseController{
                    $img_value=$result[0];
                 }                
                 
-                
-               $x->dtRows[]=[$value->username, $img_value,$value->date,["text"=>"Show", "url"=>site_url("./Marker/showMarker/")."$value->id/confirmMarker"]];
+                $status_names=['C'=>"Confirmed","N"=>"Not Confirmed"];
+               $x->dtRows[]=[$value->username, $img_value,$status_names[$value->status],["text"=>"Show", "url"=>site_url("./Marker/showMarker/")."$value->id/".$this->request->getVar('search_species')]];
             }
            }
            echo view('pages/guest_page',["config"=>$x]);

@@ -58,6 +58,14 @@ class MarkerModel extends Model
        return $this->where('species_name', $term)->findAll();
     }
     
+    public function findMarkersValid($term){
+      return $markers=$this->db->table('marker as m')
+        ->join('confirmation as con', 'm.id = con.id', 'LEFT')
+        ->where("con.status!='D'")
+        ->select("m.id,con.status,m.username")
+        ->get()->getResult();  
+    }   
+    
     public function addMarker($species, $username, $date, $latitude, $longitude, $text){
         
         

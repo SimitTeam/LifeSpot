@@ -71,7 +71,7 @@ class Moderator extends BaseController
                 $model=new ConfirmationModel();
                 $result_model=$model->getConfirmation($this->request->getVar("marker_id"));
             
-                if($result_model!=null && $result_model->status=="N"){
+                if($result_model!=null && $result_model->status=="N" && strcmp($result_model->username, $this->session->get('user')->username)==0){
                    $spec=new SpeciesModel();
                    $result_spec=$spec->getSpecies($this->request->getVar("species_name"));
                    if($result_spec!=null)
