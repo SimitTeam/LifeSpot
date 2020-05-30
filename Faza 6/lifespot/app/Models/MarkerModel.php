@@ -70,9 +70,13 @@ class MarkerModel extends Model
                 'text' => $text
             ];
 
+           $id=$this->insert($marker,);
             
-            
-          return  $this->insert($marker);
+           $conf=new ConfirmationModel();
+           $answer=$conf->addConfirmation($id,$username);
+           
+           
+          return  $id;
             
             
     }

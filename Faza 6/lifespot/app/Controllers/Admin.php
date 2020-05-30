@@ -2,6 +2,7 @@
 
 
 use App\Models\SpeciesModel;
+use App\Models\ConfirmationModel;
 use App\Models\UserModel;
 use App\Libraries\ViewConfig;
 
@@ -9,9 +10,10 @@ class Admin extends BaseController
 {
     
     public function index(){
-        $x = new ViewConfig();
-        $x->userType = "admin";
-        echo view('pages/guest_page', ["config"=>$x]);
+        $con=new ConfirmationModel();
+        $result=$con->addConfirmation("");
+        var_dump($result);
+        
     }
         
     public function administer(){

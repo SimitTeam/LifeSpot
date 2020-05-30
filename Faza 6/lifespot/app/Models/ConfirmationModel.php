@@ -9,7 +9,7 @@ class ConfirmationModel extends Model
 
     protected $returnType     = 'object';
     
-    protected $allowedFields = ['username', 'status'];
+    protected $allowedFields = ['username', 'status','id'];
     
     public function getConfirmation($id){
         $getConfirmation = $this->find($id);
@@ -26,13 +26,43 @@ class ConfirmationModel extends Model
         return $getStatus->status;
     }
     
-    public function addConfirmation($username, $status){
-        $query = $this->db->query('SELECT * FROM marker');
-        $id = $query->num_rows();
-        $new_id = $id + 1;
+    public function addConfirmation($id,$user_add){
         
+        $confirmers=$this->db->table('user as u')
+        ->groupStart()
+            ->where('con.status','N') 
+            ->orWhere('con.status',null)                
+        ->groupEnd()
+        ->groupStart()
+            ->where('u.type','M')
+            ->orWhere('u.type','A')
+         ->groupEnd()
+        ->join('confirmation  as con', 'u.username = con.username', 'LEFT')
+        ->groupBy('u.username')
+        ->select("u.username,con.id")
+        ->selectCount("con.id",'count')
+        ->get()->getResult();         
+
+        
+        $min=-1;
+        $username="";
+        foreach ($confirmers as $value) {
+            if(strcmp($user_add, $value->username)==0)continue;
+            
+            if($min==-1 || $min>$value->count){
+                $min=$value->count;
+                $username=$value->username;
+            }
+        }
+        
+        
+        $status='N';
+        if($min==-1){
+             $username=$user_add;
+             $status='C';
+        }
         $confirmation = [
-                'id' => $new_id,
+                'id' => $id,
                 'username' => $username,
                 'status' => $status
             ];
