@@ -16,8 +16,10 @@ class UserFilter implements FilterInterface {
         $user = session()->get('user');
         
         if ($user == null){
-            return redirect()->to("/Guest/login");
+            session()->set('error','login');
+            return redirect()->to("/Error/login");
         }
+
     }
 
 }
