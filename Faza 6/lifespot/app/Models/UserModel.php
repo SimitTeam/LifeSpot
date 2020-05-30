@@ -51,9 +51,10 @@ class UserModel extends Model
             return 'User';
         }else if($getType->type === 'M'){
             return 'Moderator';
-        }else{
-            return 'Admin';
-        }
+        }else if ($getType->type === 'A')
+                return 'Admin';
+            else
+                return 'Banned';
     }
     
     public function addUser($name, $surname, $username, $pass, $date, $email){
