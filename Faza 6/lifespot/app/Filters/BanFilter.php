@@ -15,14 +15,15 @@ class BanFilter implements FilterInterface{
         $user = session()->get('user');
         
         if ($user == null){
-            return redirect()->to("/Guest/login");
+            session()->set('error','login');
+            return redirect()->to("/Error/login");
         }
         
         if ($userType == "Banned"){
-            return redirect()->to("/Signout");
+            session()->set('error', 'banned');
+            return redirect()->to("/Error/banned");
         }
-        
-        
+       
     }
 
 }

@@ -45,6 +45,7 @@ class ViewConfig{
 		$this->logInPageSignUpButton = "./Guest/signup";
 		$this->signUpPageLogInButton = "./Guest/login";
 
+                $this->errorBackPage = "";
 
 		//Form submit controllers
 
@@ -93,7 +94,8 @@ class ViewConfig{
 		$this->markerImage="Mock7";
 		$this->markerId="Mock8";
 		$this->username="Options";
-
+                $this->errorPageMessage=""; //error messages
+                $this->errorButton="";
 
 		//Working with DataTables
 		

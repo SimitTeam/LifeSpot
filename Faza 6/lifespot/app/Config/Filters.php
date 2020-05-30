@@ -13,7 +13,8 @@ class Filters extends BaseConfig
                 'moderator' => \App\Filters\ModeratorFilter::class,
                 'admin'     => \App\Filters\AdminFilter::class,
                 'user'      => \App\Filters\UserFilter::class,
-                'ban'       => \App\Filters\BanFilter::class
+                'ban'       => \App\Filters\BanFilter::class,
+                'error'     => \App\Filters\ErrorFilter::class
 	];
 
 	// Always applied before every request
@@ -40,6 +41,7 @@ class Filters extends BaseConfig
             'moderator' => ['before' => ['Moderator/*', 'Marker/showMarker/*/confirmMarker']],
             'admin'     => ['before' => ['Admin/*']],
             'user'      => ['before' => ['Marker/newMarker']],
-            'ban'       => ['before' => ['/Moderator/*', 'Marker/showMarker/*/confirmMarker', 'Marker/newMarker']]
+            'ban'       => ['before' => ['/Moderator/*', 'Marker/showMarker/*/confirmMarker', 'Marker/newMarker']],
+            'error'     => ['before' => ['/Error/*']]
         ];
 }

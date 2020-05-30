@@ -15,12 +15,15 @@ class AdminFilter implements FilterInterface{
         $user = session()->get('user');
         
         if ($user == null){
-            return redirect()->to("/Guest/login");
+            session()->set('error','login');
+            return redirect()->to("/Error/login");
         }
         
         if ($userType != 'Admin'){
-            return redirect()->to('/Guest/index'); //dodati error page za ovo
+            session()->set('error','permission');
+            return redirect()->to('/Error/permission');
         }
+
     }
 
 }
