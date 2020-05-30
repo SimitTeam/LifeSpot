@@ -58,7 +58,8 @@ class Moderator extends BaseController
                 }                
                 
                 
-               $x->dtRows[]=[$value->username, $img_value,$value->species_name,["text"=>"Show", "url"=>site_url("./Marker/showMarker/")."$value->id/confirmMarker"]];
+               $x->dtRows[]=[$value->username, $img_value,$value->species_name,["text"=>"Show", 
+                   "url"=>site_url("./Marker/showMarker/")."$value->id/confirmMarker"]];
             }
 
             echo view('pages/guest_page', ["config"=>$x]);
