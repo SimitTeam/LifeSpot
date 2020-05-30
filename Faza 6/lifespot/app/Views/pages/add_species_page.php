@@ -4,7 +4,7 @@
 <?php $this->section('content') ?>
 <div class='container-fluid '>   
 	<div class="row">
-		<div class=" offset-sm-2 col-sm-4 text-center row_space">
+		<div class=" offset-md-2 col-md-8 offset-lg-1 col-lg-4 text-center row_space">
 			<h2>Add Species</h2>
 			<?php if($config->showError[0]) echo($this-> include('modules/error_list')) ?>
 			<form action="<?=site_url($config->addSpeciesFormSubmit)?>" method="post" enctype="multipart/form-data" >
@@ -39,7 +39,7 @@
 				</table>
 			</form>
 		</div>
-		<div class=" col-sm-4 text-center row_space">
+		<div class="offset-md-2 col-md-8 offset-lg-2 col-lg-4 text-center row_space">
 			<h2>Add Synonym</h2>
 			<?php if($config->showError[1]) echo($this-> include('modules/error_list')) ?>
 			<form action="<?=site_url($config->addSynonymFormSubmit)?>" >
