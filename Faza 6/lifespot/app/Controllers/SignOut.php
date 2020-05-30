@@ -10,10 +10,4 @@ class SignOut extends BaseController{
                $this->session->destroy();
                return redirect()->to(site_url("Guest/index"));
 	}
-        
-        
-        public function banned(){
-            $this->session->destroy();
-            return redirect()->to(site_url("Guest/index")); //banned page
-        }
 }
