@@ -11,7 +11,7 @@ class Admin extends BaseController
     
     public function index(){
         $con=new ConfirmationModel();
-        $result=$con->addConfirmation("");
+        $result=$con->addConfirmation("","");
         var_dump($result);
         
     }

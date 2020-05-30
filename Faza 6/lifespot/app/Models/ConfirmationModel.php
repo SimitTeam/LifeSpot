@@ -27,17 +27,15 @@ class ConfirmationModel extends Model
     }
     
     public function addConfirmation($id,$user_add){
+   
+
         
-        $confirmers=$this->db->table('user as u')
-        ->groupStart()
-            ->where('con.status','N') 
-            ->orWhere('con.status',null)                
-        ->groupEnd()
+       $confirmers=$this->db->table('user as u')
         ->groupStart()
             ->where('u.type','M')
             ->orWhere('u.type','A')
          ->groupEnd()
-        ->join('confirmation  as con', 'u.username = con.username', 'LEFT')
+        ->join('(SELECT * from confirmation where status!="C" and status!="D") as con', 'u.username = con.username', 'LEFT')
         ->groupBy('u.username')
         ->select("u.username,con.id")
         ->selectCount("con.id",'count')
