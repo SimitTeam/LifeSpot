@@ -1,5 +1,5 @@
         <?php 
-                $dirname="./assets/img/markers/".$config->markerId."/".$config->markerImage."/";
+                $dirname="./assets/img/markers/".$config->markerId."/";
                 $images = glob($dirname."*.{jpg,png}",GLOB_BRACE);
                 $result=array();
                 foreach($images as $image) {

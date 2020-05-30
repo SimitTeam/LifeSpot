@@ -20,7 +20,7 @@
 						echo("<td><a href=\"".$row[$i]["url"]."\" class='btn btn-success'>".$row[$i]["text"]."</a></td>");
 					}
 					else if(!strcmp($config->dtTypes[$i], "img")){
-						echo("<td>".$row[$i]."</td>");
+						echo("<td><img width='100px' height='100px' src='".$row[$i]."'></td>");
 					}
 				}
 				echo("</tr>");

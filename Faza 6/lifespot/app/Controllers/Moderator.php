@@ -37,7 +37,28 @@ class Moderator extends BaseController
             $results=$test->getNotConfirmed($this->session->get("user")->username);
 
             foreach ($results as $value) {
-               $x->dtRows[]=[$value->username,$value->img,$value->species_name,["text"=>"Show", "url"=>site_url("./Marker/showMarker/")."$value->id/confirmMarker"]];
+                
+                $dirname="./assets/img/markers/".$value->id."/";
+                $images = glob($dirname."*.{jpg,png}",GLOB_BRACE);
+                $result=array();
+                foreach($images as $image) {
+                  $result[]=site_url($image);  
+                }
+                
+                $img_value="";
+                
+                if(empty($result)){
+                   $result=array();
+                   $image=glob("./assets/img/markers/no_preview.jpg");
+                   $img_value=site_url($image);
+                   echo "<script>var images=". json_encode($result)." </script>";                   
+                }
+                else{
+                   $img_value=$result[0];
+                }                
+                
+                
+               $x->dtRows[]=[$value->username, $img_value,$value->species_name,["text"=>"Show", "url"=>site_url("./Marker/showMarker/")."$value->id/confirmMarker"]];
             }
 
             echo view('pages/guest_page', ["config"=>$x]);
