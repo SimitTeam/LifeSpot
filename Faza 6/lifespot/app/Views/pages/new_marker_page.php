@@ -15,7 +15,7 @@
 			  <table class='table'>
 				<tr>
 					<td>
-						<span style="color: red;">*</span> Species :
+						<span style="color: red;">*</span> Species:
 					</td>
 					<td>
 						<?=$this-> include('modules/autocomplete');?>
