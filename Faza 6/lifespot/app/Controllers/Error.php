@@ -9,6 +9,7 @@ class Error extends BaseController{
         $x->errorButton = "Home page";
         $x->errorBackPage = "./Guest/index";
         $x->errorPageMessage = 'You are BANNED ! <br>For additional information contact admin. <br>Return to the home page.';
+        $this->session->destroy();
         echo view('pages/error_page',["config"=>$x]);
    }
    

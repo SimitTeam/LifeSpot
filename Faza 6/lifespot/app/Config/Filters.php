@@ -20,12 +20,11 @@ class Filters extends BaseConfig
 	// Always applied before every request
 	public $globals = [
 		'before' => [
-			//'honeypot'
-			// 'csrf',
+			
 		],
 		'after'  => [
 			'toolbar',
-			//'honeypot'
+			
 		],
 	];
 
@@ -41,7 +40,7 @@ class Filters extends BaseConfig
             'moderator' => ['before' => ['Moderator/*', 'Marker/showMarker/*/confirmMarker']],
             'admin'     => ['before' => ['Admin/*']],
             'user'      => ['before' => ['Marker/newMarker']],
-            'ban'       => ['before' => ['/Moderator/*', 'Marker/showMarker/*/confirmMarker', 'Marker/newMarker']],
+            'ban'       => ['before' => ['/Moderator/*', 'Results/*', 'Marker/showMarker/*/confirmMarker', 'Marker/newMarker']],
             'error'     => ['before' => ['/Error/*']]
         ];
 }
