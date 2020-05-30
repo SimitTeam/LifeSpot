@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-ligh nav_color">
 	<a href="<?= site_url($config->headerLogo) ?>" > 
-		<img src="<?= site_url("./assets/img/logo1.png") ?>" alt='Lifespot_logo' class="navbar-brand" height = 70 width = 325></a>
+		<img src="<?= site_url("./assets/img/logo1.png") ?>" alt='Lifespot_logo' class="navbar-brand" height = 70 width = 260></a>
 	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	  <span class="navbar-toggler-icon"></span>
 	</button>
