@@ -1,5 +1,14 @@
 <?php namespace App\Models;
 
+/**
+* Synonym Model – klasa koja komunicisa Synonym tabelom u bazi
+*
+* @version 1.0
+ * 
+ *@author Aleksa Bogdanovic i Jovan Spasojevic
+*/
+
+
 use CodeIgniter\Model;
 
 class SynonymModel extends Model
@@ -29,8 +38,14 @@ class SynonymModel extends Model
         $getName = $this->find($id);
         return $getName->species_name;
     }
+
     
-    //Trazi markere koji u name i species_name imaju term
+    /**
+    * Funkcija koja dohvata sve vrste i njihove sinonime koji odgovaraju pretrazi
+    *
+    *@param String $term niska po kojoj se vrsi pretraga
+    *@return Array 
+    */
     public function findMarkers($term){
      return $this->db->table('species as sp')
      ->select("sp.species_name,syn.name")  

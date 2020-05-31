@@ -1,5 +1,14 @@
 <?php namespace App\Models;
 
+/**
+* Species Model – klasa koja komunicisa Species tabelom u bazi
+*
+* @version 1.0
+ * 
+ *@author Aleksa Bogdanovic
+*/
+
+
 use CodeIgniter\Model;
 
 class SpeciesModel extends Model

@@ -1,5 +1,13 @@
 <?php namespace App\Controllers;
 
+/**
+* Guest Controller – klasa za zahteve vezane za prijavljivanje postojeceg korisnika,
+ *  registraciju novog korisnika i pozivanje prikaza pocetne stranice
+*
+* @version 1.0
+ * 
+ *@author  Mara Bolic
+*/
 
 use App\Models\SpeciesModel;
 use App\Libraries\ViewConfig;
@@ -8,16 +16,31 @@ use App\Models\UserModel;
 class Guest extends BaseController
 {
    
+    /**
+        * Funkcija za pozivanje prikaza pocetne stranice
+        *
+        *
+    */
     protected function show($page,$data){
         $x = new ViewConfig();
         echo view('pages/guest_page',["config"=>$x]);
     }
-    
+      /**
+        * Funkcija za pozivanje prikaza stranize za prijvaljivanje
+        *
+        *
+    */
     public function login(){
         $x = new ViewConfig();
         echo view('pages/login_page', ["config"=>$x]);
        
     }
+    
+      /**
+        * Funkcija za pozivanje prikaza stranice za registraciju novog korisnika
+        *
+        *
+    */
     
     public function signup(){
         $x = new ViewConfig();
@@ -25,7 +48,11 @@ class Guest extends BaseController
     }
     
     
-    //
+      /**
+        * Funkcija za obradu podataka prilikom prijavljivanja
+        *
+        *
+    */
     public function loginSubmit(){
         //validation
        
@@ -73,6 +100,11 @@ class Guest extends BaseController
       
     }
     
+      /**
+        * Funkcija za obradu podataka prilikom registracije korisnika
+        *
+        *
+    */
     public function signupSubmit(){
         //validation
        

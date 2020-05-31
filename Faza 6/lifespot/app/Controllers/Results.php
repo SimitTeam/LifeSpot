@@ -1,19 +1,21 @@
 <?php namespace App\Controllers;
-
+/**
+* ResultsController – klasa koja prikazuje stranicu sa rezultatima
+*
+* @version 1.0
+ * 
+*/
 
 use App\Models\SpeciesModel;
 use App\Models\MarkerModel;
 use App\Libraries\ViewConfig;
 class Results extends BaseController{
     
-    //private $resultPerPage = 3;
-    /*
-        public function index($id)
-        {
-            $speciesModel=new SpeciesModel();
-            $species = $speciesModel->findLike();
-	}
-*/
+
+        /**
+        * Funkcija za prikaz rezultata pretrage
+        *
+        */
         public function search(){
            $x = new ViewConfig();
            

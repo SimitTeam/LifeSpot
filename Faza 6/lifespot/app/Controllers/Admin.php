@@ -1,5 +1,12 @@
 <?php namespace App\Controllers;
 
+/**
+* Admin Controller – klasa koja prikazuje stranicu za adiministriranje sistema
+*
+* @version 1.0
+ * 
+ *@author Jovan Spasojevic
+*/
 
 use App\Models\SpeciesModel;
 use App\Models\ConfirmationModel;
@@ -9,13 +16,18 @@ use App\Libraries\ViewConfig;
 class Admin extends BaseController
 {
     
+  
     public function index(){
         $con=new ConfirmationModel();
         $result=$con->addConfirmation("","");
         var_dump($result);
         
     }
-        
+    /**
+    * Funkcija za pozivanje prikaza stranice za administriranje sistema
+    *
+    *
+    */
     public function administer(){
         $x = new ViewConfig();
         $x->dtRows=[];

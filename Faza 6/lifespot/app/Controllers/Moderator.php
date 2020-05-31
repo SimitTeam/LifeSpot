@@ -1,5 +1,13 @@
 <?php namespace App\Controllers;
 
+/**
+* Moderator Controller – klasa za obradjivanje zahteva koje moze da vrsi barem
+ * Moderator, odnosno Administrator i Moderator
+*
+* @version 1.0
+ * 
+ *@author  Mara Bolic i Jovan Spasojevic
+*/ 
 
 use App\Models\SpeciesModel;
 use App\Models\MarkerModel;
@@ -10,6 +18,11 @@ use \App\Models\SynonymModel;
 
 class Moderator extends BaseController
 {
+        /**
+           * Funkcija za pozivanje prikaza pocetne stranice pri prijavi moderatora
+           *
+           *
+        */
 	public function index()
 	{
             $x = new ViewConfig();
@@ -17,6 +30,11 @@ class Moderator extends BaseController
             echo view('pages/guest_page', ["config"=>$x]);
 	}
         
+         /**
+        * Funkcija za pozivanje prikaza stranice na kojoj se dodaju vrste i sinonimi
+        *
+        *
+    */
         public function addSpecies(){
             $x = new ViewConfig();
             //$x->userType = "moderator";
@@ -24,7 +42,12 @@ class Moderator extends BaseController
         }
 
         
-        //Creates page with markers to be confirmed
+         /**
+        * Funkcija za kreiranje stranice na kojoj se prikazuju markeri koji
+          * zahtevaju potvrdu opazanja
+        *
+        *
+    */
         public function confirmMarker(){
            
             $x = new ViewConfig();
@@ -66,7 +89,12 @@ class Moderator extends BaseController
         }
         
         
-        
+         /**
+        * Funkcija za obradu podataka prilikom potvrde opazanja
+        *
+        *  @return preusmeravanje na odgovarajucu stranicu 
+        *
+    */
         public function confirmSubmit(){
                 $model=new ConfirmationModel();
                 $result_model=$model->getConfirmation($this->request->getVar("marker_id"));
@@ -97,6 +125,11 @@ class Moderator extends BaseController
 
 
         
+        /**
+        * Funkcija za obradu podataka prilikom dodacanja nove vrste
+        *
+        * @return preusmeravanje na stranicu 
+        */
         public function speciesSubmit(){
             //validation
 	
@@ -126,6 +159,11 @@ class Moderator extends BaseController
             return redirect()->to(site_url("/Moderator/addSpecies"));
         }
         
+         /**
+        * Funkcija za obradu podataka prilikom dodavanja sinonima za neku vrstu
+        *
+        *@return preusmeravanje na stranicu 
+    */
         public function synonymSubmit(){
             //validation
             $this->validation->setRuleGroup("synonym");

@@ -1,5 +1,14 @@
 <?php namespace App\Models;
 
+/**
+* User Model – klasa koja komunicisa User tabelom u bazi
+*
+* @version 1.0
+ * 
+ *@author Aleksa Bogdanovic
+*/
+
+
 use CodeIgniter\Model;
 
 class UserModel extends Model
@@ -15,36 +24,61 @@ class UserModel extends Model
     protected $useTimestamps = false;
     protected $skipValidation = false;
     
-    //getUserByUsername
+    /**
+    * Funkcija koja dohvata korisnika
+    *
+    *@return Object korisnik
+    */
     public function getUser($username){
         $getUserByUsername = $this->find($username);
         return $getUserByUsername;
     }
     
-    //getNameByUsername
+    /**
+    * Funkcija koja dohvata ime
+    *
+    *@return String ime
+    */
     public function getName($username){
         $getName = $this->find($username);
         return $getName->name;
     }
     
-    //getSurnameByUsername
+    /**
+    * Funkcija koja dohvata prezime
+    *
+    *@return String prezime
+    */
     public function getSurname($username){
         $getSurname = $this->find($username);
         return $getSurname->surname;
     }
     
-    //getBirthDateByUsername
+    /**
+    * Funkcija koja dohvata datum rodjenja
+    *
+    *@return String datum rodjenja
+    */
     public function getBirthDate($username){
         $getBirthDate = $this->find($username);
         return $getBirthDate->birth_date;
     }
     
-    //getMailByUsername
+    /**
+    * Funkcija koja dohvata prezime
+    *
+    *@return String prezime
+    */
     public function getMail($username){
         $getMail = $this->find($username);
         return $getMail->mail;
     }
     
+    /**
+    * Funkcija koja dohvata prezime
+    *
+    *@return String prezime
+    */
     public function getType($username){
         $getType = $this->find($username);
         if($getType->type === 'U'){
@@ -56,7 +90,13 @@ class UserModel extends Model
             else
                 return 'Banned';
     }
+
     
+    /**
+    * Funkcija koja dohvata prezime
+    *
+    *@return String prezime
+    */
     public function addUser($name, $surname, $username, $pass, $date, $email){
         $proveraUsername = $this->where('username', $username)->findAll();
         $proveraMail = $this->where('mail', $email)->findAll();
@@ -81,6 +121,11 @@ class UserModel extends Model
         
     }
     
+    /**
+    * Funkcija koja dohvata prezime
+    *
+    *@return String prezime
+    */
     public function checkUser($username, $password){
         $user = $this->getUser($username);
         
@@ -95,6 +140,11 @@ class UserModel extends Model
         }
     }
     
+    /**
+    * Funkcija koja dohvata prezime
+    *
+    *@return String prezime
+    */
     public function promoteUser($username, $type){
         $newType = [
             'type' => $type
@@ -103,6 +153,11 @@ class UserModel extends Model
         return $this->update($username, $newType);
     }
     
+    /**
+    * Funkcija koja dohvata prezime
+    *
+    *@return String prezime
+    */
     public function demoteUser($username){
         $currType = $this->getType($username);
         $test = FALSE;
@@ -122,11 +177,22 @@ class UserModel extends Model
             $this->update($username, $newType);
         }
     }
-    
+
+    /**
+    * Funkcija koja dohvata prezime
+    *
+    *@return String prezime
+    */
     public function findUser($term){
         return $this->where('username', $term)->findAll();
     }
     
+    
+    /**
+    * Funkcija koja dohvata prezime
+    *
+    *@return String prezime
+    */
     public function getAllUsers(){
         return $this->findAll();
     }

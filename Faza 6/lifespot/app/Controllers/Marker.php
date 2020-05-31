@@ -1,5 +1,11 @@
 <?php namespace App\Controllers;
-
+/**
+* MarkerController – klasa koja sluzi za prikazivanje i dodavanje markera
+*
+* @version 1.0
+ * 
+ * @author Edvin Maid i Jovan Spasojevic
+*/
 
 use App\Models\SpeciesModel;
 use App\Models\ConfirmationModel;
@@ -11,8 +17,6 @@ use App\Libraries\ViewConfig;
 class Marker extends BaseController
 {
     
-    
-    
 	public function index()
 	{
             $speciesModel=new SpeciesModel();
@@ -22,7 +26,10 @@ class Marker extends BaseController
 	    return view('welcome_message');
 	}
         
-        //Shows marker by id
+        /**
+        * Funkcija za prikaz markera po id-u
+        *
+        */
         public function showMarker($id,$string){
             
             $t_marker=new MarkerModel();
@@ -63,12 +70,23 @@ class Marker extends BaseController
             
         }
         
+         /**
+        * Funkcija za prikaz stranice za dodavanje markera
+        *
+        *
+        */
         public function newMarker(){
             $x = new ViewConfig();
             $x->userType = "user";
             echo view("pages/new_marker_page", ["config"=>$x]);
         }
         
+        
+        /**
+        * Funkcija za obradu podataka prilikom dodavanja novog markera
+        *
+        *
+        */
         public function markerSubmit(){
             //validation
             $this->validation->setRuleGroup("marker");

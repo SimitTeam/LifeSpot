@@ -1,10 +1,17 @@
 <?php namespace App\Controllers;
 
-
+/**
+* Autocomplete Controller – klasa koja koristi pri AJAX zahtevima
+* @version 1.0
+ * 
+ *@author  Jovan Spasojevic
+*/
 use App\Models\SpeciesModel;
 use App\Models\SynonymModel;
 use App\Models\UserModel;
 use App\Models\MarkerModel;
+
+
 class Autocomplete extends BaseController
 {
 
@@ -15,6 +22,11 @@ class Autocomplete extends BaseController
                 echo view('teplates/footer.php');
         }
         
+        /**
+        * Funkcija koja odgovara na AJAX zahtev za kompletiranje predloga pretrage
+        *
+        *
+        */
         public function fetch(){
             if($this->request->isAJAX()){
                 $output=array();
@@ -36,6 +48,12 @@ class Autocomplete extends BaseController
                 echo "Acces Denied";
             }
         }
+        
+        /**
+        * Funkcija za iscrtavanje markera na mapi
+        *
+        *
+        */
         public function getMarkers(){
          if($this->request->isAJAX()){
                 $term=$this->request->getVar("term");
@@ -44,6 +62,12 @@ class Autocomplete extends BaseController
                 echo json_encode($results);
           }
         }
+        
+        /**
+        * Funkcija za menjanje tipa korisnika prilikom administratorskih akcija
+        *
+        *
+        */
         public function updateUser($username,$type){
          if($this->request->isAJAX()){
                 $marker=new UserModel();
