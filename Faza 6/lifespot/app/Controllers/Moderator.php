@@ -6,7 +6,7 @@
 *
 * @version 1.0
  * 
- *@author  Mara Bolic i Jovan Spasojevic
+ *@author  Mara Bolic 17/0614 i Jovan Spasojevic 17/0118
 */ 
 
 use App\Models\SpeciesModel;

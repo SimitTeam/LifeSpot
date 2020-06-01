@@ -4,7 +4,7 @@
 *
 * @version 1.0
  * 
- * @author Edvin Maid i Jovan Spasojevic
+ * @author Edvin Maid 17/0117 i Jovan Spasojevic 17/0118
 */
 
 use App\Models\SpeciesModel;

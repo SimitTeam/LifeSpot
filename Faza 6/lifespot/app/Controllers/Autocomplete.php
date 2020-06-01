@@ -4,7 +4,7 @@
 * Autocomplete Controller – klasa koja koristi pri AJAX zahtevima
 * @version 1.0
  * 
- *@author  Jovan Spasojevic
+ *@author  Jovan Spasojevic 17/0118
 */
 use App\Models\SpeciesModel;
 use App\Models\SynonymModel;

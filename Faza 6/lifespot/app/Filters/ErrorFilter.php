@@ -4,12 +4,27 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use CodeIgniter\Filters\FilterInterface;
 
+/**
+* 
+* ErrorFilter - klasa koja filtrira pristup korisnika koji pokusavaju da pristupe 
+* error ispisu bez izazivanja pravog error-a
+*
+* @version 1.0
+* 
+* @author Mara Bolic 17/0614 i Aleksa Bogdanovic 17/0578
+*/
 class ErrorFilter implements FilterInterface {
    
     public function after(RequestInterface $request, ResponseInterface $response) {
         
     }
 
+    /**
+    * Funkcija koja filtrira pristup korisnika koji pokusavaju da pristupe 
+	* error ispisu bez izazivanja pravog error-a
+    *
+    *
+    */
     public function before(RequestInterface $request) {
         $error = session()->get('error');
         

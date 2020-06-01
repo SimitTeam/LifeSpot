@@ -6,7 +6,7 @@
 *
 * @version 1.0
  * 
- *@author  Aleksa Bogdanovic
+ *@author  Aleksa Bogdanovic 17/0578
 */
 
 use App\Libraries\ViewConfig;
