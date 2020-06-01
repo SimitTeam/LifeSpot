@@ -1,4 +1,4 @@
-<form name="search" <?php if(!$config->showSearchBarGP) echo("hidden") ?>action="<?= site_url($config->searchFormSubmit) ?>">
+<form name="search" action="<?= site_url($config->searchFormSubmit) ?>">
 	<div class="row">
 		<div class="offset-4 col-4">
 			<?=$this-> include('modules/autocomplete');?>

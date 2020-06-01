@@ -58,7 +58,7 @@ class ViewConfig{
 		$this->logInPageSignUpButton = "./Guest/signup";
 		$this->signUpPageLogInButton = "./Guest/login";
 
-                $this->errorBackPage = "";
+		$this->errorBackPage = "";
 
 		//Form submit controllers
 

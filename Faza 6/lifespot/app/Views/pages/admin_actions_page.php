@@ -75,8 +75,8 @@
                              $term=$_GET["term"];
                         }                        
                         
-                        $link_bef= site_url("./Admin/administer")."/?limit=$limit&offset=$offset_bef&term=$term";
-                        $link_aft= site_url("./Admin/administer")."/?limit=$limit&offset=$offset_aft&term=$term";
+                        $link_bef= site_url("./Admin/administer")."?limit=$limit&offset=$offset_bef&term=$term";
+                        $link_aft= site_url("./Admin/administer")."?limit=$limit&offset=$offset_aft&term=$term";
                     echo '<a '."href='$link_bef'".' class="btn btn-dark"><span style="color:white;">Previous</span></a>';
                     echo '<a '."href='$link_aft'".' class="btn btn-dark"><span style="color:white;">Next</span></a>';
                     ?>

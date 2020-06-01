@@ -34,7 +34,6 @@ class ModeratorFilter implements FilterInterface {
             session()->set('error','permission');
             return redirect()->to('/Error/permission'); 
         }
-
     }
 
 }
