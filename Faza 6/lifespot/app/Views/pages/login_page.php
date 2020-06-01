@@ -1,3 +1,14 @@
+<?php
+
+/**
+* login_page - iscrtava stranicu koja sadrzi formu za prijavljivanje na sistem
+*
+* @version 1.0
+* 
+*@author Edvin Maid 17/0117
+*/
+
+?>
 <?php $this->extend('template') ?>
 
 

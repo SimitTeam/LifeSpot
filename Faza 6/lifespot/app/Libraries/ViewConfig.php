@@ -1,6 +1,14 @@
 <?php 
 namespace App\Libraries;
 
+/**
+* View Config - klasa za konfigurisanje prikaza view-ova
+* nacin koriscenja je dokumentovan ispod
+*
+* @version 1.0
+ * 
+ *@author Edvin Maid 17/0117
+*/
 // To use this you need to add the following code to your controller:
 // use App\Libraries\ViewConfig;
 //
@@ -14,6 +22,11 @@ namespace App\Libraries;
 // If you wish to change the default setting you may do so here VVVVV
 
 class ViewConfig{
+    /**
+    * Konstruktor koji generise podrazumevani konfiguraciju za iscrtavanje view-a
+    *
+    *
+    */
 	public function __construct(){
 		//General settings
 		$this->title = "LifeSpot";

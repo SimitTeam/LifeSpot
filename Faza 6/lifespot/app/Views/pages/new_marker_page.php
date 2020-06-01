@@ -1,3 +1,14 @@
+<?php
+
+/**
+* new_marker_page - iscrtava stranicu koja sadrzi formu za pravljenej novog marker
+*
+* @version 1.0
+* 
+*@author Edvin Maid 17/0117
+*/
+
+?>
 <?php $this->extend('template') ?>
 
 

@@ -1,3 +1,14 @@
+<?php
+
+/**
+* admin_actions_page - iscrtava stranicu koja sadrzi forme za administriranje sistema
+*
+* @version 1.0
+* 
+*@author Edvin Maid 17/0117
+*/
+
+?>
 <?php $this->extend('template') ?>
 
 <?php $this->section('htmlhead') ?>

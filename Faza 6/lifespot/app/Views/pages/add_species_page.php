@@ -1,3 +1,14 @@
+<?php
+
+/**
+* add_species_page - iscrtava stranicu koja sadrzi forme za dodavanje novih vrsta i novih sinonima
+*
+* @version 1.0
+* 
+*@author Edvin Maid 17/0117
+*/
+
+?>
 <?php $this->extend('template') ?>
 
 

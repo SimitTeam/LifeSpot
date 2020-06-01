@@ -1,3 +1,14 @@
+<?php
+
+/**
+* modifiable_marker_page - prikazuje marker koji moze da bude modifikovan, potvrdjen ili odbijen
+*
+* @version 1.0
+* 
+*@author Edvin Maid 17/0117
+*/
+
+?>
 <?php $this->extend('template') ?>
 
 

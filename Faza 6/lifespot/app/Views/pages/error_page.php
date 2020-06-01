@@ -1,3 +1,14 @@
+<?php
+
+/**
+* error_page - iscrtava stranicu koja prikazuje poruku greske
+*
+* @version 1.0
+* 
+*@author Aleksa Bogdanovic 17/0578
+*/
+
+?>
 <?php $this->extend('template') ?>
 
 <?php $this->section('content') ?>

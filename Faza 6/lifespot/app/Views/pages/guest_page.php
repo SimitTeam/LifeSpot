@@ -1,3 +1,15 @@
+<?php
+
+/**
+* guest_page - iscrtava stranicu koja sadrzi forme za pretragu markera po vrsti i prikazuje 
+*
+* @version 1.0
+* 
+*@author Edvin Maid 17/0117
+*/
+
+?>
+
 <?php $this->extend('template') ?>
 
 <?php $this->section('htmlhead') ?>
