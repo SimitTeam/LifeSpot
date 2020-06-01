@@ -1,7 +1,7 @@
 <?php namespace App\Models;
 
 /**
-* Marker Model – klasa koja komunicisa Marker tabelom u bazi
+* Marker Model – klasa koja komunicira sa Marker tabelom u bazi
 *
 * @version 1.0
  * 
@@ -111,16 +111,22 @@ class MarkerModel extends Model
     /**
     * Funkcija za dohvatanje markera sa zadatim nazivom vrste
     *
-    *@param Float $term niska po kojoj se pretrazuje
+    *@param String $term niska po kojoj se pretrazuje
     */    
     public function findMarkers($term){
        return $this->where('species_name', $term)->findAll();
     }
     
+    /**
+    * Funkcija za dohvatanje svih validnih markera markera sa zadatim nazivom vrste
+    *
+    *@param String $term niska po kojoj se pretrazuje
+    */    
     public function findMarkersValid($term){
       return $markers=$this->db->table('marker as m')
         ->join('confirmation as con', 'm.id = con.id', 'LEFT')
         ->where("con.status!='D'")
+		->where("m.species_name",$term)
         ->select("m.id,con.status,m.username")
         ->get()->getResult();  
     }   
