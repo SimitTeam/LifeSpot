@@ -36,7 +36,7 @@ class ViewConfig{
 		$this->showResultsMap = True;
 		$this->modifiableMarker = True;
 		$this->showSearchResults = False;
-
+		$this->showSearchBarGP = False;
 		$this->showError = [False, False]; //showError is now an array for every form on a page
 
 		$this->errors = [];
@@ -95,7 +95,7 @@ class ViewConfig{
 		//This is the controller which is being
 		//used while searching for species
 
-		$this->autocompleteFetch="./AutoComplete/fetch";
+		$this->autocompleteFetch="./Autocomplete/fetch";
 
 		//Outputs
 		$this->markerUser="Mock1";

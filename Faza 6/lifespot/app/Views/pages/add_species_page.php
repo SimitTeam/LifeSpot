@@ -5,7 +5,7 @@
 *
 * @version 1.0
 * 
-*@author Edvin Maid 17/0117
+*@author edvin maid 17/0117
 */
 
 ?>
