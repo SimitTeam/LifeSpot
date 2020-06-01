@@ -69,14 +69,13 @@ class Validation
                     'label' => 'Name',
                     'rules' =>'required',
                     'errors' =>[
-                            'required' => 'Your name is required !'
+                            'required' => 'Your username is required !'
                     ]
             ],
             'password'      => [
-                    'label' => 'Mail',
                     'rules' =>'required',
                     'errors' =>[
-                            'required' => 'Your mail is required !',
+                            'required' => 'Your password is required !',
                     ]
                 ],
 

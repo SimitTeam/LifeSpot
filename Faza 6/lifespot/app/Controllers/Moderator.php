@@ -55,6 +55,7 @@ class Moderator extends BaseController
             $x->dtHead=["Username", "Image", "Species", "Link"];
             $x->showSearchResults=true;
             $x->showResultsMap=false;
+			$x->showSearchBarGP = true;
             
             $test=new MarkerModel();
             $results=$test->getNotConfirmed($this->session->get("user")->username);
@@ -148,7 +149,7 @@ class Moderator extends BaseController
             $ext = $imgs->getClientExtension();
             $newName = $this->request->getVar("species_name").'.'.$ext;
             $PATH = getcwd();
-            $imgs->move($PATH.'/assets/img/species', $newName);
+            $imgs->move('./assets/img/species', $newName);
 
             //database add
             $speciesModel=new SpeciesModel();

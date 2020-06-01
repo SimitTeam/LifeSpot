@@ -1,3 +1,17 @@
+<?php
+
+/**
+* template - sablon za generisanje svih ostalih stranica
+* ukljucuje sve biblioteke koje su koriscene za iscrtavanje
+* kao i sekcije za dopunjavanje header dela stranice
+*  
+*
+* @version 1.0
+* 
+*@author Edvin Maid 17/0117
+*/
+
+?>
 <html>
 	<head>
 			
