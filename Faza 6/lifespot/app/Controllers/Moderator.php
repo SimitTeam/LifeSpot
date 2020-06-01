@@ -113,14 +113,14 @@ class Moderator extends BaseController
                        else $symbol='D';
                        
                        $model->updateConfirmation($this->request->getVar("marker_id"),$symbol);
-                       return redirect()->to(site_url("/Moderator/confirmMarker/"));
+                       return redirect()->to(site_url("./Moderator/confirmMarker"));
                    }
                    else{
                        return redirect()->back();
                    }                      
                 }
                 else{
-                    return redirect()->to(site_url("/Moderator/confirmMarker/"));
+                    return redirect()->to(site_url("./Moderator/confirmMarker"));
                 }
         }
 

@@ -114,7 +114,12 @@ class MarkerModel extends Model
     *@param String $term niska po kojoj se pretrazuje
     */    
     public function findMarkers($term){
-       return $this->where('species_name', $term)->findAll();
+      return $markers=$this->db->table('marker as m')
+        ->join('confirmation as con', 'm.id = con.id', 'LEFT')
+        ->where("con.status!='D'")
+		->where("m.species_name",$term)
+        ->select("*")
+        ->get()->getResult();  
     }
     
     /**
