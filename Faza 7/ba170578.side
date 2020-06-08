@@ -1,0 +1,1024 @@
+{
+  "id": "3b3949f4-3bce-47fc-ac73-cbafef5b3e13",
+  "version": "2.0",
+  "name": "ba170578",
+  "url": "http://24.135.50.15/lifespot/public/",
+  "tests": [{
+    "id": "ced2968e-4cc1-49b5-8aa7-28beddd52f6d",
+    "name": "viewMarkerGuest",
+    "commands": [{
+      "id": "d2bd9554-d93c-4298-95d3-8c612cb2a523",
+      "comment": "",
+      "command": "open",
+      "target": "http://24.135.50.15/lifespot/public/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b5379f61-0c71-4a7b-9d6a-89c2fb9b168a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "794x430",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "935639aa-b00c-4457-9e6a-a7a0e22da51c",
+      "comment": "",
+      "command": "click",
+      "target": "id=search_data",
+      "targets": [
+        ["id=search_data", "id"],
+        ["css=#search_data", "css:finder"],
+        ["xpath=//input[@id='search_data']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a03fdf81-81b3-4c35-b35c-30b3841cb2ab",
+      "comment": "",
+      "command": "type",
+      "target": "id=search_data",
+      "targets": [],
+      "value": "konj"
+    }, {
+      "id": "2ffae207-b07f-4fca-ba9b-ad9ee2cf9c24",
+      "comment": "",
+      "command": "type",
+      "target": "id=search_data",
+      "targets": [
+        ["id=search_data", "id"],
+        ["css=#search_data", "css:finder"],
+        ["xpath=//input[@id='search_data']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "Equus ferus caballus"
+    }, {
+      "id": "6742fe8c-04b2-423d-9ddc-c6cb13f0bb2d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(1)",
+      "targets": [
+        ["css=.btn:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "45e441c6-4e3f-465c-88d5-d065d1bc96e7",
+    "name": "viewSpeciesGuest",
+    "commands": [{
+      "id": "8eee8764-56db-4c38-9659-1aadc2ce0896",
+      "comment": "",
+      "command": "open",
+      "target": "http://24.135.50.15/lifespot/public/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "114872a4-3f47-4235-ae42-6fc42f62dbeb",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "794x430",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "72c4e64f-5ef5-4c38-8be8-1d2a771143c6",
+      "comment": "",
+      "command": "click",
+      "target": "id=search_data",
+      "targets": [
+        ["id=search_data", "id"],
+        ["css=#search_data", "css:finder"],
+        ["xpath=//input[@id='search_data']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "49245f7d-542e-4bf5-be7e-71448a6864ef",
+      "comment": "",
+      "command": "type",
+      "target": "id=search_data",
+      "targets": [
+        ["id=search_data", "id"],
+        ["css=#search_data", "css:finder"],
+        ["xpath=//input[@id='search_data']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "Citrullus lanatus"
+    }, {
+      "id": "33b6d932-e4c3-443f-b9b2-6c979839e6d8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(1)",
+      "targets": [
+        ["css=.btn:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "dbb910c5-6b00-47b9-97ce-b09e30edefb2",
+    "name": "AdminPromoteSuccess",
+    "commands": [{
+      "id": "2c7bb928-797a-4691-808e-1f8dfb3f3987",
+      "comment": "",
+      "command": "open",
+      "target": "http://24.135.50.15/lifespot/public/Guest/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "db5acc74-7a72-46d7-b7ed-bfd380ca5237",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "28650979-bba8-4319-b794-e8670c05c8a0",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=tr:nth-child(1) input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f2e3cdd-f1d7-4ac6-b17c-8f45751fc5eb",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=tr:nth-child(1) input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "admirko"
+    }, {
+      "id": "1c071b45-a325-4045-8e54-3b850fc49187",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2081a9b5-48be-42eb-b9af-ec758f351b17",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": "123"
+    }, {
+      "id": "be9a71b2-3187-4f98-af77-0cec04b86007",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(1)",
+      "targets": [
+        ["css=.btn:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log In')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "47cbd683-a446-4c55-ba00-c7ede910ddeb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav-item:nth-child(2) > .nav-link",
+      "targets": [
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://24.135.50.15/lifespot/public/Admin/administer']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c31f6416-5460-464d-ae19-21324480b345",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7ba8dc99-4782-40c0-8e1d-cc7e2795a927",
+      "comment": "",
+      "command": "click",
+      "target": "id=mod3",
+      "targets": [
+        ["id=mod3", "id"],
+        ["css=#mod3", "css:finder"],
+        ["xpath=//button[@id='mod3']", "xpath:attributes"],
+        ["xpath=//table[@id='example']/tbody/tr[4]/td[3]/button", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[3]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d75d95e5-911c-489a-bdeb-dfdad8863bd2",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "Do you want to PROMOTE user:bogy",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1b9dce0e-0add-481c-be2b-357c1d2334d2",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "b7a11dd9-dbc4-4f0d-9630-3d3985442edc",
+    "name": "AdminDemoteSuccess",
+    "commands": [{
+      "id": "4c847f6d-3112-4035-af85-eff9659a3667",
+      "comment": "",
+      "command": "open",
+      "target": "http://24.135.50.15/lifespot/public/Guest/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "41fc7cd7-e9cb-4298-9642-0363f3f51946",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "260ba2fa-5210-4bd0-9bca-8e8bc73e3342",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=tr:nth-child(1) input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "43737282-d0ae-472f-aae5-a8a02a2474f9",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=tr:nth-child(1) input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "admirko"
+    }, {
+      "id": "8b56ec75-0e1c-4294-857d-a18d8357064d",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aca6d53d-ecaa-4b18-9280-205beb85909c",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": "123"
+    }, {
+      "id": "ffc98c5d-4d95-4949-978f-f5af3aea171f",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(1)",
+      "targets": [
+        ["css=.btn:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log In')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb2996f3-92f1-4911-994e-bb9215396323",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav-item:nth-child(2) > .nav-link",
+      "targets": [
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://24.135.50.15/lifespot/public/Admin/administer']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c038764-5efc-43e4-b3d4-9daff218cf8c",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8a79b11c-be62-4d9d-ae5c-1eab27cce01f",
+      "comment": "",
+      "command": "click",
+      "target": "id=mod3",
+      "targets": [
+        ["id=mod3", "id"],
+        ["css=#mod3", "css:finder"],
+        ["xpath=//button[@id='mod3']", "xpath:attributes"],
+        ["xpath=//table[@id='example']/tbody/tr[4]/td[3]/button", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[3]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "56733ba1-d1c5-4c1e-a278-52cb0ddd8c43",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "Do you want to DEMOTE user:bogy",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b5b44a3e-d2c0-4271-a852-b0a593d26bdf",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "0bc94507-d605-49f6-9636-9e1030cc2c7c",
+    "name": "AdminBan",
+    "commands": [{
+      "id": "34e8c684-d8a2-4199-9662-66b06e59a407",
+      "comment": "",
+      "command": "open",
+      "target": "http://24.135.50.15/lifespot/public/Guest/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7901513e-f3c0-47d6-b830-e8fbcf8d11ba",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8c5eb8bf-845f-4d6d-b84a-54b068158355",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=tr:nth-child(1) input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f2b615c4-557a-41a7-9b45-657de1b063aa",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=tr:nth-child(1) input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "admirko"
+    }, {
+      "id": "f9180d2e-509e-4b40-b150-9d1023e46d2a",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7dddd073-59f3-456f-be1e-7f7786f441e8",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": "123"
+    }, {
+      "id": "a9dc163f-7917-45fc-b679-08698ffe681c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(1)",
+      "targets": [
+        ["css=.btn:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log In')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c2e3f967-4cdd-4692-8815-6aeedfc07127",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav-item:nth-child(2) > .nav-link",
+      "targets": [
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://24.135.50.15/lifespot/public/Admin/administer']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ed9d8cea-86ca-4025-a058-4806978c9cfe",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "baf609ee-18c6-4e50-9359-9c7e89f6ec6c",
+      "comment": "",
+      "command": "click",
+      "target": "id=ban2",
+      "targets": [
+        ["id=ban2", "id"],
+        ["css=#ban2", "css:finder"],
+        ["xpath=//button[@id='ban2']", "xpath:attributes"],
+        ["xpath=//table[@id='example']/tbody/tr[3]/td[4]/button", "xpath:idRelative"],
+        ["xpath=//tr[3]/td[4]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "99ef73a7-b04a-4944-afc9-a03c7946e466",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "Do you want to BAN user:user1",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f695bb38-3401-4351-81c9-5bebef629100",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "039b06b6-75f7-4388-8f18-689dbe1d704d",
+    "name": "AdminUnban",
+    "commands": [{
+      "id": "fd25beba-d80e-49d0-913d-a431bfdd80cf",
+      "comment": "",
+      "command": "open",
+      "target": "http://24.135.50.15/lifespot/public/Guest/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "af8c85ba-9ac7-4fb9-bdb5-fb10a63eaf4e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cf4b0c9b-53b1-4ce7-a041-569cde1df129",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=tr:nth-child(1) input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5565011f-e8ea-4cd4-a641-ee33a541691f",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=tr:nth-child(1) input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "admirko"
+    }, {
+      "id": "2d6cf4d8-11de-484b-ac7c-0be1f07771f5",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "04c93ad3-45f3-462c-9361-024364698611",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": "123"
+    }, {
+      "id": "24845334-5f0f-43ae-827e-02cd93888c44",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(1)",
+      "targets": [
+        ["css=.btn:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log In')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1295204d-194f-4df7-8a18-e89803c6f598",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav-item:nth-child(2) > .nav-link",
+      "targets": [
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://24.135.50.15/lifespot/public/Admin/administer']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e56082de-9f4d-48df-a21d-843b693cce94",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "59bcd806-cabf-4174-a7b5-66d91e1f1ccc",
+      "comment": "",
+      "command": "click",
+      "target": "id=ban3",
+      "targets": [
+        ["id=ban3", "id"],
+        ["css=#ban3", "css:finder"],
+        ["xpath=//button[@id='ban3']", "xpath:attributes"],
+        ["xpath=//table[@id='example']/tbody/tr[4]/td[4]/button", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[4]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ebb709ba-f376-409c-8ed1-58d10a332b63",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "Do you want to UNBAN user:bogy",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "093a9d46-3cca-427a-a9d9-7c7e77a64758",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "dcede769-210a-4883-a550-4d6f340b51a9",
+    "name": "AdminSearchPromoteSuccess",
+    "commands": [{
+      "id": "b2e3eb83-175a-4f75-a06e-dfc7510f9650",
+      "comment": "",
+      "command": "open",
+      "target": "http://24.135.50.15/lifespot/public/Guest/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a6f360e6-29b2-4bad-9b02-c7b5cf3fa812",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "281d05fe-01d8-4cef-a43f-88226690c73b",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=tr:nth-child(1) input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aaba7d24-c0fa-4253-bc31-8bc905c02835",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=tr:nth-child(1) input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "admirko"
+    }, {
+      "id": "924374de-1aa2-494f-8c85-ba54a04e6e7d",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6b83c591-6b84-45d2-ad13-a499690e08df",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": "123"
+    }, {
+      "id": "db9e9fe6-92c5-4b47-b502-4027974bd448",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(1)",
+      "targets": [
+        ["css=.btn:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log In')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "efa25ba5-de71-45e4-afe9-035901918696",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav-item:nth-child(2) > .nav-link",
+      "targets": [
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://24.135.50.15/lifespot/public/Admin/administer']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "818a6912-5b55-420e-90f1-8808749e7edd",
+      "comment": "",
+      "command": "click",
+      "target": "name=term",
+      "targets": [
+        ["name=term", "name"],
+        ["css=form:nth-child(1) > input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='term']", "xpath:attributes"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3eb2cda5-2e18-4922-a8f9-4159f23caa30",
+      "comment": "",
+      "command": "type",
+      "target": "name=term",
+      "targets": [
+        ["name=term", "name"],
+        ["css=form:nth-child(1) > input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='term']", "xpath:attributes"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "bogy"
+    }, {
+      "id": "61c0abc4-c2f8-42b1-b831-5c403be5cfe5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(4)",
+      "targets": [
+        ["css=.btn:nth-child(4)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[2]/div/form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "535a1b70-ea6d-4116-9370-dc31763b9323",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4edafa24-97a2-441f-926e-12f75dd77b90",
+      "comment": "",
+      "command": "click",
+      "target": "id=mod0",
+      "targets": [
+        ["id=mod0", "id"],
+        ["css=#mod0", "css:finder"],
+        ["xpath=//button[@id='mod0']", "xpath:attributes"],
+        ["xpath=//table[@id='example']/tbody/tr/td[3]/button", "xpath:idRelative"],
+        ["xpath=//td[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Promote')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "20fe1ec6-6624-427d-b4ec-dc64bde4e03b",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "Do you want to PROMOTE user:bogy",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a86168c4-ff63-451f-bf8d-8de6f81a3a4e",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "ec76a43e-dba5-4651-8cc0-4c573a10efd5",
+    "name": "AdminSearchPromoteFail",
+    "commands": [{
+      "id": "5de1f760-c746-4daa-b84d-5c034665aa7c",
+      "comment": "",
+      "command": "open",
+      "target": "http://24.135.50.15/lifespot/public/Guest/login",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "38dd2686-cc3e-4c5c-9691-7c866c3b59ca",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bb53a123-7342-43b3-b777-a378fb54fb20",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) > td:nth-child(2)",
+      "targets": [
+        ["css=tr:nth-child(1) > td:nth-child(2)", "css:finder"],
+        ["xpath=//td[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c60c1efd-9aff-411c-811a-968dfa4a408b",
+      "comment": "",
+      "command": "click",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=tr:nth-child(1) input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "859bb34e-5d5b-4b79-971c-b78960938a75",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=tr:nth-child(1) input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//td[2]/input", "xpath:position"]
+      ],
+      "value": "admirko"
+    }, {
+      "id": "5c0b3123-d2dc-4f6f-8cc4-11de9e356854",
+      "comment": "",
+      "command": "click",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "82543045-85ab-4cfc-a2f7-00dcfec4777c",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//tr[2]/td[2]/input", "xpath:position"]
+      ],
+      "value": "123"
+    }, {
+      "id": "7f053a99-4822-4d67-b3fc-6a1c22a8cb52",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(1)",
+      "targets": [
+        ["css=.btn:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//td/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Log In')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "781a9668-ea1f-4f74-b8a8-26b271f7e389",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav-item:nth-child(2) > .nav-link",
+      "targets": [
+        ["css=.nav-item:nth-child(2) > .nav-link", "css:finder"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://24.135.50.15/lifespot/public/Admin/administer']", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a938c8a0-4d32-49c5-bc4f-3825b642be1b",
+      "comment": "",
+      "command": "click",
+      "target": "name=term",
+      "targets": [
+        ["name=term", "name"],
+        ["css=form:nth-child(1) > input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='term']", "xpath:attributes"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a556f466-077a-4ccf-a6eb-8f1b851915d1",
+      "comment": "",
+      "command": "type",
+      "target": "name=term",
+      "targets": [
+        ["name=term", "name"],
+        ["css=form:nth-child(1) > input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='term']", "xpath:attributes"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "aleksa"
+    }, {
+      "id": "458da0d0-8797-462a-94c2-f2931a61c1c6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(4)",
+      "targets": [
+        ["css=.btn:nth-child(4)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[2]/div/form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bf65e236-cbe5-47ce-aa1d-6d0c12d27c5e",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "de6f05e7-ac7b-4360-a10f-5ddca3c09035",
+      "comment": "",
+      "command": "click",
+      "target": "id=mod0",
+      "targets": [
+        ["id=mod0", "id"],
+        ["css=#mod0", "css:finder"],
+        ["xpath=//button[@id='mod0']", "xpath:attributes"],
+        ["xpath=//table[@id='example']/tbody/tr/td[3]/button", "xpath:idRelative"],
+        ["xpath=//td[3]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Promote')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4eff8f3-b2f3-462d-b647-c3deaf760313",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "Do you want to PROMOTE user:aleksa",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "56a306a7-b0a7-49bf-807e-fc01d4ff97de",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "5e2b586c-3bda-4b33-898f-7bd83f633887",
+    "name": "ClickMarkerAfterSearch",
+    "commands": [{
+      "id": "eda6ba2d-61db-4a4d-b03f-fcbd47377973",
+      "comment": "",
+      "command": "open",
+      "target": "http://24.135.50.15/lifespot/public/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dd29688f-6bfd-4fd6-8533-6e786364c13b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x840",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a0e541f5-18a7-4d0e-8a2c-bd96c5078c25",
+      "comment": "",
+      "command": "click",
+      "target": "id=search_data",
+      "targets": [
+        ["id=search_data", "id"],
+        ["css=#search_data", "css:finder"],
+        ["xpath=//input[@id='search_data']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b793825-2d54-4d12-896a-a87b23fd29f4",
+      "comment": "",
+      "command": "type",
+      "target": "id=search_data",
+      "targets": [
+        ["id=search_data", "id"],
+        ["css=#search_data", "css:finder"],
+        ["xpath=//input[@id='search_data']", "xpath:attributes"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "Equus ferus caballus"
+    }, {
+      "id": "c0645ce6-f552-483d-8f35-8e88f4390bf8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn:nth-child(1)",
+      "targets": [
+        ["css=.btn:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0af1b8d4-ed40-4894-bf1b-8db5b7d54a45",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Show",
+      "targets": [
+        ["linkText=Show", "linkText"],
+        ["css=td > .btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Show')]", "xpath:link"],
+        ["xpath=//table[@id='example']/tbody/tr/td[4]/a", "xpath:idRelative"],
+        ["xpath=//a[@href='http://24.135.50.15/lifespot/public/Marker/showMarker/16/Equus ferus caballus']", "xpath:href"],
+        ["xpath=//td[4]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Show')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "1773333e-9f15-4e38-9c9d-7cfaf11dcee7",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://24.135.50.15/lifespot/public/", "http://24.135.50.15/lifespot/public/Guest/login"],
+  "plugins": []
+}
