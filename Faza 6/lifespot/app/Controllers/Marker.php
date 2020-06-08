@@ -47,7 +47,6 @@ class Marker extends BaseController
             $x->markerText=$marker->text;
             $x->markerLat=$marker->latitude;
             $x->markerLon=$marker->longitude;
-            $x->markerImage=$marker->img;
             $x->markerId=$marker->id;
             $x->showBackButton=true;
             
