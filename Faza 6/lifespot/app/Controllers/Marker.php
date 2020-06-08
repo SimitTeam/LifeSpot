@@ -64,8 +64,17 @@ class Marker extends BaseController
                 $x->headerBackButton="/Results/search?search_species=".urldecode($string);
             }
             
+			$errmodpg = $this->session->get('error_mod_marker_page');
+			$errors = [];
+			if($errmodpg == 1){
+				$this->session->set('error_mod_marker_page', 0);
+				$errors = ["That species does not exist!",];
+				$x->showError = [True];
+			}
             
-	    echo view('./pages/modifiable_marker_page', ["config"=>$x]);
+			echo view('./pages/modifiable_marker_page', ["config"=>$x,
+				'errors'=>$errors
+			]);
             
         }
         

@@ -30,7 +30,7 @@ class BanFilter implements FilterInterface{
         if ($user != null){
             if ($userType == "Banned"){
                 session()->set('error', 'banned');
-                return redirect()->to("/Error/banned");
+                return redirect()->to(site_url("/Error/banned"));
             }
         }
         

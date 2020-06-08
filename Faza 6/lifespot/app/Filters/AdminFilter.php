@@ -29,12 +29,12 @@ class AdminFilter implements FilterInterface{
         
         if ($user == null){
             session()->set('error','login');
-            return redirect()->to("/Error/login");
+            return redirect()->to(site_url("/Error/login"));
         }
         
         if ($userType != 'Admin'){
             session()->set('error','permission');
-            return redirect()->to('/Error/permission');
+            return redirect()->to(site_url('/Error/permission'));
         }
 
     }
