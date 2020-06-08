@@ -97,6 +97,12 @@ class Moderator extends BaseController
         *
     */
         public function confirmSubmit(){
+			$this->validation->setRuleGroup("confirmSubmit");
+			if (!$this->validation->withRequest($this->request)->run()){
+				$myid = $this->request->getVar("marker_id");
+				$this->session->set('error_mod_marker_page', 1);
+				return redirect()->to(site_url("./Marker/showMarker/")."$myid/confirmMarker");
+			}
                 $model=new ConfirmationModel();
                 $result_model=$model->getConfirmation($this->request->getVar("marker_id"));
             
