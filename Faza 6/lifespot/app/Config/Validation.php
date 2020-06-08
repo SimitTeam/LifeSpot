@@ -32,9 +32,10 @@ class Validation
             ],
 
             'newpassword'  => [
-                    'rules' => 'required',
+                    'rules' => 'required|min_length[3]',
                     'errors' => [
-                        'required' => 'Your password is required  !'
+                        'required' => 'Your password is required  !',
+                        'min_length' => "Password must be at least 3 chars long"
                     ]
             ],
 
