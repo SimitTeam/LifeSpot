@@ -30,7 +30,7 @@ class UserFilter implements FilterInterface {
         
         if ($user == null){
             session()->set('error','login');
-            return redirect()->to("/Error/login");
+            return redirect()->to(site_url("/Error/login"));
         }
 
     }

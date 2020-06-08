@@ -9,6 +9,15 @@ class Validation
 		\CodeIgniter\Validation\CreditCardRules::class,
 	];
 
+	public $confirmSubmit = [
+		'species_name' => [
+			'rules' => 'is_not_unique[species.species_name]',
+			'errors' => [
+				'is_not_unique' => 'That species does not exist!'
+			]
+		]
+	];
+
 	public $signup= [
             'name'       => [
                     'rules' =>'required',

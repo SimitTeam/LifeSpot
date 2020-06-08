@@ -1,3 +1,8 @@
+<div class="row">
+<div class="offset-3 col-6">
+	<?php if($config->showError[0]) echo($this-> include('modules/error_list')) ?>
+</div>
+</div>
 <h3> Confirm Marker: </h3>
 <form action="<?=site_url($config->ConfirmationFormSubmit)?>">
 	Confirm 
