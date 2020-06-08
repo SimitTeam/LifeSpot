@@ -18,7 +18,7 @@ class MarkerModel extends Model
 
     protected $returnType     = 'object';
     
-    protected $allowedFields = ['id', 'species_name', 'username', 'img', 'date', 'text', 'latitude', 'longitude'];
+    protected $allowedFields = ['id', 'species_name', 'username',  'date', 'text', 'latitude', 'longitude'];
     
     
     protected $useTimestamps = false;
@@ -59,10 +59,6 @@ class MarkerModel extends Model
         return $getUsername->username;
     }
     
-    public function getIMG($id){
-        $getImg = $this->find($id);
-        return $getImg->img;
-    }
     
     /**
     * Funkcija za dohvatanje Datuma
